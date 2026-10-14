@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-high-contrast="false" data-font-size="normal">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Alberti — Museu Interativo de Arte. Ver, ler e compreender a arte como linguagem, forma e civilização.">
+  <meta name="theme-color" content="#F5F1E8">
+
+  <!-- Open Graph -->
+  <meta property="og:title"       content="Alberti — Museu Interativo de Arte">
+  <meta property="og:description" content="Ver, ler e compreender a arte como linguagem, forma e civilização.">
+  <meta property="og:type"        content="website">
+
+  <title>Alberti — Museu Interativo de Arte</title>
+
+  <!-- Preconnect para Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- CSS — ordem importa: base → layout → theme → components → gallery → mobile -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/gallery.css">
+  <link rel="stylesheet" href="css/mobile.css">
+
+  <!-- Favicon inline SVG -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23F5F1E8'/%3E%3Ctext x='50%25' y='55%25' font-family='serif' font-size='20' fill='%236E4B2A' text-anchor='middle' dominant-baseline='middle'%3EA%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+
+  <!-- ====================================================
+       HEADER
+       ==================================================== -->
+  <header id="site-header" role="banner">
+    <div class="container">
+      <div class="header-inner">
+
+        <!-- Marca -->
+        <a href="#/" class="header-brand" aria-label="Alberti — Início">
+          <span class="header-brand-name">Alberti</span>
+          <span class="header-brand-subtitle">Museu Interativo de Arte</span>
+        </a>
+
+        <!-- Navegação principal -->
+        <nav class="header-nav" aria-label="Navegação principal">
+          <ul class="nav-list" role="list">
+            <li><a href="#/"          class="nav-link" data-route="home"      aria-current="page">Início</a></li>
+            <li><a href="#/linguagem" class="nav-link" data-route="linguagem">Linguagem</a></li>
+            <li><a href="#/periodos"  class="nav-link" data-route="periodos">Períodos</a></li>
+            <li><a href="#/artistas"  class="nav-link" data-route="artistas">Artistas</a></li>
+            <li><a href="#/museu"     class="nav-link" data-route="museu">Museu</a></li>
+            <li><a href="#/studio"    class="nav-link" data-route="studio">Estúdio</a></li>
+            <li><a href="#/comparar"  class="nav-link" data-route="comparar">Comparar</a></li>
+          </ul>
+        </nav>
+
+        <!-- Controles de acessibilidade -->
+        <div class="header-actions">
+          <div class="a11y-controls" aria-label="Controles de acessibilidade">
+            <button class="btn-a11y" id="btn-font-decrease" aria-label="Diminuir fonte" title="Diminuir fonte">A−</button>
+            <button class="btn-a11y" id="btn-font-increase" aria-label="Aumentar fonte" title="Aumentar fonte">A+</button>
+            <button class="btn-a11y" id="btn-contrast"      aria-label="Alto contraste" title="Alto contraste" aria-pressed="false">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                <circle cx="7" cy="7" r="6" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M7 1v12A6 6 0 0 1 7 1z" fill="currentColor"/>
+              </svg>
+            </button>
+          </div>
+
+          <!-- Modo Professor -->
+          <button class="btn btn-sm btn-secondary" id="btn-teacher-mode" aria-label="Modo Professor">
+            Professor
+          </button>
+
+          <!-- Botão menu mobile -->
+          <button class="btn-menu" id="btn-menu" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-drawer">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path d="M3 5h14M3 10h14M3 15h14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Drawer de navegação mobile -->
+  <nav id="nav-drawer" class="nav-drawer" aria-label="Menu mobile" aria-hidden="true">
+    <ul role="list" style="display:flex; flex-direction:column; gap:0.5rem;">
+      <li><a href="#/"          class="nav-link" style="font-size:1.1rem; padding:0.75rem 0;">Início</a></li>
+      <li><a href="#/linguagem" class="nav-link" style="font-size:1.1rem; padding:0.75rem 0;">Linguagem da Arte</a></li>
+      <li><a href="#/periodos"  class="nav-link" style="font-size:1.1rem; padding:0.75rem 0;">Períodos</a></li>
+      <li><a href="#/artistas"  class="nav-link" style="font-size:1.1rem; padding:0.75rem 0;">Artistas</a></li>
+      <li><a href="#/museu"     class="nav-link" style="font-size:1.1rem; padding:0.75rem 0;">Museu</a></li>
+      <li><a href="#/studio"    class="nav-link" style="font-size:1.1rem; padding:0.75rem 0;">Estúdio</a></li>
+      <li><a href="#/comparar"  class="nav-link" style="font-size:1.1rem; padding:0.75rem 0;">Comparar</a></li>
+    </ul>
+    <div style="margin-top:2rem; padding-top:2rem; border-top:1px solid var(--color-divider);">
+      <button class="btn btn-secondary" id="btn-teacher-mode-mobile" style="width:100%; justify-content:center;">
+        Modo Professor
+      </button>
+    </div>
+  </nav>
+
+  <!-- ====================================================
+       CONTEÚDO PRINCIPAL — ponto de montagem do SPA
+       ==================================================== -->
+  <main id="app-main" role="main">
+
+    <!-- VIEW: HOME (renderizada pelo server-side inicial) -->
+    <div id="view-home" data-view="home">
+
+      <!-- ================================================
+           HERO
+           ================================================ -->
+      <section class="hero" aria-label="Apresentação do Alberti"
+               style="background-color:var(--color-bg-secondary); border-bottom:1px solid var(--color-border-base);">
+        <div class="container" style="padding-block: clamp(3rem, 6vw, 5rem);">
+          <div class="hero-grid">
+
+            <!-- Coluna esquerda — texto -->
+            <div class="hero-text-col">
+              <span class="section-eyebrow" style="margin-bottom:var(--space-4);">Museu Interativo de Arte</span>
+
+              <h1 class="hero-title">Alberti</h1>
+
+              <p class="hero-tagline">
+                Ver, ler e compreender a arte como linguagem, forma e civilização.
+              </p>
+
+              <p class="hero-description">
+                Um museu-laboratório onde a obra é protagonista e a leitura visual é ensinada com precisão.
+              </p>
+
+              <div class="hero-actions">
+                <a href="#/linguagem" class="btn btn-primary btn-lg">Começar pela Linguagem</a>
+                <a href="#/museu"     class="btn btn-secondary btn-lg">Entrar no Museu</a>
+              </div>
+            </div>
+
+            <!-- Coluna direita — composição visual museológica -->
+            <div class="hero-visual-col">
+
+              <!-- Imagem principal com overlay SVG.
+                   Usa data-src (lazy loader) que funciona de forma consistente
+                   em todos os browsers incluindo quando servido via file://. -->
+              <div class="hero-artwork-frame">
+                <img
+                  src="assets/artworks/last-supper.jpg"
+                  alt="" role="presentation"
+                  loading="eager"
+                  style="width:100%;height:100%;object-fit:cover;opacity:0.85;display:block;"
+                >
+                <!-- Overlay SVG de composição -->
+                <svg class="hero-overlay-svg" viewBox="0 0 400 300"
+                     xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <line x1="133" y1="0"   x2="133" y2="300" stroke="rgba(167,120,61,0.25)" stroke-width="1"/>
+                  <line x1="267" y1="0"   x2="267" y2="300" stroke="rgba(167,120,61,0.25)" stroke-width="1"/>
+                  <line x1="0"   y1="100" x2="400" y2="100" stroke="rgba(167,120,61,0.25)" stroke-width="1"/>
+                  <line x1="0"   y1="200" x2="400" y2="200" stroke="rgba(167,120,61,0.25)" stroke-width="1"/>
+                  <line x1="200" y1="80"  x2="50"  y2="300" stroke="rgba(85,107,116,0.30)" stroke-width="1" stroke-dasharray="4 3"/>
+                  <line x1="200" y1="80"  x2="350" y2="300" stroke="rgba(85,107,116,0.30)" stroke-width="1" stroke-dasharray="4 3"/>
+                  <circle cx="200" cy="85" r="14" fill="none" stroke="rgba(167,120,61,0.55)" stroke-width="1.5"/>
+                  <circle cx="200" cy="85" r="4"  fill="rgba(167,120,61,0.50)"/>
+                </svg>
+                <!-- Legenda -->
+                <div class="hero-artwork-caption">
+                  <p class="hero-caption-title">A Última Ceia</p>
+                  <p class="hero-caption-meta">LEONARDO DA VINCI — 1495–1498</p>
+                </div>
+              </div>
+
+              <!-- Miniaturas — todas via data-src -->
+              <div class="hero-thumbs">
+                <figure class="hero-thumb">
+                  <img src="assets/thumbnails/creation-of-adam.jpg"
+                       alt="" role="presentation"
+                       loading="lazy"
+                       style="width:100%;height:100%;object-fit:cover;opacity:0.82;display:block;">
+                </figure>
+                <figure class="hero-thumb">
+                  <img src="assets/thumbnails/school-of-athens.svg"
+                       alt="" role="presentation"
+                       loading="lazy"
+                       style="width:100%;height:100%;object-fit:cover;opacity:0.82;display:block;">
+                </figure>
+                <figure class="hero-thumb">
+                  <img src="assets/thumbnails/mona-lisa.svg"
+                       alt="" role="presentation"
+                       loading="lazy"
+                       style="width:100%;height:100%;object-fit:cover;opacity:0.82;display:block;">
+                </figure>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================
+           SEÇÃO: LINGUAGEM DA ARTE
+           ================================================ -->
+      <section class="section" aria-labelledby="sec-linguagem-title">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-eyebrow">Fundamentos</span>
+            <h2 class="section-title" id="sec-linguagem-title">Linguagem da Arte</h2>
+            <p class="section-description">
+              Antes de períodos e artistas, existe a linguagem. Aprender a ver é o primeiro passo — distinguir linha, forma, cor, luz e composição em qualquer obra.
+            </p>
+          </div>
+
+          <div class="auto-grid-4 stagger" id="linguagem-grid" role="list">
+            <!-- Renderizado por gallery-grid.js ao carregar data/modules.json -->
+            <!-- Fallback estático para carregamento inicial -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Divisória ornamental -->
+      <div class="container">
+        <div class="ornament-filete">
+          <span class="ornament-filete-mark">— —</span>
+        </div>
+      </div>
+
+      <!-- ================================================
+           SEÇÃO: PERCURSO HISTÓRICO
+           ================================================ -->
+      <section class="section-medium" aria-labelledby="sec-periodos-title">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-eyebrow">História da Arte</span>
+            <h2 class="section-title" id="sec-periodos-title">Percurso Histórico</h2>
+            <p class="section-description">
+              Da Antiguidade ao contemporâneo — cada período forma a gramática visual das obras que vieram depois.
+            </p>
+          </div>
+
+          <!-- Timeline de períodos -->
+          <div class="timeline-container" id="home-timeline" aria-label="Linha do tempo de períodos artísticos">
+            <div class="timeline-line" aria-hidden="true"></div>
+            <div class="timeline-track" role="list" id="timeline-track">
+              <!-- Renderizado por timeline-viewer.js -->
+            </div>
+          </div>
+
+          <!-- Grade de períodos -->
+          <div class="auto-grid-3 stagger" style="margin-top: var(--space-7);" id="periods-grid" role="list">
+            <!-- Renderizado pelo router -->
+          </div>
+
+          <div style="text-align: center; margin-top: var(--space-6);">
+            <a href="#/periodos" class="btn btn-secondary">Ver todos os períodos</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================
+           SEÇÃO: SALAS DO MUSEU
+           ================================================ -->
+      <section class="section" style="background: var(--color-bg-secondary); border-top: 1px solid var(--color-border-base); border-bottom: 1px solid var(--color-border-base);"
+               aria-labelledby="sec-museu-title">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-eyebrow">Coleção</span>
+            <h2 class="section-title" id="sec-museu-title">Salas do Museu</h2>
+            <p class="section-description">
+              Cada sala reúne obras em torno de um eixo curatorial. Visite o percurso completo ou escolha a sala pelo tema.
+            </p>
+          </div>
+
+          <div class="auto-grid-3 stagger museum-rooms-grid" id="museum-rooms-grid" role="list">
+            <!-- Renderizado por museum-room.js -->
+          </div>
+
+          <div style="text-align: center; margin-top: var(--space-6);">
+            <a href="#/museu" class="btn btn-primary">Entrar no Museu</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================
+           SEÇÃO: ARTISTAS EM DESTAQUE
+           ================================================ -->
+      <section class="section" aria-labelledby="sec-artistas-title">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-eyebrow">Mestres</span>
+            <h2 class="section-title" id="sec-artistas-title">Artistas em Destaque</h2>
+            <p class="section-description">
+              Não apenas biografias — a linguagem formal de cada artista, suas escolhas técnicas e seu lugar na história do olhar.
+            </p>
+          </div>
+
+          <div class="auto-grid-3 stagger" id="artists-grid" role="list">
+            <!-- Renderizado por artist-card.js -->
+          </div>
+
+          <div style="text-align: center; margin-top: var(--space-6);">
+            <a href="#/artistas" class="btn btn-secondary">Ver todos os artistas</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================
+           SEÇÃO: ESTÚDIO
+           ================================================ -->
+      <section class="section" style="background: var(--color-bg-secondary); border-top: 1px solid var(--color-border-base);"
+               aria-labelledby="sec-studio-title">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-eyebrow">Prática</span>
+            <h2 class="section-title" id="sec-studio-title">Estúdio</h2>
+            <p class="section-description">
+              Atividades de leitura visual e construção formal. Não exercícios escolares — análise como um curador faria.
+            </p>
+          </div>
+
+          <div class="auto-grid-3 stagger" id="studio-grid" role="list">
+            <!-- Renderizado pelo exercício engine -->
+          </div>
+
+          <div style="text-align: center; margin-top: var(--space-6);">
+            <a href="#/studio" class="btn btn-accent">Entrar no Estúdio</a>
+          </div>
+        </div>
+      </section>
+
+    </div><!-- /view-home -->
+
+    <!-- VIEW: LINGUAGEM DA ARTE -->
+    <div id="view-linguagem" data-view="linguagem" class="hidden">
+      <div class="container section">
+        <div id="linguagem-view-content"></div>
+      </div>
+    </div>
+
+    <!-- VIEW: PERÍODOS -->
+    <div id="view-periodos" data-view="periodos" class="hidden">
+      <div class="container section">
+        <div id="periodos-view-content"></div>
+      </div>
+    </div>
+
+    <!-- VIEW: ARTISTAS -->
+    <div id="view-artistas" data-view="artistas" class="hidden">
+      <div class="container section">
+        <div id="artistas-view-content"></div>
+      </div>
+    </div>
+
+    <!-- VIEW: MUSEU -->
+    <div id="view-museu" data-view="museu" class="hidden">
+      <div class="container section">
+        <div id="museu-view-content"></div>
+      </div>
+    </div>
+
+    <!-- VIEW: STUDIO -->
+    <div id="view-studio" data-view="studio" class="hidden">
+      <div class="container section">
+        <div id="studio-view-content"></div>
+      </div>
+    </div>
+
+    <!-- VIEW: COMPARAR -->
+    <div id="view-comparar" data-view="comparar" class="hidden">
+      <div class="container section">
+        <div id="comparar-view-content"></div>
+      </div>
+    </div>
+
+    <!-- VIEW: OBRA INDIVIDUAL -->
+    <div id="view-obra" data-view="obra" class="hidden">
+      <div class="container section">
+        <div id="obra-view-content"></div>
+      </div>
+    </div>
+
+    <!-- VIEW: ARTISTA INDIVIDUAL -->
+    <div id="view-artista" data-view="artista" class="hidden">
+      <div class="container section">
+        <div id="artista-view-content"></div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ====================================================
+       PAINEL DO PROFESSOR (slide panel)
+       ==================================================== -->
+  <aside id="teacher-panel" class="slide-panel" aria-label="Modo Professor" aria-hidden="true">
+    <div class="slide-panel-header">
+      <h2 class="slide-panel-title">Modo Professor</h2>
+      <button class="btn btn-icon btn-ghost" id="btn-close-teacher" aria-label="Fechar painel do professor">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+          <path d="M2 2l14 14M16 2L2 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+    <div class="slide-panel-body" id="teacher-panel-content">
+      <p style="color: var(--color-text-discrete); font-size: var(--text-caption);">
+        Selecione uma lição ou obra para ver as informações de mediação.
+      </p>
+    </div>
+  </aside>
+
+  <!-- ====================================================
+       FOOTER
+       ==================================================== -->
+  <footer id="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-inner">
+
+        <!-- Marca -->
+        <div class="footer-brand">
+          <div class="footer-brand-name">Alberti</div>
+          <p class="footer-tagline">Museu Interativo de Arte. Ver, ler e compreender a arte como linguagem, forma e civilização.</p>
+        </div>
+
+        <!-- Navegação do footer -->
+        <nav class="footer-nav" aria-label="Navegação do rodapé">
+          <div class="footer-nav-group">
+            <h3 class="footer-nav-title">Explorar</h3>
+            <ul class="footer-nav-list" role="list">
+              <li><a href="#/linguagem" class="footer-nav-link">Linguagem da Arte</a></li>
+              <li><a href="#/periodos"  class="footer-nav-link">Períodos</a></li>
+              <li><a href="#/artistas"  class="footer-nav-link">Artistas</a></li>
+              <li><a href="#/museu"     class="footer-nav-link">Salas do Museu</a></li>
+            </ul>
+          </div>
+          <div class="footer-nav-group">
+            <h3 class="footer-nav-title">Aprender</h3>
+            <ul class="footer-nav-list" role="list">
+              <li><a href="#/studio"   class="footer-nav-link">Estúdio</a></li>
+              <li><a href="#/comparar" class="footer-nav-link">Comparar</a></li>
+            </ul>
+          </div>
+          <div class="footer-nav-group">
+            <h3 class="footer-nav-title">Ecossistema</h3>
+            <ul class="footer-nav-list" role="list">
+              <li><a href="#" class="footer-nav-link">Johnson English</a></li>
+              <li><a href="#" class="footer-nav-link">Euclides</a></li>
+              <li><a href="#" class="footer-nav-link">Heródoto</a></li>
+              <li><a href="#" class="footer-nav-link">Lavoisier</a></li>
+              <li><a href="#" class="footer-nav-link">Humboldt</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+
+      <div class="footer-bottom">
+        <span class="footer-copy">Alberti v1.0.0 — Coleção digital do ecossistema educacional</span>
+        <div class="footer-ecosystem" aria-label="Outros sistemas do ecossistema">
+          <span class="footer-nav-title" style="margin-bottom:0;">Ecossistema:</span>
+          <a href="#" class="footer-ecosystem-link">Heródoto</a>
+          <a href="#" class="footer-ecosystem-link">Euclides</a>
+          <a href="#" class="footer-ecosystem-link">Quintiliano</a>
+          <a href="#" class="footer-ecosystem-link">Johnson</a>
+          <a href="#" class="footer-ecosystem-link">Lavoisier</a>
+          <a href="#" class="footer-ecosystem-link">Humboldt</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ====================================================
+       CONTAINER DE NOTIFICAÇÕES
+       ==================================================== -->
+  <div id="toast-container" class="toast-container" role="status" aria-live="polite" aria-atomic="true"></div>
+
+  <!-- ====================================================
+       JAVASCRIPT — ES Modules
+       ==================================================== -->
+  <script type="module" src="js/main.js"></script>
+
+</body>
+</html>

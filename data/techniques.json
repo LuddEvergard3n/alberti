@@ -1,0 +1,9 @@
+[
+  { "id": "afresco",           "title": "Afresco",           "category": "Pintura", "short_description": "Pigmento aplicado sobre reboco fresco. A tinta funde-se à parede ao secar, criando durabilidade excepcional." },
+  { "id": "oleo-sobre-madeira","title": "Óleo sobre madeira","category": "Pintura", "short_description": "Tinta a óleo sobre suporte de madeira. Permite revisões, camadas e sfumato." },
+  { "id": "oleo-sobre-tela",   "title": "Óleo sobre tela",  "category": "Pintura", "short_description": "Suporte têxtil com tinta a óleo. Mais leve que madeira, permite grandes formatos." },
+  { "id": "tempera",           "title": "Têmpera",          "category": "Pintura", "short_description": "Pigmento com gema de ovo. Seca rápido, permite detalhe preciso, menos blend." },
+  { "id": "afresco-tempera",   "title": "Afresco e têmpera","category": "Pintura", "short_description": "Combinação técnica usada por Leonardo na Última Ceia, que contribuiu para sua deterioração precoce." },
+  { "id": "tinta-e-aquarela",  "title": "Tinta e aquarela", "category": "Desenho", "short_description": "Tinta a pena com lavagem de aquarela. Técnica de estudo e projeto." },
+  { "id": "marmore",           "title": "Mármore",          "category": "Escultura","short_description": "Escultura em bloco de mármore por subtração. Técnica dominante na escultura renascentista e clássica." }
+]

@@ -1,0 +1,689 @@
+/**
+ * layout.css
+ * Alberti — Museu Interativo de Arte
+ *
+ * Sistema de layout global.
+ * Contém: containers, grid de 12 colunas, utilitários de flex,
+ * sistema de seções, header e footer shells.
+ *
+ * Todas as larguras usam tokens de base.css.
+ * Nenhuma largura arbitrária deve ser definida aqui.
+ */
+
+/* =========================================================
+   CONTAINERS
+   Hierarquia: container-max > container-wide > content-max
+   ========================================================= */
+
+/**
+ * .container — container padrão da maioria das seções.
+ * max-width: 1280px com padding lateral responsivo.
+ */
+.container {
+  width:       100%;
+  max-width:   var(--container-max);
+  margin-inline: auto;
+  padding-inline: clamp(var(--space-4), 3vw, var(--space-5));
+}
+
+/**
+ * .container-wide — container para seções que precisam de mais largura.
+ * Usado em galerias e grids densos.
+ */
+.container-wide {
+  width:       100%;
+  max-width:   var(--container-wide);
+  margin-inline: auto;
+  padding-inline: clamp(var(--space-4), 3vw, var(--space-5));
+}
+
+/**
+ * .container-content — container para conteúdo editorial.
+ * Usado em artigos, lições, textos curatoriais.
+ */
+.container-content {
+  width:       100%;
+  max-width:   var(--content-max);
+  margin-inline: auto;
+  padding-inline: clamp(var(--space-4), 3vw, var(--space-5));
+}
+
+/**
+ * .container-reading — container para leitura longa.
+ * max-width em ch para legibilidade ideal.
+ */
+.container-reading {
+  width:       100%;
+  max-width:   var(--reading-max);
+  margin-inline: auto;
+  padding-inline: clamp(var(--space-3), 3vw, var(--space-4));
+}
+
+/* =========================================================
+   GRID DE 12 COLUNAS
+   Usado com classes .col-* dentro de .grid
+   ========================================================= */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--gap-medium);
+}
+
+/* Colunas com span explícito */
+.col-1  { grid-column: span 1;  }
+.col-2  { grid-column: span 2;  }
+.col-3  { grid-column: span 3;  }
+.col-4  { grid-column: span 4;  }
+.col-5  { grid-column: span 5;  }
+.col-6  { grid-column: span 6;  }
+.col-7  { grid-column: span 7;  }
+.col-8  { grid-column: span 8;  }
+.col-9  { grid-column: span 9;  }
+.col-10 { grid-column: span 10; }
+.col-11 { grid-column: span 11; }
+.col-12 { grid-column: span 12; }
+
+/* Offset de coluna */
+.col-start-2 { grid-column-start: 2; }
+.col-start-3 { grid-column-start: 3; }
+.col-start-4 { grid-column-start: 4; }
+
+/* =========================================================
+   AUTO-GRIDS
+   Grids automáticos sem especificar colunas manualmente.
+   ========================================================= */
+
+/**
+ * .auto-grid-4 — 4 colunas iguais, colapsa em mobile.
+ * Usado para cards de linguagem da arte, técnicas, etc.
+ */
+.auto-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--gap-medium);
+}
+
+/**
+ * .auto-grid-3 — 3 colunas iguais.
+ * Usado para artistas em destaque, salas do museu, etc.
+ */
+.auto-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--gap-medium);
+}
+
+/**
+ * .auto-grid-2 — 2 colunas iguais.
+ * Usado para comparações, hero layout alternativo.
+ */
+.auto-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--gap-large);
+}
+
+/**
+ * .auto-grid-fill — colunas automáticas com min-width.
+ * Usa auto-fill para adaptar-se ao container.
+ */
+.auto-grid-fill {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: var(--gap-medium);
+}
+
+/* =========================================================
+   FLEXBOX UTILITÁRIOS
+   ========================================================= */
+
+.flex           { display: flex; }
+.flex-col       { display: flex; flex-direction: column; }
+.flex-center    { display: flex; align-items: center; justify-content: center; }
+.flex-between   { display: flex; align-items: center; justify-content: space-between; }
+.flex-start     { display: flex; align-items: flex-start; }
+.flex-end       { display: flex; align-items: flex-end; }
+.flex-wrap      { flex-wrap: wrap; }
+.flex-grow      { flex: 1; }
+.flex-shrink-0  { flex-shrink: 0; }
+
+/* Gaps em flex */
+.gap-sm { gap: var(--gap-small);  }
+.gap-md { gap: var(--gap-medium); }
+.gap-lg { gap: var(--gap-large);  }
+
+/* =========================================================
+   SEÇÕES DA HOME
+   Ritmo vertical consistente entre as seções.
+   ========================================================= */
+
+/**
+ * .section — wrapper padrão de seção.
+ * Espaçamento vertical --section-large.
+ */
+.section {
+  padding-block: var(--section-large);
+}
+
+/**
+ * .section-medium — seções intermediárias.
+ */
+.section-medium {
+  padding-block: var(--section-medium);
+}
+
+/**
+ * .section-compact — seções densas.
+ */
+.section-compact {
+  padding-block: var(--section-compact);
+}
+
+/**
+ * .section-monumental — hero e separações principais.
+ */
+.section-monumental {
+  padding-block: var(--section-monumental);
+}
+
+/* Cabeçalho de seção — título + descrição curta */
+.section-header {
+  margin-bottom: var(--space-6);
+}
+
+.section-header .section-eyebrow {
+  display:        block;
+  font-family:    var(--font-body);
+  font-size:      var(--text-small);
+  font-weight:    var(--weight-medium);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color:          var(--color-brand-accent);
+  margin-bottom:  var(--space-2);
+}
+
+.section-header .section-title {
+  font-family: var(--font-display);
+  font-size:   var(--text-section);
+  font-weight: var(--weight-medium);
+  color:       var(--color-text-primary);
+  line-height: var(--leading-snug);
+  margin-bottom: var(--space-3);
+}
+
+.section-header .section-description {
+  font-size:  var(--text-body-lg);
+  color:      var(--color-text-secondary);
+  max-width:  60ch;
+  line-height:var(--leading-relaxed);
+}
+
+/* Divisória de seção */
+.section-divider {
+  width:  100%;
+  height: 1px;
+  background: var(--color-divider);
+  margin-block: var(--section-medium);
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+/**
+ * Grid de 2 colunas para a hero da home.
+ * Responsividade no mobile.css.
+ */
+.hero-grid {
+  display:     grid;
+  grid-template-columns: 5fr 6fr;
+  gap:         clamp(2rem, 4vw, 4rem);
+  align-items: center;
+}
+
+.hero-text-col {
+  display:        flex;
+  flex-direction: column;
+  align-items:    flex-start;
+  gap:            0;
+}
+
+.hero-title {
+  font-family:    var(--font-display);
+  font-size:      var(--text-hero);
+  font-weight:    var(--weight-light);
+  line-height:    1.05;
+  letter-spacing: -0.02em;
+  color:          var(--color-text-primary);
+  margin-bottom:  var(--space-4);
+}
+
+.hero-tagline {
+  font-family:  var(--font-display);
+  font-size:    clamp(1.05rem, 1.5vw, 1.3rem);
+  font-style:   italic;
+  color:        var(--color-text-secondary);
+  line-height:  var(--leading-snug);
+  margin-bottom:var(--space-5);
+  max-width:    44ch;
+}
+
+.hero-description {
+  font-family:  var(--font-body);
+  font-size:    var(--text-body);
+  color:        var(--color-text-secondary);
+  line-height:  var(--leading-relaxed);
+  margin-bottom:var(--space-6);
+  max-width:    40ch;
+}
+
+.hero-actions {
+  display:     flex;
+  gap:         var(--gap-medium);
+  flex-wrap:   wrap;
+  align-items: center;
+}
+
+/* Coluna visual */
+.hero-visual-col {
+  position: relative;
+}
+
+/* Frame da obra principal */
+.hero-artwork-frame {
+  position:     relative;
+  aspect-ratio: 4 / 3;
+  background:   var(--color-bg-deep);
+  border-radius:var(--radius-lg);
+  overflow:     hidden;
+  border:       1px solid var(--color-border-base);
+}
+
+.hero-artwork-frame img {
+  /* A imagem cresce para preencher quando carregada */
+  transition: opacity var(--transition-slow);
+}
+
+.hero-overlay-svg {
+  position:       absolute;
+  inset:          0;
+  width:          100%;
+  height:         100%;
+  pointer-events: none;
+}
+
+.hero-artwork-caption {
+  position:   absolute;
+  bottom:     0;
+  left:       0;
+  right:      0;
+  background: linear-gradient(to top, rgba(42,36,30,0.88) 0%, transparent 100%);
+  padding:    1.5rem 1.25rem 1rem;
+}
+
+.hero-caption-title {
+  font-family:  var(--font-display);
+  font-size:    0.95rem;
+  font-style:   italic;
+  color:        rgba(251,248,242,0.95);
+  margin-bottom:0.2rem;
+  line-height:  1.3;
+  max-width:    100%;
+}
+
+.hero-caption-meta {
+  font-family:    var(--font-mono);
+  font-size:      0.70rem;
+  color:          rgba(251,248,242,0.55);
+  letter-spacing: 0.07em;
+}
+
+/* Grade de miniaturas abaixo da obra principal */
+.hero-thumbs {
+  display:               grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:                   0.5rem;
+  margin-top:            0.5rem;
+}
+
+.hero-thumb {
+  margin:        0;
+  aspect-ratio:  1;
+  background:    var(--color-bg-deep);
+  border-radius: var(--radius-sm);
+  overflow:      hidden;
+  border:        1px solid var(--color-border-base);
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+#site-header {
+  position:   sticky;
+  top:        0;
+  left:       0;
+  right:      0;
+  z-index:    var(--z-sticky);
+  height:     var(--header-height);
+  /* Fallback sólido para Firefox < 103 e outros sem suporte a backdrop-filter */
+  background: rgba(251, 248, 242, 0.98);
+  border-bottom: 1px solid var(--color-border-base);
+  transition: background var(--transition-base),
+              box-shadow  var(--transition-base);
+}
+
+/* Blur progressivo apenas quando o navegador suporta backdrop-filter.
+   Firefox 103+ (ago 2022), Chrome 76+, Edge 79+, Opera 63+, Brave (Chromium). */
+@supports (backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px)) {
+  #site-header {
+    background: rgba(251, 248, 242, 0.94);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+}
+
+#site-header.scrolled {
+  box-shadow: var(--shadow-soft);
+}
+
+/* O container dentro do header precisa de height:100% para que
+   o header-inner consiga centralizar os itens verticalmente. */
+#site-header .container {
+  height: 100%;
+}
+
+.header-inner {
+  display:     flex;
+  align-items: center;
+  height:      100%;
+  gap:         var(--gap-medium);
+}
+
+/* Marca / logotipo */
+.header-brand {
+  display:     flex;
+  align-items: baseline;
+  gap:         var(--space-2);
+  flex-shrink: 0;
+}
+
+.header-brand-name {
+  font-family: var(--font-display);
+  font-size:   1.4rem;
+  font-weight: var(--weight-medium);
+  color:       var(--color-brand-primary);
+  letter-spacing: var(--tracking-tight);
+  line-height: 1;
+}
+
+.header-brand-subtitle {
+  font-size:   var(--text-small);
+  color:       var(--color-text-discrete);
+  letter-spacing: var(--tracking-wide);
+  font-family: var(--font-body);
+  font-weight: var(--weight-regular);
+  display:     none; /* visível em desktop */
+}
+
+/* Navegação principal */
+.header-nav {
+  flex:        1;
+  display:     flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-list {
+  display:     flex;
+  align-items: center;
+  gap:         var(--space-1);
+}
+
+.nav-link {
+  display:        block;
+  padding:        var(--space-2) var(--space-3);
+  font-size:      var(--text-meta);
+  font-weight:    var(--weight-regular);
+  color:          var(--color-text-secondary);
+  letter-spacing: var(--tracking-wide);
+  /* Sem border-radius no estado normal — evita aparência de botão */
+  border-bottom:  2px solid transparent;
+  transition:     color var(--transition-fast),
+                  border-color var(--transition-fast);
+}
+
+.nav-link:hover {
+  color: var(--color-text-primary);
+}
+
+/* Estado ativo: apenas cor mais escura + sublinhado fino */
+.nav-link[aria-current="page"] {
+  color:        var(--color-brand-primary);
+  font-weight:  var(--weight-medium);
+  border-bottom-color: var(--color-brand-accent);
+}
+
+/* Ações do header */
+.header-actions {
+  display:     flex;
+  align-items: center;
+  gap:         var(--space-2);
+  flex-shrink: 0;
+}
+
+/* Botão hamburger (mobile) */
+.btn-menu {
+  display:      none;
+  align-items:  center;
+  justify-content: center;
+  width:        40px;
+  height:       40px;
+  border-radius:var(--radius-sm);
+  color:        var(--color-text-secondary);
+  transition:   background var(--transition-fast);
+}
+
+.btn-menu:hover {
+  background: var(--color-hover-overlay);
+}
+
+/* Drawer de navegação mobile */
+.nav-drawer {
+  display:   none;
+  position:  fixed;
+  top:       var(--header-height);
+  left:      0;
+  right:     0;
+  bottom:    0;
+  background:var(--color-bg-surface);
+  z-index:   var(--z-overlay);
+  padding:   var(--space-5);
+  overflow-y:auto;
+  transform: translateX(-100%);
+  transition:transform var(--transition-slow);
+}
+
+.nav-drawer.open {
+  transform: translateX(0);
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+#site-footer {
+  background:  var(--color-bg-secondary);
+  border-top:  1px solid var(--color-border-base);
+  padding-block:var(--section-medium);
+  margin-top:  var(--section-large);
+}
+
+.footer-inner {
+  display:   flex;
+  gap:       var(--gap-large);
+  flex-wrap: wrap;
+}
+
+.footer-brand {
+  flex:      0 0 auto;
+  max-width: 260px;
+}
+
+.footer-brand-name {
+  font-family: var(--font-display);
+  font-size:   1.25rem;
+  font-weight: var(--weight-medium);
+  color:       var(--color-brand-primary);
+  margin-bottom: var(--space-2);
+}
+
+.footer-tagline {
+  font-size:  var(--text-caption);
+  color:      var(--color-text-discrete);
+  line-height:var(--leading-relaxed);
+  max-width:  240px;
+}
+
+.footer-nav {
+  flex:    1;
+  display: flex;
+  gap:     var(--gap-large);
+  flex-wrap:wrap;
+}
+
+.footer-nav-group {
+  min-width: 140px;
+}
+
+.footer-nav-title {
+  font-size:      var(--text-small);
+  font-weight:    var(--weight-semibold);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color:          var(--color-text-discrete);
+  margin-bottom:  var(--space-3);
+  font-family:    var(--font-body);
+}
+
+.footer-nav-list {
+  display:       flex;
+  flex-direction:column;
+  gap:           var(--space-2);
+}
+
+.footer-nav-link {
+  font-size:  var(--text-caption);
+  color:      var(--color-text-secondary);
+  transition: color var(--transition-fast);
+}
+
+.footer-nav-link:hover {
+  color: var(--color-brand-primary);
+}
+
+.footer-bottom {
+  margin-top:  var(--space-6);
+  padding-top: var(--space-4);
+  border-top:  1px solid var(--color-divider);
+  display:     flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap:   wrap;
+  gap:         var(--space-3);
+}
+
+.footer-copy {
+  font-size:  var(--text-small);
+  color:      var(--color-text-discrete);
+  font-family:var(--font-mono);
+}
+
+.footer-ecosystem {
+  display:     flex;
+  align-items: center;
+  gap:         var(--space-3);
+  flex-wrap:   wrap;
+}
+
+.footer-ecosystem-link {
+  font-size:  var(--text-small);
+  color:      var(--color-text-discrete);
+  transition: color var(--transition-fast);
+}
+
+.footer-ecosystem-link:hover {
+  color: var(--color-brand-accent);
+}
+
+/* =========================================================
+   MAIN CONTENT AREA
+   ========================================================= */
+
+#app-main {
+  min-height: calc(100vh - var(--header-height));
+}
+
+/* =========================================================
+   UTILITÁRIOS DE LAYOUT GERAL
+   ========================================================= */
+
+/* Centralização */
+.mx-auto { margin-inline: auto; }
+.text-center { text-align: center; }
+.text-left   { text-align: left;   }
+.text-right  { text-align: right;  }
+
+/* Overflow */
+.overflow-hidden { overflow: hidden; }
+
+/* Posicionamento */
+.relative { position: relative; }
+.absolute { position: absolute; }
+
+/* Aspect ratios comuns */
+.aspect-16-9    { aspect-ratio: 16 / 9; }
+.aspect-4-3     { aspect-ratio: 4  / 3; }
+.aspect-3-4     { aspect-ratio: 3  / 4; }
+.aspect-1-1     { aspect-ratio: 1  / 1; }
+.aspect-golden  { aspect-ratio: 1.618 / 1; }
+
+/* Cover para imagens em containers com aspect-ratio */
+.img-cover {
+  width:      100%;
+  height:     100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* =========================================================
+   ANIMAÇÕES DE ENTRADA
+   Classes adicionadas pelo JavaScript ao montar componentes.
+   ========================================================= */
+
+.fade-in {
+  animation: fadeIn var(--transition-slow) ease both;
+}
+
+.slide-up {
+  animation: slideUp var(--transition-slow) ease both;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+/* Stagger para listas de cards */
+.stagger > *:nth-child(1) { animation-delay:  60ms; }
+.stagger > *:nth-child(2) { animation-delay: 120ms; }
+.stagger > *:nth-child(3) { animation-delay: 180ms; }
+.stagger > *:nth-child(4) { animation-delay: 240ms; }
+.stagger > *:nth-child(5) { animation-delay: 300ms; }
+.stagger > *:nth-child(6) { animation-delay: 360ms; }

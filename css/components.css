@@ -1,0 +1,685 @@
+/**
+ * components.css
+ * Alberti — Museu Interativo de Arte
+ *
+ * Componentes reutilizáveis de interface.
+ * Contém: botões, cards genéricos, painéis, modais,
+ * navegação de abas, acordeões, pílulas de filtragem.
+ *
+ * Filosofia: componentes devem parecer museu e catálogo,
+ * não widgets de software corporativo.
+ */
+
+/* =========================================================
+   BOTÕES
+   ========================================================= */
+
+/**
+ * .btn — botão base.
+ * Todos os botões derivam desta classe.
+ */
+.btn {
+  display:        inline-flex;
+  align-items:    center;
+  justify-content:center;
+  gap:            var(--space-2);
+  padding:        var(--space-2) var(--space-4);
+  font-family:    var(--font-body);
+  font-size:      var(--text-caption);
+  font-weight:    var(--weight-medium);
+  letter-spacing: var(--tracking-wide);
+  line-height:    1.4;
+  border-radius:  var(--radius-sm);
+  border:         1px solid transparent;
+  cursor:         pointer;
+  transition:     background var(--transition-fast),
+                  color       var(--transition-fast),
+                  border-color var(--transition-fast),
+                  box-shadow  var(--transition-fast);
+  text-decoration:none;
+  white-space:    nowrap;
+}
+
+.btn:disabled {
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+/**
+ * .btn-primary — ação principal.
+ * Cor marrom-renascentista (--color-brand-primary).
+ */
+.btn-primary {
+  background: var(--color-brand-primary);
+  color:      var(--color-bg-surface);
+  border-color: var(--color-brand-primary);
+}
+
+.btn-primary:hover {
+  background:  #5A3A1E;
+  border-color:#5A3A1E;
+  box-shadow:  var(--shadow-soft);
+}
+
+/**
+ * .btn-secondary — ação secundária com borda.
+ */
+.btn-secondary {
+  background:  transparent;
+  color:       var(--color-brand-primary);
+  border-color:var(--color-border-base);
+}
+
+.btn-secondary:hover {
+  background:  rgba(110, 75, 42, 0.07);
+  border-color:var(--color-brand-primary);
+}
+
+/**
+ * .btn-ghost — botão sem borda, apenas texto.
+ */
+.btn-ghost {
+  background:  transparent;
+  color:       var(--color-text-secondary);
+  border-color:transparent;
+}
+
+.btn-ghost:hover {
+  background: var(--color-hover-overlay);
+  color:      var(--color-text-primary);
+}
+
+/**
+ * .btn-accent — ação de destaque com ocre dourado.
+ */
+.btn-accent {
+  background:  var(--color-brand-accent);
+  color:       var(--color-bg-surface);
+  border-color:var(--color-brand-accent);
+}
+
+.btn-accent:hover {
+  background:  #8E6228;
+  border-color:#8E6228;
+}
+
+/* Tamanhos de botão */
+.btn-sm {
+  padding:   var(--space-1) var(--space-3);
+  font-size: var(--text-small);
+}
+
+.btn-lg {
+  padding:   var(--space-3) var(--space-5);
+  font-size: var(--text-body);
+}
+
+/* Botão com ícone apenas */
+.btn-icon {
+  width:  40px;
+  height: 40px;
+  padding:0;
+  border-radius:var(--radius-sm);
+}
+
+.btn-icon-lg {
+  width:  48px;
+  height: 48px;
+  padding:0;
+  border-radius:var(--radius-md);
+}
+
+/* =========================================================
+   CARDS
+   Filosofia: placas de catálogo, fichas de museu.
+   ========================================================= */
+
+/**
+ * .card — card base. Todos os cards derivam desta classe.
+ */
+.card {
+  background:   var(--color-bg-surface);
+  border:       1px solid var(--color-border-base);
+  border-radius:var(--radius-md);
+  box-shadow:   var(--shadow-soft);
+  overflow:     hidden;
+  transition:   box-shadow  var(--transition-base),
+                transform   var(--transition-base),
+                border-color var(--transition-base);
+  display:      flex;
+  flex-direction:column;
+}
+
+.card:hover {
+  box-shadow:   var(--shadow-medium);
+  border-color: var(--color-border-light);
+  transform:    translateY(-2px);
+}
+
+/* Corpo do card */
+.card-body {
+  padding: var(--pad-card-v) var(--pad-card-h);
+  flex:    1;
+  display: flex;
+  flex-direction:column;
+  gap:     var(--space-2);
+}
+
+.card-body-sm {
+  padding: var(--pad-card-sm-v) var(--pad-card-sm-h);
+  flex:    1;
+  display: flex;
+  flex-direction:column;
+  gap:     var(--space-2);
+}
+
+/* Imagem do card */
+.card-image {
+  position:  relative;
+  overflow:  hidden;
+  background:var(--color-bg-secondary);
+}
+
+.card-image img {
+  width:      100%;
+  height:     100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.card:hover .card-image img {
+  transform: scale(1.03);
+}
+
+/* Metadados do card */
+.card-eyebrow {
+  font-family:    var(--font-mono);
+  font-size:      var(--text-small);
+  color:          var(--color-text-discrete);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+}
+
+.card-title {
+  font-family: var(--font-display);
+  font-size:   var(--text-card-title);
+  font-weight: var(--weight-medium);
+  color:       var(--color-text-primary);
+  line-height: var(--leading-snug);
+  margin-block:var(--space-1);
+}
+
+.card-description {
+  font-size:  var(--text-caption);
+  color:      var(--color-text-secondary);
+  line-height:var(--leading-relaxed);
+  flex:       1;
+}
+
+/* Rodapé do card — badge + ação */
+.card-footer {
+  padding:    var(--pad-card-sm-v) var(--pad-card-h);
+  border-top: 1px solid var(--color-divider);
+  display:    flex;
+  align-items:center;
+  justify-content: space-between;
+  gap:        var(--space-2);
+}
+
+/* Card horizontal */
+.card-horizontal {
+  flex-direction: row;
+  align-items:    stretch;
+}
+
+.card-horizontal .card-image {
+  width:      200px;
+  flex-shrink:0;
+}
+
+/**
+ * .card-artwork — card especializado para obras de arte.
+ * Proporção 3:4 para a imagem.
+ */
+.card-artwork .card-image {
+  aspect-ratio: 3 / 4;
+}
+
+/**
+ * .card-artist — card de artista com retrato quadrado.
+ */
+.card-artist .card-image {
+  aspect-ratio: 1 / 1;
+}
+
+/**
+ * .card-period — card de período sem imagem.
+ * Visual minimalista, mais texto.
+ */
+.card-period {
+  min-height: var(--card-min-height-sm);
+}
+
+/**
+ * .card-concept — card de conceito visual (linguagem da arte).
+ * Fundo suave, sem imagem, com símbolo SVG.
+ */
+.card-concept {
+  background: var(--color-bg-secondary);
+  border:     1px solid var(--color-border-base);
+  min-height: var(--card-min-height-sm);
+}
+
+.card-concept:hover {
+  background: var(--color-bg-surface);
+}
+
+.card-concept-icon {
+  width:  56px;
+  height: 56px;
+  margin-bottom:var(--space-3);
+  color:  var(--color-brand-accent);
+  opacity:0.8;
+}
+
+/* =========================================================
+   PAINÉIS E PAINÉIS LATERAIS
+   ========================================================= */
+
+/**
+ * .panel — container de painel com fundo e borda.
+ */
+.panel {
+  background:   var(--color-bg-surface);
+  border:       1px solid var(--color-border-base);
+  border-radius:var(--radius-md);
+  padding:      var(--space-5);
+}
+
+/**
+ * .panel-dark — painel com fundo secundário.
+ */
+.panel-dark {
+  background: var(--color-bg-secondary);
+  border:     1px solid var(--color-border-base);
+  border-radius:var(--radius-md);
+  padding:    var(--space-5);
+}
+
+/**
+ * .slide-panel — painel deslizante para informações auxiliares.
+ * Posicionamento relativo ao #app-main.
+ */
+.slide-panel {
+  position:   fixed;
+  top:        var(--header-height);
+  right:      0;
+  bottom:     0;
+  width:      min(400px, 90vw);
+  background: var(--color-bg-surface);
+  border-left:1px solid var(--color-border-base);
+  box-shadow: var(--shadow-elevated);
+  z-index:    var(--z-dropdown);
+  overflow-y: auto;
+  transform:  translateX(100%);
+  transition: transform var(--transition-slow);
+  display:    flex;
+  flex-direction:column;
+}
+
+.slide-panel.open {
+  transform: translateX(0);
+}
+
+.slide-panel-header {
+  padding:       var(--space-4) var(--space-5);
+  border-bottom: 1px solid var(--color-divider);
+  display:       flex;
+  align-items:   center;
+  justify-content: space-between;
+  flex-shrink:   0;
+}
+
+.slide-panel-title {
+  font-family: var(--font-heading);
+  font-size:   var(--text-body-lg);
+  font-weight: var(--weight-medium);
+  color:       var(--color-text-primary);
+}
+
+.slide-panel-body {
+  padding: var(--space-5);
+  flex:    1;
+  overflow-y:auto;
+}
+
+/* =========================================================
+   MODAL
+   ========================================================= */
+
+.modal-overlay {
+  position:   fixed;
+  inset:      0;
+  background: rgba(42, 36, 30, 0.55);
+  backdrop-filter: blur(4px);
+  z-index:    var(--z-modal);
+  display:    flex;
+  align-items:center;
+  justify-content:center;
+  padding:    var(--space-4);
+  animation:  fadeIn 200ms ease both;
+}
+
+.modal-box {
+  background:   var(--color-bg-surface);
+  border:       1px solid var(--color-border-base);
+  border-radius:var(--radius-lg);
+  box-shadow:   var(--shadow-elevated);
+  max-width:    600px;
+  width:        100%;
+  max-height:   85vh;
+  display:      flex;
+  flex-direction:column;
+  animation:    slideUp 250ms ease both;
+}
+
+.modal-header {
+  padding:       var(--space-4) var(--space-5);
+  border-bottom: 1px solid var(--color-divider);
+  display:       flex;
+  align-items:   center;
+  justify-content: space-between;
+  flex-shrink:   0;
+}
+
+.modal-title {
+  font-family: var(--font-display);
+  font-size:   var(--text-body-lg);
+  font-weight: var(--weight-medium);
+}
+
+.modal-body {
+  padding:   var(--space-5);
+  overflow-y:auto;
+  flex:      1;
+}
+
+.modal-footer {
+  padding:    var(--space-4) var(--space-5);
+  border-top: 1px solid var(--color-divider);
+  display:    flex;
+  justify-content: flex-end;
+  gap:        var(--space-3);
+  flex-shrink:0;
+}
+
+/* =========================================================
+   ABAS (TABS)
+   ========================================================= */
+
+.tabs {
+  display:       flex;
+  flex-direction:column;
+  gap:           var(--space-5);
+}
+
+.tabs-nav {
+  display:       flex;
+  border-bottom: 1px solid var(--color-border-base);
+  gap:           var(--space-1);
+  overflow-x:    auto;
+  scrollbar-width:none;
+}
+
+.tabs-nav::-webkit-scrollbar { display: none; }
+
+.tab-btn {
+  padding:       var(--space-2) var(--space-4);
+  font-family:   var(--font-body);
+  font-size:     var(--text-caption);
+  font-weight:   var(--weight-medium);
+  color:         var(--color-text-secondary);
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  transition:    color var(--transition-fast),
+                 border-color var(--transition-fast);
+  white-space:   nowrap;
+  flex-shrink:   0;
+}
+
+.tab-btn:hover {
+  color: var(--color-text-primary);
+}
+
+.tab-btn[aria-selected="true"] {
+  color:        var(--color-brand-primary);
+  border-color: var(--color-brand-primary);
+}
+
+.tab-panel {
+  display: none;
+}
+
+.tab-panel[data-active="true"] {
+  display: block;
+  animation: fadeIn var(--transition-base) ease both;
+}
+
+/* =========================================================
+   ACCORDEÃO
+   ========================================================= */
+
+.accordion-item {
+  border-bottom: 1px solid var(--color-divider);
+}
+
+.accordion-trigger {
+  width:       100%;
+  display:     flex;
+  align-items: center;
+  justify-content: space-between;
+  padding:     var(--space-4) 0;
+  font-family: var(--font-body);
+  font-size:   var(--text-body);
+  font-weight: var(--weight-medium);
+  color:       var(--color-text-primary);
+  text-align:  left;
+  gap:         var(--space-3);
+}
+
+.accordion-icon {
+  width:      20px;
+  height:     20px;
+  flex-shrink:0;
+  transition: transform var(--transition-fast);
+  color:      var(--color-text-discrete);
+}
+
+.accordion-trigger[aria-expanded="true"] .accordion-icon {
+  transform: rotate(180deg);
+}
+
+.accordion-body {
+  overflow:  hidden;
+  max-height:0;
+  transition:max-height var(--transition-slow);
+}
+
+.accordion-body.open {
+  max-height: 1000px; /* valor alto suficiente */
+}
+
+.accordion-content {
+  padding-bottom: var(--space-4);
+  font-size:   var(--text-caption);
+  color:       var(--color-text-secondary);
+  line-height: var(--leading-relaxed);
+}
+
+/* =========================================================
+   PÍLULAS DE FILTRO
+   ========================================================= */
+
+.filter-bar {
+  display:     flex;
+  align-items: center;
+  gap:         var(--space-2);
+  flex-wrap:   wrap;
+  padding-block:var(--space-3);
+}
+
+.filter-label {
+  font-size:      var(--text-small);
+  font-weight:    var(--weight-semibold);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color:          var(--color-text-discrete);
+  flex-shrink:    0;
+  font-family:    var(--font-body);
+}
+
+.filter-pill {
+  display:     inline-flex;
+  align-items: center;
+  padding:     4px var(--space-3);
+  border:      1px solid var(--color-border-base);
+  border-radius:var(--radius-pill);
+  font-size:   var(--text-small);
+  font-family: var(--font-body);
+  color:       var(--color-text-secondary);
+  background:  transparent;
+  cursor:      pointer;
+  transition:  background var(--transition-fast),
+               color var(--transition-fast),
+               border-color var(--transition-fast);
+  white-space: nowrap;
+}
+
+.filter-pill:hover {
+  background:  rgba(110, 75, 42, 0.07);
+  border-color:var(--color-brand-primary);
+  color:       var(--color-brand-primary);
+}
+
+.filter-pill.active {
+  background:  var(--color-brand-primary);
+  border-color:var(--color-brand-primary);
+  color:       var(--color-bg-surface);
+}
+
+/* =========================================================
+   BREADCRUMB
+   ========================================================= */
+
+.breadcrumb {
+  display:     flex;
+  align-items: center;
+  gap:         var(--space-2);
+  font-size:   var(--text-small);
+  color:       var(--color-text-discrete);
+  flex-wrap:   wrap;
+}
+
+.breadcrumb-item {
+  display:     flex;
+  align-items: center;
+  gap:         var(--space-2);
+}
+
+.breadcrumb-link {
+  color:      var(--color-text-secondary);
+  transition: color var(--transition-fast);
+}
+
+.breadcrumb-link:hover {
+  color: var(--color-brand-primary);
+}
+
+.breadcrumb-separator {
+  color:     var(--color-border-base);
+  font-size: 0.7rem;
+}
+
+.breadcrumb-current {
+  color: var(--color-text-primary);
+  font-weight: var(--weight-medium);
+}
+
+/* =========================================================
+   NOTIFICAÇÃO / TOAST
+   ========================================================= */
+
+.toast-container {
+  position:  fixed;
+  bottom:    var(--space-5);
+  right:     var(--space-5);
+  z-index:   var(--z-toast);
+  display:   flex;
+  flex-direction:column;
+  gap:       var(--space-2);
+  max-width: 360px;
+}
+
+.toast {
+  background:   var(--color-text-primary);
+  color:        var(--color-bg-surface);
+  padding:      var(--space-3) var(--space-4);
+  border-radius:var(--radius-md);
+  font-size:    var(--text-caption);
+  box-shadow:   var(--shadow-elevated);
+  animation:    slideUp 200ms ease both;
+}
+
+/* =========================================================
+   BARRA DE PROGRESSO DE LIÇÃO
+   ========================================================= */
+
+.lesson-progress {
+  height:      4px;
+  background:  var(--color-bg-secondary);
+  border-radius:var(--radius-pill);
+  overflow:    hidden;
+}
+
+.lesson-progress-fill {
+  height:     100%;
+  background: var(--color-brand-accent);
+  border-radius:var(--radius-pill);
+  transition: width var(--transition-slow);
+}
+
+/* =========================================================
+   CONTROLES DE ACESSIBILIDADE NO HEADER
+   ========================================================= */
+
+.a11y-controls {
+  display:     flex;
+  align-items: center;
+  gap:         var(--space-1);
+}
+
+.btn-a11y {
+  display:        inline-flex;
+  align-items:    center;
+  justify-content:center;
+  padding:        4px var(--space-2);
+  font-family:    var(--font-body);
+  font-size:      var(--text-small);
+  font-weight:    var(--weight-medium);
+  color:          var(--color-text-secondary);
+  border:         1px solid var(--color-border-base);
+  border-radius:  var(--radius-xs);
+  transition:     background var(--transition-fast),
+                  color var(--transition-fast);
+}
+
+.btn-a11y:hover {
+  background: var(--color-hover-overlay);
+  color:      var(--color-text-primary);
+}
+
+.btn-a11y.active {
+  background:  rgba(110, 75, 42, 0.10);
+  color:       var(--color-brand-primary);
+  border-color:var(--color-brand-primary);
+}

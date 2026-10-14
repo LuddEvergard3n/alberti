@@ -1,0 +1,75 @@
+[
+  {
+    "id": "arte-antiga",
+    "title": "Arte Antiga",
+    "years": "3500 a.C. – 400 d.C.",
+    "short_description": "Egito, Grécia e Roma. A arte como instrumento de poder, religião e memória coletiva.",
+    "description": "As civilizações da Antiguidade desenvolveram linguagens visuais rigorosas — o cânone egípcio, o ideal grego de beleza, o realismo romano. A arte não buscava expressão individual: era linguagem de ordem social, religiosa e política.",
+    "featured": false
+  },
+  {
+    "id": "medieval",
+    "title": "Arte Medieval",
+    "years": "400 – 1400",
+    "short_description": "A arte a serviço da fé. Hierarquia espiritual sobreposta à natureza.",
+    "description": "A perspectiva naturalista deu lugar à hierarquia simbólica: figuras maiores são mais sagradas, não mais próximas. A luz é espiritual, não física. A arte medieval é linguagem teológica antes de ser representação.",
+    "featured": false
+  },
+  {
+    "id": "renascimento",
+    "title": "Renascimento",
+    "years": "1400 – 1600",
+    "short_description": "O retorno à Antiguidade, o humanismo, a perspectiva e a proporção como fundamentos.",
+    "description": "O Renascimento redescobriu a perspectiva linear, a proporção matemática e o estudo anatômico. A arte voltou-se para o ser humano como medida de todas as coisas. Leonardo, Michelangelo e Rafael definiram o cânone do Alto Renascimento: equilíbrio, beleza ideal, harmonia formal.",
+    "featured": true,
+    "thumbnail": "assets/thumbnails/school-of-athens.svg"
+  },
+  {
+    "id": "barroco",
+    "title": "Barroco",
+    "years": "1600 – 1750",
+    "short_description": "Drama, luz e sombra, movimento e tensão como princípios visuais.",
+    "description": "O Barroco substituiu o equilíbrio renascentista pela dramaticidade. Caravaggio introduziu o chiaroscuro radical; Bernini trouxe movimento à escultura. A diagonal, o contraste de luz e sombra e a intensidade emocional definem o estilo.",
+    "featured": true
+  },
+  {
+    "id": "neoclassicismo",
+    "title": "Neoclassicismo",
+    "years": "1750 – 1830",
+    "short_description": "O retorno à razão e à ordem clássica em contraposição ao Barroco.",
+    "description": "Reação ao excesso barroco e ao ornamento rococó, o Neoclassicismo retornou à clareza, sobriedade e simetria da Antiguidade. David e Canova definiram a estética: linha antes de cor, razão antes de emoção.",
+    "featured": false
+  },
+  {
+    "id": "romantismo",
+    "title": "Romantismo",
+    "years": "1800 – 1850",
+    "short_description": "Emoção, natureza e o sublime como oposição à racionalidade neoclássica.",
+    "description": "O Romantismo colocou a subjetividade, a emoção e o sublime natural no centro. A natureza deixou de ser fundo para tornar-se protagonista. Goya, Delacroix e Friedrich exploram o terror, a melancolia e o transcendente.",
+    "featured": false
+  },
+  {
+    "id": "impressionismo",
+    "title": "Impressionismo",
+    "years": "1860 – 1900",
+    "short_description": "A luz como tema. O instante como sujeito. A pincelada visível como método.",
+    "description": "Os impressionistas abandonaram o acabamento liso acadêmico em favor da pincelada visível e da captura da luz em movimento. Monet, Renoir e Degas registraram o cotidiano e a atmosfera — não a forma permanente, mas o instante percebido.",
+    "featured": false
+  },
+  {
+    "id": "modernismo",
+    "title": "Arte Moderna",
+    "years": "1900 – 1970",
+    "short_description": "A ruptura com a representação. Formas, cores e conceitos como linguagem autônoma.",
+    "description": "O Modernismo fragmentou a representação naturalista em múltiplas direções: Cubismo, Expressionismo, Surrealismo, Abstração. A pergunta central deixou de ser 'como representar o mundo?' e tornou-se 'o que é arte?'",
+    "featured": false
+  },
+  {
+    "id": "contemporaneo",
+    "title": "Arte Contemporânea",
+    "years": "1970 – presente",
+    "short_description": "A arte como questionamento, processo e contexto.",
+    "description": "A arte contemporânea não tem estilo único — tem pluralidade radical. Conceito, processo, materialidade e contexto cultural substituem a primazia da forma. A pergunta 'o que é arte?' torna-se o próprio conteúdo.",
+    "featured": false
+  }
+]

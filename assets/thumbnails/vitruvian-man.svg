@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <rect width="400" height="400" fill="#302a20"/>
+  <circle cx="200" cy="180" r="50" fill="none" stroke="rgba(167,120,61,0.35)" stroke-width="1.5"/>
+  <circle cx="200" cy="180" r="8" fill="rgba(167,120,61,0.45)"/>
+  <line x1="133" y1="0" x2="133" y2="400" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+  <line x1="267" y1="0" x2="267" y2="400" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+  <line x1="0" y1="133" x2="400" y2="133" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+  <line x1="0" y1="267" x2="400" y2="267" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+  <text x="200" y="340" font-family="Georgia,serif" font-size="16" font-style="italic"
+        fill="rgba(255,255,255,0.65)" text-anchor="middle">O Homem Vitruviano</text>
+  <text x="200" y="362" font-family="monospace" font-size="11"
+        fill="rgba(255,255,255,0.35)" text-anchor="middle">Leonardo da Vinci</text>
+</svg>

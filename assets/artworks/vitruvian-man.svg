@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <rect width="800" height="600" fill="#302a20"/>
+  <rect width="800" height="600" fill="url(#grain)" opacity="0.15"/>
+  <!-- Grade de terços -->
+  <line x1="267" y1="0" x2="267" y2="600" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+  <line x1="533" y1="0" x2="533" y2="600" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+  <line x1="0" y1="200" x2="800" y2="200" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+  <line x1="0" y1="400" x2="800" y2="400" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+  <!-- Ponto focal -->
+  <circle cx="400" cy="300" r="40" fill="none" stroke="rgba(167,120,61,0.4)" stroke-width="1.5"/>
+  <circle cx="400" cy="300" r="8" fill="rgba(167,120,61,0.5)"/>
+  <!-- Legendas -->
+  <text x="400" y="520" font-family="Georgia,serif" font-size="22" font-style="italic"
+        fill="rgba(255,255,255,0.7)" text-anchor="middle">O Homem Vitruviano</text>
+  <text x="400" y="548" font-family="monospace" font-size="13"
+        fill="rgba(255,255,255,0.4)" text-anchor="middle">Leonardo da Vinci — c. 1490</text>
+</svg>

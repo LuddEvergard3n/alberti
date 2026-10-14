@@ -1,0 +1,83 @@
+[
+  {
+    "id": "linha",
+    "type": "concept",
+    "eyebrow": "Elemento visual",
+    "title": "Linha",
+    "short_description": "Contorno, direção, tensão. A linha é o elemento mais fundamental da linguagem visual.",
+    "description": "A linha define formas, cria direção e estabelece tensão. Pode ser contorno de um objeto, linha de fuga, divisória entre luz e sombra ou eixo de composição. Nas obras renascentistas, a linha (disegno) era considerada o fundamento de todas as artes.",
+    "content": "<p>A linha é o traço mais básico e mais carregado de linguagem visual. Ela pode ser <strong>contorno</strong> — delimitando a forma de um objeto —, <strong>linha de fuga</strong> — criando profundidade perspectiva —, ou <strong>eixo implícito</strong> de composição, que organiza o olhar sem ser desenhada explicitamente.</p><p>Michelangelo acreditava que o <em>disegno</em> — o desenho como fundamento — era superior à cor. A linha como pensamento antes da execução.</p>"
+  },
+  {
+    "id": "forma",
+    "type": "concept",
+    "eyebrow": "Elemento visual",
+    "title": "Forma",
+    "short_description": "Geométrica ou orgânica, a forma define o peso visual e a identidade de cada elemento.",
+    "description": "A forma é a delimitação de um espaço. Formas geométricas (círculo, triângulo, quadrado) transmitem estabilidade e racionalidade; formas orgânicas transmitem vida e movimento. O triângulo é a composição favorita do Renascimento — estável na base, dinâmico no ápice.",
+    "content": "<p>O Renascimento preferiu formas geométricas: o triângulo para grupos de figuras, o círculo para proporção ideal. A figura piramidal de muitas Madonas de Rafael — Mãe ao centro, crianças nos cantos — cria estabilidade visual ao mesmo tempo que eleva o olhar.</p>"
+  },
+  {
+    "id": "cor",
+    "type": "concept",
+    "eyebrow": "Elemento visual",
+    "title": "Cor",
+    "short_description": "Temperatura, valor, saturação. A cor dirige o olhar, cria emoção e organiza o espaço.",
+    "description": "A cor não é apenas decoração — é estrutura. Cores quentes avançam, frias recuam. Alto contraste de valor cria dramaticidade (Caravaggio); baixo contraste cria harmonia (Rafael). A paleta é uma escolha formal, não apenas estética.",
+    "content": "<p>Na pintura renascentista italiana, azul e vermelho dominam as vestes das figuras principais — não por acaso: são as cores de Cristo e da Virgem, com significado simbólico preciso. A cor como linguagem codificada.</p>"
+  },
+  {
+    "id": "luz",
+    "type": "concept",
+    "eyebrow": "Elemento visual",
+    "title": "Luz",
+    "short_description": "Fonte, direção, intensidade. A luz modela volumes e dirige o olhar na obra.",
+    "description": "A luz é o que revela a forma. Sua fonte, direção e intensidade definem como percebemos volumes, profundidade e hierarquia visual. No Renascimento, a luz é racional e uniforme; no Barroco, ela se torna dramática e seletiva — o chiaroscuro de Caravaggio isola figuras do escuro.",
+    "content": "<p>A diferença entre a luz renascentista e barroca é radical: Rafael ilumina toda a cena de forma homogênea; Caravaggio concentra a luz em um ponto e mergulha o resto em sombra. Ambos usam luz como instrumento — com intenções formais opostas.</p>"
+  },
+  {
+    "id": "composicao",
+    "type": "concept",
+    "eyebrow": "Elemento visual",
+    "title": "Composição",
+    "short_description": "A organização dos elementos no espaço pictórico. Onde o olhar vai e por quê.",
+    "description": "Composição é a decisão de onde colocar cada elemento e como eles se relacionam. Não é aleatória — é o argumento visual da obra. A regra dos terços, o equilíbrio bilateral, a diagonal de tensão: cada escolha dirige o olhar e atribui significado.",
+    "content": "<p>A Última Ceia é um tratado de composição: figuras em linha horizontal, divididas em quatro grupos de três, convergindo para Cristo ao centro. Cada decisão é calculada para criar ritmo, equilíbrio e hierarquia visual simultâneos.</p>"
+  },
+  {
+    "id": "perspectiva",
+    "type": "concept",
+    "eyebrow": "Elemento visual",
+    "title": "Perspectiva",
+    "short_description": "A representação do espaço tridimensional em superfície plana. Linhas de fuga e ponto de fuga.",
+    "description": "A perspectiva linear foi um dos grandes inventos do Renascimento. Brunelleschi demonstrou matematicamente que linhas paralelas convergem para um ponto de fuga no horizonte. Leonardo e Rafael usaram esse princípio não apenas para criar profundidade — mas para organizar hierarquia: o ponto de fuga coincide com o personagem mais importante.",
+    "content": "<p>Identifique as linhas do teto e do piso na Última Ceia. Todas convergem para a cabeça de Cristo. A perspectiva não é apenas espacial — é uma escolha de sentido: o artista decide para onde todas as linhas vão, e esse destino é carregado de significado.</p>"
+  },
+  {
+    "id": "sala-renascimento",
+    "type": "room",
+    "room_number": "01",
+    "title": "Renascimento",
+    "curator_note": "A redescoberta do humano e da perspectiva como fundamentos da visão moderna.",
+    "description": "Esta sala reúne obras-chave do Alto Renascimento italiano. A perspectiva linear, a proporção matemática e o humanismo definem a linguagem: o ser humano como medida de todas as coisas, a geometria como estrutura da beleza.",
+    "artwork_ids": ["last-supper", "school-of-athens", "creation-of-adam", "mona-lisa"]
+  },
+  {
+    "id": "sala-perspectiva",
+    "type": "room",
+    "room_number": "02",
+    "title": "Forma e Perspectiva",
+    "curator_note": "Como o espaço é construído — linhas de fuga, ponto focal e profundidade.",
+    "description": "Uma sala dedicada à análise de como os grandes mestres construíram a ilusão de profundidade e organizaram o espaço pictórico. Perspectiva linear, perspectiva atmosférica e composição espacial.",
+    "artwork_ids": ["last-supper", "school-of-athens", "sistine-ceiling"]
+  },
+  {
+    "id": "sala-figura-humana",
+    "type": "room",
+    "room_number": "03",
+    "title": "Figura Humana e Composição",
+    "curator_note": "O corpo como linguagem formal. Anatomia, movimento e tensão.",
+    "description": "A figura humana no centro da arte renascentista: não como motivo decorativo, mas como o instrumento mais preciso de expressão formal. Cada postura, gesto e tensão muscular carrega significado.",
+    "artwork_ids": ["creation-of-adam", "vitruvian-man", "mona-lisa", "sistine-ceiling"]
+  }
+]

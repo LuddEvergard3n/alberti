@@ -1,0 +1,686 @@
+/**
+ * gallery.css
+ * Alberti — Museu Interativo de Arte
+ *
+ * Estilos especializados para componentes de galeria e visualização.
+ * Contém: gallery-grid, artwork-viewer, comparison-view,
+ * composition-overlay, timeline-viewer, museum-room.
+ *
+ * A obra é protagonista. A interface existe para servi-la.
+ */
+
+/* =========================================================
+   GALLERY GRID
+   ========================================================= */
+
+/**
+ * .gallery-grid — grade principal de obras.
+ * Layout masonry-like com CSS Grid.
+ */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: var(--gap-medium);
+}
+
+/**
+ * .gallery-item — célula de obra na grade.
+ */
+.gallery-item {
+  position:     relative;
+  overflow:     hidden;
+  border-radius:var(--radius-md);
+  background:   var(--color-bg-secondary);
+  cursor:       pointer;
+}
+
+.gallery-item-image {
+  width:      100%;
+  height:     100%;
+  object-fit: cover;
+  display:    block;
+  transition: transform var(--transition-slow);
+}
+
+.gallery-item:hover .gallery-item-image {
+  transform: scale(1.04);
+}
+
+/* Overlay de legenda no hover */
+.gallery-item-overlay {
+  position:   absolute;
+  inset:      0;
+  background: linear-gradient(
+    to top,
+    rgba(42, 36, 30, 0.80) 0%,
+    rgba(42, 36, 30, 0.00) 55%
+  );
+  opacity:    0;
+  transition: opacity var(--transition-base);
+  display:    flex;
+  flex-direction:column;
+  justify-content: flex-end;
+  padding:    var(--space-4);
+}
+
+.gallery-item:hover .gallery-item-overlay,
+.gallery-item:focus-within .gallery-item-overlay {
+  opacity: 1;
+}
+
+.gallery-item-title {
+  font-family: var(--font-display);
+  font-size:   var(--text-body-lg);
+  font-style:  italic;
+  color:       #FBF8F2;
+  margin-bottom:var(--space-1);
+  line-height: var(--leading-snug);
+}
+
+.gallery-item-meta {
+  font-family:    var(--font-mono);
+  font-size:      var(--text-small);
+  color:          rgba(251, 248, 242, 0.70);
+  letter-spacing: var(--tracking-wide);
+}
+
+/* =========================================================
+   ARTWORK VIEWER
+   O componente central do sistema.
+   ========================================================= */
+
+.artwork-viewer {
+  display:  flex;
+  gap:      var(--gap-large);
+  align-items: flex-start;
+}
+
+/**
+ * .viewer-stage — área principal da imagem.
+ * Contém a imagem, zoom, overlays.
+ */
+.viewer-stage {
+  flex:     1;
+  position: relative;
+  background:var(--color-text-primary);
+  border-radius:var(--radius-md);
+  overflow:  hidden;
+  user-select:none;
+}
+
+.viewer-image-wrap {
+  position:  relative;
+  overflow:  hidden;
+  width:     100%;
+}
+
+.viewer-img {
+  width:      100%;
+  height:     auto;
+  display:    block;
+  transition: transform var(--transition-base);
+  transform-origin: center center;
+}
+
+/* Cursor de zoom */
+.viewer-stage[data-zoomed="false"] {
+  cursor: zoom-in;
+}
+
+.viewer-stage[data-zoomed="true"] {
+  cursor: zoom-out;
+}
+
+/**
+ * .viewer-controls — barra de controles do viewer.
+ * Zoom, overlays, comparação.
+ */
+.viewer-controls {
+  position:  absolute;
+  bottom:    var(--space-3);
+  left:      50%;
+  transform: translateX(-50%);
+  display:   flex;
+  align-items:center;
+  gap:       var(--space-1);
+  background:rgba(42, 36, 30, 0.75);
+  backdrop-filter:blur(8px);
+  border-radius:var(--radius-pill);
+  padding:   var(--space-1) var(--space-3);
+  opacity:   0;
+  transition:opacity var(--transition-fast);
+}
+
+.viewer-stage:hover .viewer-controls {
+  opacity: 1;
+}
+
+.viewer-ctrl-btn {
+  display:       flex;
+  align-items:   center;
+  justify-content:center;
+  width:         36px;
+  height:        36px;
+  color:         rgba(251, 248, 242, 0.85);
+  border-radius: var(--radius-sm);
+  transition:    background var(--transition-fast),
+                 color var(--transition-fast);
+}
+
+.viewer-ctrl-btn:hover {
+  background: rgba(251, 248, 242, 0.15);
+  color:      #FBF8F2;
+}
+
+.viewer-ctrl-btn.active {
+  background: rgba(167, 120, 61, 0.40);
+  color:      #FBF8F2;
+}
+
+.viewer-ctrl-divider {
+  width:      1px;
+  height:     20px;
+  background: rgba(251, 248, 242, 0.20);
+}
+
+/**
+ * .viewer-sidebar — painel lateral com informações da obra.
+ */
+.viewer-sidebar {
+  width:     320px;
+  flex-shrink:0;
+  display:   flex;
+  flex-direction:column;
+  gap:       var(--space-4);
+}
+
+.viewer-title {
+  font-family: var(--font-display);
+  font-size:   clamp(1.4rem, 2vw, 2rem);
+  font-weight: var(--weight-medium);
+  font-style:  italic;
+  color:       var(--color-text-primary);
+  line-height: var(--leading-snug);
+}
+
+.viewer-artist {
+  font-family: var(--font-body);
+  font-size:   var(--text-body);
+  font-weight: var(--weight-medium);
+  color:       var(--color-brand-primary);
+  margin-top:  var(--space-1);
+}
+
+/* Painel de análise formal */
+.viewer-analysis {
+  background:   var(--color-bg-secondary);
+  border:       1px solid var(--color-border-base);
+  border-radius:var(--radius-md);
+  padding:      var(--space-4);
+}
+
+.viewer-analysis-title {
+  font-family:    var(--font-body);
+  font-size:      var(--text-small);
+  font-weight:    var(--weight-semibold);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color:          var(--color-text-discrete);
+  margin-bottom:  var(--space-3);
+}
+
+.viewer-analysis-text {
+  font-size:   var(--text-caption);
+  color:       var(--color-text-secondary);
+  line-height: var(--leading-relaxed);
+}
+
+/* Chips de conceitos da obra */
+.viewer-concepts {
+  display:  flex;
+  flex-wrap:wrap;
+  gap:      var(--space-2);
+}
+
+/* Navegação entre obras */
+.viewer-nav {
+  display:       flex;
+  align-items:   center;
+  justify-content: space-between;
+  padding-top:   var(--space-4);
+  border-top:    1px solid var(--color-divider);
+}
+
+/* =========================================================
+   SVG COMPOSITION OVERLAY
+   Camada SVG sobre a imagem para análise formal.
+   ========================================================= */
+
+.composition-overlay-svg {
+  position:  absolute;
+  inset:     0;
+  width:     100%;
+  height:    100%;
+  pointer-events:none;
+}
+
+/* Linhas de composição */
+.overlay-line {
+  stroke:       var(--color-brand-accent);
+  stroke-width: 1.5;
+  stroke-dasharray: 6 4;
+  opacity:      0.75;
+}
+
+.overlay-line-fuga {
+  stroke:       var(--color-brand-cold);
+  stroke-width: 1;
+  stroke-dasharray: 4 3;
+  opacity:      0.65;
+}
+
+/* Ponto focal */
+.overlay-focal {
+  fill:    none;
+  stroke:  var(--color-brand-accent);
+  stroke-width: 1.5;
+  opacity: 0.80;
+}
+
+/* Grade de terços */
+.overlay-thirds {
+  stroke:       rgba(167, 120, 61, 0.35);
+  stroke-width: 1;
+  fill:         none;
+}
+
+/* Área de destaque */
+.overlay-highlight {
+  fill:    rgba(167, 120, 61, 0.12);
+  stroke:  rgba(167, 120, 61, 0.40);
+  stroke-width:1;
+}
+
+/* Texto de anotação */
+.overlay-label {
+  font-family: var(--font-mono);
+  font-size:   11px;
+  fill:        var(--color-brand-accent);
+  opacity:     0.85;
+}
+
+/* =========================================================
+   COMPARISON VIEW
+   Duas obras lado a lado para análise comparativa.
+   ========================================================= */
+
+.comparison-view {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--gap-medium);
+  align-items: start;
+}
+
+.comparison-panel {
+  display:       flex;
+  flex-direction:column;
+  gap:           var(--space-3);
+}
+
+.comparison-panel-label {
+  font-family:    var(--font-mono);
+  font-size:      var(--text-small);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color:          var(--color-text-discrete);
+  text-align:     center;
+  padding-bottom: var(--space-2);
+  border-bottom:  1px solid var(--color-divider);
+}
+
+.comparison-panel-image {
+  width:        100%;
+  aspect-ratio: 4 / 3;
+  object-fit:   cover;
+  border-radius:var(--radius-md);
+  background:   var(--color-bg-secondary);
+}
+
+.comparison-notes {
+  margin-top:  var(--space-4);
+  padding-top: var(--space-4);
+  border-top:  1px solid var(--color-divider);
+}
+
+.comparison-notes-title {
+  font-family:    var(--font-body);
+  font-size:      var(--text-small);
+  font-weight:    var(--weight-semibold);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color:          var(--color-text-discrete);
+  margin-bottom:  var(--space-3);
+}
+
+/* Slider de divisão visual (para comparação in-place) */
+.comparison-slider {
+  position:  relative;
+  overflow:  hidden;
+  cursor:    ew-resize;
+  border-radius:var(--radius-md);
+  user-select:none;
+}
+
+.comparison-slider-left,
+.comparison-slider-right {
+  position:   absolute;
+  inset:      0;
+  overflow:   hidden;
+}
+
+.comparison-slider-right {
+  left: 50%;
+}
+
+.comparison-slider-handle {
+  position:  absolute;
+  top:       0;
+  bottom:    0;
+  left:      50%;
+  width:     2px;
+  background:var(--color-bg-surface);
+  transform: translateX(-50%);
+  cursor:    ew-resize;
+}
+
+.comparison-slider-handle::before {
+  content:       '';
+  position:      absolute;
+  top:           50%;
+  left:          50%;
+  transform:     translate(-50%, -50%);
+  width:         32px;
+  height:        32px;
+  background:    var(--color-bg-surface);
+  border-radius: var(--radius-pill);
+  box-shadow:    var(--shadow-medium);
+}
+
+/* =========================================================
+   TIMELINE VIEWER
+   ========================================================= */
+
+.timeline-container {
+  position:   relative;
+  padding-top:var(--space-5);
+}
+
+/* Linha central horizontal */
+.timeline-line {
+  position:   absolute;
+  top:        32px;
+  left:       0;
+  right:      0;
+  height:     1px;
+  background: var(--color-border-base);
+}
+
+.timeline-track {
+  display:        flex;
+  gap:            var(--gap-large);
+  overflow-x:     auto;
+  padding-bottom: var(--space-6);
+  scrollbar-width:thin;
+  scrollbar-color:var(--color-border-base) transparent;
+  position:       relative;
+}
+
+.timeline-period {
+  flex-shrink:    0;
+  width:          180px;
+  display:        flex;
+  flex-direction: column;
+  align-items:    center;
+  gap:            var(--space-3);
+  cursor:         pointer;
+}
+
+.timeline-node {
+  width:        16px;
+  height:       16px;
+  border-radius:var(--radius-pill);
+  border:       2px solid var(--color-border-base);
+  background:   var(--color-bg-surface);
+  transition:   border-color var(--transition-fast),
+                background   var(--transition-fast),
+                transform    var(--transition-fast);
+  flex-shrink:  0;
+}
+
+.timeline-period:hover .timeline-node,
+.timeline-period.active .timeline-node {
+  border-color: var(--color-brand-accent);
+  background:   var(--color-brand-accent);
+  transform:    scale(1.3);
+}
+
+.timeline-year {
+  font-family:    var(--font-mono);
+  font-size:      var(--text-small);
+  color:          var(--color-text-discrete);
+  letter-spacing: var(--tracking-wide);
+  text-align:     center;
+}
+
+.timeline-label {
+  font-family: var(--font-display);
+  font-size:   var(--text-caption);
+  color:       var(--color-text-secondary);
+  text-align:  center;
+  line-height: var(--leading-snug);
+}
+
+.timeline-period:hover .timeline-label,
+.timeline-period.active .timeline-label {
+  color: var(--color-brand-primary);
+}
+
+/* =========================================================
+   MUSEUM ROOM
+   Sala temática do museu.
+   ========================================================= */
+
+.museum-room {
+  background:   var(--color-bg-secondary);
+  border:       1px solid var(--color-border-base);
+  border-radius:var(--radius-lg);
+  overflow:     hidden;
+  transition:   box-shadow var(--transition-base);
+}
+
+.museum-room:hover {
+  box-shadow: var(--shadow-elevated);
+}
+
+.museum-room-header {
+  padding:       var(--space-5) var(--space-5) var(--space-4);
+  border-bottom: 1px solid var(--color-divider);
+  display:       flex;
+  align-items:   center;
+  gap:           var(--space-4);
+}
+
+.museum-room-number {
+  font-family:    var(--font-mono);
+  font-size:      2rem;
+  font-weight:    var(--weight-light);
+  color:          var(--color-border-base);
+  line-height:    1;
+  flex-shrink:    0;
+  letter-spacing: var(--tracking-wide);
+}
+
+.museum-room-info {
+  flex: 1;
+}
+
+.museum-room-title {
+  font-family: var(--font-display);
+  font-size:   var(--text-card-title);
+  font-weight: var(--weight-medium);
+  color:       var(--color-text-primary);
+  line-height: var(--leading-snug);
+}
+
+.museum-room-curator {
+  font-size:  var(--text-small);
+  color:      var(--color-text-discrete);
+  margin-top: var(--space-1);
+  font-family:var(--font-mono);
+}
+
+.museum-room-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--color-border-base);
+}
+
+.museum-room-thumb {
+  aspect-ratio: 1 / 1;
+  background:   var(--color-bg-secondary);
+  overflow:     hidden;
+}
+
+.museum-room-thumb img {
+  width:      100%;
+  height:     100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.museum-room:hover .museum-room-thumb img {
+  transform: scale(1.05);
+}
+
+.museum-room-footer {
+  padding:  var(--space-4) var(--space-5);
+  display:  flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.museum-room-count {
+  font-family:    var(--font-mono);
+  font-size:      var(--text-small);
+  color:          var(--color-text-discrete);
+  letter-spacing: var(--tracking-wide);
+}
+
+/* =========================================================
+   STUDIO / EXERCÍCIOS
+   ========================================================= */
+
+.studio-exercise {
+  background:   var(--color-bg-surface);
+  border:       1px solid var(--color-border-base);
+  border-radius:var(--radius-md);
+  overflow:     hidden;
+}
+
+.studio-exercise-header {
+  background:    var(--color-bg-secondary);
+  padding:       var(--space-4) var(--space-5);
+  border-bottom: 1px solid var(--color-divider);
+  display:       flex;
+  align-items:   center;
+  gap:           var(--space-3);
+}
+
+.studio-exercise-type {
+  font-family:    var(--font-mono);
+  font-size:      var(--text-small);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color:          var(--color-brand-accent);
+}
+
+.studio-exercise-title {
+  font-family: var(--font-heading);
+  font-size:   var(--text-body-lg);
+  font-weight: var(--weight-medium);
+  color:       var(--color-text-primary);
+}
+
+.studio-exercise-body {
+  padding: var(--space-5);
+}
+
+.studio-exercise-instruction {
+  font-size:   var(--text-body);
+  color:       var(--color-text-secondary);
+  line-height: var(--leading-relaxed);
+  margin-bottom:var(--space-4);
+}
+
+/* Canvas de exercício */
+.studio-canvas-wrap {
+  position:     relative;
+  background:   var(--color-bg-secondary);
+  border:       1px solid var(--color-border-base);
+  border-radius:var(--radius-sm);
+  overflow:     hidden;
+}
+
+.studio-canvas {
+  display:   block;
+  width:     100%;
+  max-height:480px;
+  cursor:    crosshair;
+}
+
+.studio-exercise-actions {
+  margin-top:  var(--space-4);
+  display:     flex;
+  align-items: center;
+  gap:         var(--space-3);
+  flex-wrap:   wrap;
+}
+
+/* =========================================================
+   HINT PANEL
+   Dica visual contextual.
+   ========================================================= */
+
+.hint-panel {
+  background:   rgba(167, 120, 61, 0.08);
+  border:       1px solid rgba(167, 120, 61, 0.25);
+  border-radius:var(--radius-md);
+  padding:      var(--space-4);
+  display:      flex;
+  gap:          var(--space-3);
+  align-items:  flex-start;
+  animation:    slideUp var(--transition-base) ease both;
+}
+
+.hint-icon {
+  width:      28px;
+  height:     28px;
+  background: rgba(167, 120, 61, 0.15);
+  border-radius:var(--radius-sm);
+  display:    flex;
+  align-items:center;
+  justify-content:center;
+  color:      var(--color-brand-accent);
+  flex-shrink:0;
+}
+
+.hint-text {
+  font-size:   var(--text-caption);
+  color:       var(--color-text-secondary);
+  line-height: var(--leading-relaxed);
+}
+
+.hint-text strong {
+  color:      var(--color-brand-primary);
+}

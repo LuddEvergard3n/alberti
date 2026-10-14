@@ -1,0 +1,29 @@
+# Alberti — .gitignore
+
+# Imagens de obras (baixadas via tools/download-assets.js)
+# Os SVGs placeholder SÃO commitados.
+# Os JPEGs reais NÃO são commitados (muito grandes para o Git).
+assets/artworks/*.jpg
+assets/thumbnails/*.jpg
+assets/artists/*.jpg
+
+# Arquivos temporários de download
+assets/**/*.tmp
+
+# Node
+node_modules/
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editores
+.vscode/settings.json
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+npm-debug.log*

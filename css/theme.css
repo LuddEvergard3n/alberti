@@ -1,0 +1,434 @@
+/**
+ * theme.css
+ * Alberti — Museu Interativo de Arte
+ *
+ * Elementos decorativos, ornamentação e atmosfera museológica.
+ * Contém: texturas, divisórias, molduras, fundos especiais,
+ * badges curatoriais, filetes e marcas de catálogo.
+ *
+ * Regra: evocar museu, não simular cenário teatral.
+ * Uso controlado — ornamentação com disciplina.
+ */
+
+/* =========================================================
+   TEXTURAS DE FUNDO
+   Padrões SVG como data URI. Leves, sem ruído exagerado.
+   ========================================================= */
+
+/**
+ * .texture-paper — sutil textura de papel envelhecido.
+ * Usada em hero e painéis importantes.
+ */
+.texture-paper {
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23noise)' opacity='0.025'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+}
+
+/**
+ * .texture-linen — textura de linho, para painéis secundários.
+ */
+.texture-linen {
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4'%3E%3Cpath d='M0 0h1v1H0zm2 2h1v1H2z' fill='%232A241E' fill-opacity='0.03'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+}
+
+/* =========================================================
+   FILETES E DIVISÓRIAS DECORATIVAS
+   ========================================================= */
+
+/**
+ * .ornament-filete — linha horizontal decorativa com marcas centrais.
+ * Separa seções com elegância.
+ */
+.ornament-filete {
+  display:    flex;
+  align-items:center;
+  gap:        var(--space-4);
+  color:      var(--color-border-base);
+  margin-block: var(--space-6);
+}
+
+.ornament-filete::before,
+.ornament-filete::after {
+  content:    '';
+  flex:       1;
+  height:     1px;
+  background: var(--color-border-base);
+}
+
+.ornament-filete-mark {
+  font-family: var(--font-mono);
+  font-size:   var(--text-small);
+  color:       var(--color-border-light);
+  letter-spacing: var(--tracking-widest);
+}
+
+/**
+ * .ornament-vline — linha vertical para separar colunas.
+ */
+.ornament-vline {
+  width:      1px;
+  background: var(--color-divider);
+  align-self: stretch;
+}
+
+/**
+ * .ornament-corner — canto decorativo de moldura.
+ * Aplicado via pseudo-elemento em containers especiais.
+ */
+.ornament-frame {
+  position: relative;
+}
+
+.ornament-frame::before,
+.ornament-frame::after {
+  content:    '';
+  position:   absolute;
+  width:      20px;
+  height:     20px;
+  border-color: var(--color-brand-secondary);
+  border-style: solid;
+}
+
+.ornament-frame::before {
+  top:    0;
+  left:   0;
+  border-width: 1px 0 0 1px;
+}
+
+.ornament-frame::after {
+  bottom: 0;
+  right:  0;
+  border-width: 0 1px 1px 0;
+}
+
+/* =========================================================
+   BADGES E RÓTULOS CURATORIAIS
+   ========================================================= */
+
+/**
+ * .badge — label pequeno de período, técnica, estilo ou categoria.
+ */
+.badge {
+  display:        inline-flex;
+  align-items:    center;
+  padding:        3px var(--space-2);
+  font-family:    var(--font-mono);
+  font-size:      var(--text-small);
+  font-weight:    var(--weight-regular);
+  letter-spacing: var(--tracking-wide);
+  border-radius:  var(--radius-xs);
+  line-height:    1.4;
+  white-space:    nowrap;
+}
+
+.badge-period {
+  background: rgba(110, 75, 42, 0.10);
+  color:      var(--color-brand-primary);
+}
+
+.badge-technique {
+  background: rgba(122, 106, 79, 0.12);
+  color:      var(--color-brand-secondary);
+}
+
+.badge-concept {
+  background: rgba(167, 120, 61, 0.12);
+  color:      var(--color-brand-accent);
+}
+
+.badge-cold {
+  background: rgba(85, 107, 116, 0.12);
+  color:      var(--color-brand-cold);
+}
+
+/* =========================================================
+   FICHA CATALOGRÁFICA
+   Grupo de metadados de obra ou artista.
+   ========================================================= */
+
+/**
+ * .catalogue-meta — conjunto de metadados de ficha de obra.
+ * Usada no artwork-viewer e artist-card.
+ */
+.catalogue-meta {
+  display:       flex;
+  flex-direction:column;
+  gap:           var(--space-2);
+}
+
+.catalogue-row {
+  display:     flex;
+  align-items: baseline;
+  gap:         var(--space-3);
+}
+
+.catalogue-label {
+  font-family:    var(--font-mono);
+  font-size:      var(--text-small);
+  color:          var(--color-text-discrete);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  flex-shrink:    0;
+  min-width:      80px;
+}
+
+.catalogue-value {
+  font-family: var(--font-body);
+  font-size:   var(--text-caption);
+  color:       var(--color-text-secondary);
+}
+
+/* =========================================================
+   LEGENDAS DE OBRA
+   ========================================================= */
+
+/**
+ * .artwork-caption — legenda formal de obra.
+ * Segue convenção de museu: Artista, Título, Ano, Técnica, Local.
+ */
+.artwork-caption {
+  padding:    var(--space-3) 0;
+  border-top: 1px solid var(--color-divider);
+  margin-top: var(--space-3);
+}
+
+.artwork-caption-title {
+  font-family: var(--font-display);
+  font-size:   var(--text-body-lg);
+  font-weight: var(--weight-medium);
+  font-style:  italic;
+  color:       var(--color-text-primary);
+  margin-bottom: var(--space-1);
+}
+
+.artwork-caption-artist {
+  font-family: var(--font-body);
+  font-size:   var(--text-caption);
+  color:       var(--color-text-secondary);
+  margin-bottom: var(--space-1);
+}
+
+.artwork-caption-meta {
+  font-family: var(--font-mono);
+  font-size:   var(--text-small);
+  color:       var(--color-text-discrete);
+}
+
+/* =========================================================
+   NÚMERO DE SALA / ÍNDICE CURATORIAL
+   ========================================================= */
+
+.room-number {
+  font-family:    var(--font-mono);
+  font-size:      3rem;
+  font-weight:    var(--weight-light);
+  color:          var(--color-border-base);
+  line-height:    1;
+  letter-spacing: var(--tracking-wide);
+  user-select:    none;
+}
+
+.room-index {
+  font-family:    var(--font-mono);
+  font-size:      var(--text-small);
+  color:          var(--color-text-discrete);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+}
+
+/* =========================================================
+   PULL QUOTES CURATORIAIS
+   Citações e textos em destaque de curadoria.
+   ========================================================= */
+
+.pull-quote {
+  border-left:  2px solid var(--color-brand-accent);
+  padding-left: var(--space-4);
+  margin-block: var(--space-5);
+}
+
+.pull-quote-text {
+  font-family: var(--font-display);
+  font-size:   var(--text-subsection);
+  font-style:  italic;
+  font-weight: var(--weight-light);
+  color:       var(--color-text-primary);
+  line-height: var(--leading-snug);
+  margin-bottom: var(--space-2);
+}
+
+.pull-quote-source {
+  font-family:    var(--font-mono);
+  font-size:      var(--text-small);
+  color:          var(--color-text-discrete);
+  letter-spacing: var(--tracking-wide);
+}
+
+/* =========================================================
+   HIGHLIGHTS / DESTAQUES VISUAIS
+   Para uso nos hints e overlays de leitura guiada.
+   ========================================================= */
+
+.highlight-concept {
+  background: rgba(167, 120, 61, 0.15);
+  color:      var(--color-brand-primary);
+  padding:    1px 4px;
+  border-radius: var(--radius-xs);
+}
+
+.highlight-cold {
+  background: rgba(85, 107, 116, 0.12);
+  color:      var(--color-brand-cold);
+  padding:    1px 4px;
+  border-radius: var(--radius-xs);
+}
+
+/* =========================================================
+   MODO PROFESSOR
+   Painel lateral com informações para mediação docente.
+   ========================================================= */
+
+.teacher-panel {
+  background:   var(--color-bg-secondary);
+  border:       1px solid var(--color-border-base);
+  border-radius:var(--radius-md);
+  padding:      var(--space-5);
+}
+
+.teacher-panel-header {
+  display:       flex;
+  align-items:   center;
+  gap:           var(--space-3);
+  margin-bottom: var(--space-4);
+  padding-bottom:var(--space-3);
+  border-bottom: 1px solid var(--color-divider);
+}
+
+.teacher-panel-icon {
+  width:  32px;
+  height: 32px;
+  background:   rgba(110, 75, 42, 0.10);
+  border-radius:var(--radius-sm);
+  display:      flex;
+  align-items:  center;
+  justify-content: center;
+  color:        var(--color-brand-primary);
+  flex-shrink:  0;
+}
+
+.teacher-panel-title {
+  font-family: var(--font-body);
+  font-size:   var(--text-meta);
+  font-weight: var(--weight-semibold);
+  letter-spacing:var(--tracking-widest);
+  text-transform:uppercase;
+  color:       var(--color-text-discrete);
+}
+
+.teacher-panel-item {
+  margin-bottom: var(--space-4);
+}
+
+.teacher-panel-item:last-child {
+  margin-bottom: 0;
+}
+
+.teacher-item-label {
+  font-size:      var(--text-small);
+  font-weight:    var(--weight-semibold);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color:          var(--color-brand-primary);
+  margin-bottom:  var(--space-1);
+  font-family:    var(--font-body);
+}
+
+.teacher-item-content {
+  font-size:  var(--text-caption);
+  color:      var(--color-text-secondary);
+  line-height:var(--leading-relaxed);
+}
+
+/* =========================================================
+   ESTADO DE CARREGAMENTO
+   ========================================================= */
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--color-bg-secondary) 25%,
+    var(--color-bg-deep)      50%,
+    var(--color-bg-secondary) 75%
+  );
+  background-size: 200% 100%;
+  animation: skeleton-wave 1.5s infinite ease-in-out;
+  border-radius: var(--radius-sm);
+}
+
+@keyframes skeleton-wave {
+  0%   { background-position:  200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* =========================================================
+   EMPTY STATE
+   ========================================================= */
+
+.empty-state {
+  display:       flex;
+  flex-direction:column;
+  align-items:   center;
+  justify-content: center;
+  padding:       var(--space-8);
+  text-align:    center;
+  color:         var(--color-text-discrete);
+}
+
+.empty-state-icon {
+  font-size: 2.5rem;
+  margin-bottom: var(--space-4);
+  opacity: 0.4;
+}
+
+.empty-state-text {
+  font-size:  var(--text-body);
+  max-width:  40ch;
+  line-height:var(--leading-relaxed);
+}
+
+/* =========================================================
+   TOOLTIP CURATORIAL
+   ========================================================= */
+
+.tooltip {
+  position:   relative;
+  display:    inline-flex;
+}
+
+.tooltip-content {
+  position:     absolute;
+  bottom:       calc(100% + var(--space-2));
+  left:         50%;
+  transform:    translateX(-50%);
+  background:   var(--color-text-primary);
+  color:        var(--color-bg-surface);
+  font-size:    var(--text-small);
+  font-family:  var(--font-body);
+  padding:      var(--space-1) var(--space-2);
+  border-radius:var(--radius-sm);
+  white-space:  nowrap;
+  pointer-events:none;
+  opacity:      0;
+  transition:   opacity var(--transition-fast);
+  z-index:      var(--z-dropdown);
+  max-width:    200px;
+  text-align:   center;
+}
+
+.tooltip:hover .tooltip-content,
+.tooltip:focus-within .tooltip-content {
+  opacity: 1;
+}

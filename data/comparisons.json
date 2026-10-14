@@ -1,0 +1,26 @@
+[
+  {
+    "id": "ultima-ceia-escola-atenas",
+    "title": "A Última Ceia × A Escola de Atenas",
+    "description": "Dois mestres do Alto Renascimento, dois tratamentos distintos de perspectiva e composição em grande formato.",
+    "artwork_ids": ["last-supper", "school-of-athens"],
+    "concepts": ["perspectiva", "composição", "equilíbrio"],
+    "axis": "Como dois artistas do mesmo período usam a perspectiva linear para criar hierarquia e organizar muitas figuras em um único espaço?"
+  },
+  {
+    "id": "leonardo-michelangelo",
+    "title": "Leonardo × Michelangelo",
+    "description": "O sfumato e a suavidade atmosférica de Leonardo contra a monumentalidade escultórica de Michelangelo.",
+    "artwork_ids": ["mona-lisa", "creation-of-adam"],
+    "concepts": ["forma", "luz", "composição"],
+    "axis": "Dois gênios do mesmo período com linguagens formais radicalmente distintas: dissolução de contornos vs. tensão muscular."
+  },
+  {
+    "id": "composicao-renascimento",
+    "title": "Composição Renascentista: dois exemplos",
+    "description": "Como o equilíbrio e a organização de figuras definem a gramática visual renascentista.",
+    "artwork_ids": ["school-of-athens", "creation-of-adam"],
+    "concepts": ["composição", "equilíbrio", "figura-humana"],
+    "axis": "Rafael e Michelangelo organizam grupos de figuras com lógicas compositivas distintas — simetria racional vs. tensão diagonal."
+  }
+]

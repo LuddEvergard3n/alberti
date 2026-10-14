@@ -1,0 +1,357 @@
+/**
+ * mobile.css
+ * Alberti — Museu Interativo de Arte
+ *
+ * Media queries responsivas.
+ * Organização: de maior para menor breakpoint (desktop-first).
+ *
+ * Breakpoints:
+ *   xl:  1280px  (limite do container padrão)
+ *   lg:  1024px  (tablet landscape)
+ *   md:   768px  (tablet portrait)
+ *   sm:   480px  (mobile largo)
+ *   xs:   360px  (mobile padrão)
+ *
+ * Regras no mobile:
+ *   - Hero empilhada
+ *   - Grids colapsando sem virar caos
+ *   - Cards com padding preservado
+ *   - Sem overflow horizontal
+ *   - Sem "buracos" verticais gigantes
+ *   - Comparação em pilha ou tabs
+ */
+
+/* =========================================================
+   TABLET LANDSCAPE — 1024px
+   ========================================================= */
+
+@media (max-width: 1024px) {
+
+  /* Grid de 12 colunas reduz para 8 */
+  .grid {
+    grid-template-columns: repeat(8, 1fr);
+  }
+
+  /* Colunas > 8 voltam para 8 */
+  .col-9, .col-10, .col-11, .col-12 {
+    grid-column: span 8;
+  }
+
+  .col-7, .col-8 {
+    grid-column: span 8;
+  }
+
+  /* Grids automáticos */
+  .auto-grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Viewer */
+  .artwork-viewer {
+    flex-direction: column;
+  }
+
+  .viewer-sidebar {
+    width: 100%;
+  }
+
+  /* Header — esconder subtítulo da marca */
+  .header-brand-subtitle {
+    display: none;
+  }
+
+  /* Footer */
+  .footer-inner {
+    gap: var(--gap-medium);
+  }
+}
+
+/* =========================================================
+   TABLET PORTRAIT — 768px
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+  /* CSS variables ajustadas */
+  :root {
+    --section-monumental: var(--space-7);
+    --section-large:      var(--space-6);
+    --section-medium:     var(--space-5);
+    --section-compact:    var(--space-4);
+    --header-height:      56px;
+  }
+
+  /* Grid de 4 colunas */
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  /* Todas as colunas viram full-width */
+  [class^="col-"] {
+    grid-column: span 4;
+  }
+
+  /* Exeções para side-by-side em tablet */
+  .col-6 { grid-column: span 2; }
+
+  /* Auto-grids */
+  .auto-grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .auto-grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .auto-grid-2 {
+    grid-template-columns: 1fr;
+    gap: var(--gap-medium);
+  }
+
+  /* Header — mostrar botão menu, esconder nav */
+  .header-nav {
+    display: none;
+  }
+
+  .btn-menu {
+    display: flex;
+  }
+
+  .nav-drawer {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Hero — colapsar para coluna única em tablet */
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+
+  .hero-visual-col {
+    max-width: 480px;
+    margin-inline: auto;
+    width: 100%;
+  }
+
+  .hero-text-col {
+    align-items: flex-start;
+  }
+
+  .hero-description {
+    max-width: 100%;
+  }
+
+  /* Comparison — pilha */
+  .comparison-view {
+    grid-template-columns: 1fr;
+  }
+
+  .comparison-panel-label::before {
+    content: attr(data-panel) ' — ';
+  }
+
+  /* Gallery grid */
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: var(--gap-small);
+  }
+
+  /* Timeline — scroll horizontal */
+  .timeline-container {
+    overflow-x: hidden;
+  }
+
+  /* Museum rooms — 1 coluna */
+  .museum-rooms-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Footer */
+  .footer-inner {
+    flex-direction: column;
+  }
+
+  .footer-brand {
+    max-width: 100%;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items:    flex-start;
+  }
+
+  /* Slide panel — full-width */
+  .slide-panel {
+    width: 100%;
+  }
+}
+
+/* =========================================================
+   MOBILE LARGO — 480px
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+  :root {
+    --section-large:   var(--space-6);
+    --section-medium:  var(--space-5);
+  }
+
+  /* Grid colapsa para 1 coluna no mobile */
+  .auto-grid-4,
+  .auto-grid-3 {
+    grid-template-columns: 1fr;
+  }
+
+  /* Gallery — 2 colunas pequenas */
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--gap-small);
+  }
+
+  /* Card horizontal vira vertical */
+  .card-horizontal {
+    flex-direction: column;
+  }
+
+  .card-horizontal .card-image {
+    width: 100%;
+    height: 200px;
+  }
+
+  /* Museum room gallery — 2 thumbs */
+  .museum-room-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Viewer — controles maiores */
+  .viewer-ctrl-btn {
+    width:  40px;
+    height: 40px;
+  }
+
+  /* Comparison — tabs em mobile */
+  .comparison-view {
+    grid-template-columns: 1fr;
+  }
+
+  /* Filter bar — scroll horizontal */
+  .filter-bar {
+    flex-wrap:    nowrap;
+    overflow-x:   auto;
+    padding-block:var(--space-2);
+    scrollbar-width: none;
+  }
+
+  .filter-bar::-webkit-scrollbar { display: none; }
+
+  /* Section header */
+  .section-header {
+    margin-bottom: var(--space-5);
+  }
+
+  /* Buttons — full width no mobile quando necessário */
+  .btn-full-mobile {
+    width:          100%;
+    justify-content:center;
+  }
+
+  /* Container reading — sem padding excessivo */
+  .container-reading {
+    padding-inline: var(--space-3);
+  }
+
+  /* Toast */
+  .toast-container {
+    left:    var(--space-3);
+    right:   var(--space-3);
+    bottom:  var(--space-3);
+    max-width: 100%;
+  }
+}
+
+/* =========================================================
+   MOBILE PADRÃO — 360px
+   ========================================================= */
+
+@media (max-width: 360px) {
+
+  /* Tipografia mínima */
+  :root {
+    --text-hero:       clamp(2rem, 10vw, 2.8rem);
+    --text-section:    clamp(1.25rem, 6vw, 1.5rem);
+  }
+
+  /* Gallery — 1 coluna */
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .header-brand-name {
+    font-size: 1.2rem;
+  }
+}
+
+/* =========================================================
+   PRINT
+   ========================================================= */
+
+@media print {
+  #site-header,
+  #site-footer,
+  .viewer-controls,
+  .filter-bar,
+  .slide-panel,
+  .modal-overlay,
+  .btn-menu {
+    display: none !important;
+  }
+
+  body {
+    background: #FFFFFF;
+    color:      #000000;
+    font-size:  12pt;
+  }
+
+  .container {
+    max-width: 100%;
+    padding:   0;
+  }
+
+  .card {
+    break-inside: avoid;
+    box-shadow:   none;
+    border-color: #CCCCCC;
+  }
+
+  a[href]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+    color: #666;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration:   0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration:  0.01ms !important;
+    scroll-behavior:      auto !important;
+  }
+}
+
+/* =========================================================
+   DARK MODE (sistema — não primário do Alberti)
+   O Alberti usa paleta museológica clara como identidade.
+   Dark mode apenas como resposta ao sistema, leve.
+   ========================================================= */
+
+@media (prefers-color-scheme: dark) {
+  /* Sem dark mode nativo — o Alberti mantém paleta de museu */
+  /* Usuários podem ativar alto contraste via botão de a11y */
+}

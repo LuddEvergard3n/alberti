@@ -1,0 +1,54 @@
+[
+  {
+    "id": "perspective-intro",
+    "module": "linguagem",
+    "title": "O que é perspectiva",
+    "concepts": ["perspectiva", "linha de fuga", "profundidade", "ponto focal"],
+    "artwork_ids": ["last-supper", "school-of-athens"],
+    "exercise_ids": ["perspectiva-01"],
+    "order": 1,
+    "teacher": {
+      "objective": "Compreender a perspectiva linear como sistema de representação do espaço e como instrumento de significado.",
+      "central_concept": "Ponto de fuga e hierarquia compositiva",
+      "technique": "Perspectiva de um ponto — Brunelleschi / Leonardo",
+      "context": "O Renascimento redescobriu a perspectiva matemática da Antiguidade e a transformou em fundamento da representação visual. Leonardo e Rafael usaram o ponto de fuga como instrumento narrativo.",
+      "mediation": "Pedir ao aluno que trace linhas do teto e do piso de uma sala real até seu ponto de convergência. Relacionar com o que Leonardo faz na Última Ceia.",
+      "criteria": "O aluno identifica o ponto de fuga, compreende sua relação com a hierarquia compositiva e reconhece que a perspectiva é uma escolha de significado.",
+      "estimated_minutes": "20–30 minutos"
+    }
+  },
+  {
+    "id": "composition-intro",
+    "module": "linguagem",
+    "title": "Como a composição organiza o olhar",
+    "concepts": ["composição", "equilíbrio", "ritmo", "hierarquia visual"],
+    "artwork_ids": ["last-supper", "creation-of-adam", "school-of-athens"],
+    "exercise_ids": ["composicao-01"],
+    "order": 2,
+    "teacher": {
+      "objective": "Identificar como a organização dos elementos em uma obra dirige o olhar e atribui importância.",
+      "central_concept": "Composição como argumento visual",
+      "context": "No Renascimento, a composição seguia regras claras: equilíbrio bilateral, hierarquia central, grupos organizados. Não havia elemento colocado sem razão.",
+      "mediation": "Cobrir partes da Última Ceia e perguntar o que muda no equilíbrio visual.",
+      "criteria": "O aluno identifica centro compositivo, grupos e relação entre posição e importância.",
+      "estimated_minutes": "25–35 minutos"
+    }
+  },
+  {
+    "id": "renaissance-overview",
+    "module": "periodos",
+    "title": "O Renascimento — visão geral",
+    "concepts": ["perspectiva", "humanismo", "proporção", "equilíbrio"],
+    "artwork_ids": ["last-supper", "school-of-athens", "creation-of-adam", "mona-lisa", "vitruvian-man"],
+    "exercise_ids": ["classificacao-01"],
+    "order": 1,
+    "teacher": {
+      "objective": "Contextualizar o Renascimento como momento de retorno ao humanismo e à racionalidade formal.",
+      "central_concept": "Humanismo, perspectiva e proporção como fundamentos visuais",
+      "context": "O Renascimento não é apenas um estilo — é uma visão de mundo. O ser humano no centro, a razão como método, a matemática como fundamento da beleza.",
+      "mediation": "Comparar uma imagem medieval (hierática, sem perspectiva) com uma renascentista. Pedir ao aluno que liste as diferenças formais antes de nomear o período.",
+      "criteria": "O aluno reconhece os marcadores formais do Renascimento: perspectiva, proporção, postura naturalista.",
+      "estimated_minutes": "40–50 minutos"
+    }
+  }
+]

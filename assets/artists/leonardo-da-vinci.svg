@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <rect width="400" height="400" fill="#3a2a1a"/>
+  <circle cx="200" cy="185" r="80" fill="none" stroke="rgba(167,120,61,0.25)" stroke-width="1.5"/>
+  <circle cx="200" cy="185" r="55" fill="rgba(255,255,255,0.04)" stroke="rgba(167,120,61,0.15)" stroke-width="1"/>
+  <text x="200" y="340" font-family="Georgia,serif" font-size="18" font-style="italic" fill="rgba(255,255,255,0.60)" text-anchor="middle">Leonardo</text><text x="200" y="364" font-family="Georgia,serif" font-size="18" font-style="italic" fill="rgba(255,255,255,0.60)" text-anchor="middle">da Vinci</text>
+</svg>

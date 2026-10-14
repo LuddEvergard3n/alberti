@@ -1,0 +1,47 @@
+[
+  {
+    "id": "leonardo-da-vinci",
+    "name": "Leonardo da Vinci",
+    "nationality": "Italiano",
+    "born": "1452, Vinci, Itália",
+    "died": "1519, Amboise, França",
+    "period": "renascimento",
+    "period_label": "Alto Renascimento",
+    "technique_primary": "Pintura, desenho, escultura, arquitetura",
+    "tagline": "A observação como método. O sfumato como linguagem. A ciência como forma de ver.",
+    "biography": "Leonardo da Vinci é o arquétipo do homem universal renascentista: artista, cientista, engenheiro e filósofo em igual medida. Sua abordagem da pintura era científica — estudou anatomia, ótica, geologia e hidrodinâmica para entender como representar o mundo com precisão. Inventou o sfumato, técnica que dissolve contornos em véus atmosféricos, e explorou a perspectiva linear como instrumento de composição e hierarquia visual.",
+    "formal_language": "Sfumato, perspectiva linear rigorosa, estudo anatômico, equilíbrio piramidal das figuras, luz como modeladora de volume.",
+    "featured": true,
+    "portrait": "assets/artists/leonardo-da-vinci.svg"
+  },
+  {
+    "id": "michelangelo",
+    "name": "Michelangelo Buonarroti",
+    "nationality": "Italiano",
+    "born": "1475, Caprese, Itália",
+    "died": "1564, Roma, Itália",
+    "period": "renascimento",
+    "period_label": "Alto Renascimento",
+    "technique_primary": "Escultura, afresco, arquitetura",
+    "tagline": "O corpo humano como linguagem do sagrado. A tensão como princípio formal.",
+    "biography": "Michelangelo via a escultura como o mais nobre das artes — liberar a forma já presente no mármore. Na pintura, transportou esse princípio: suas figuras têm a monumentalidade e a tensão muscular da escultura. O teto da Capela Sistina e a Pietà sintetizam sua visão: a beleza física como reflexo da perfeição divina, e o corpo humano como a linguagem mais completa do sagrado.",
+    "formal_language": "Figura humana monumental, tensão muscular, disegno (desenho como fundamento), sfumato restrito, composição diagonal de força.",
+    "featured": true,
+    "portrait": "assets/artists/michelangelo.jpg"
+  },
+  {
+    "id": "rafael",
+    "name": "Rafael Sanzio",
+    "nationality": "Italiano",
+    "born": "1483, Urbino, Itália",
+    "died": "1520, Roma, Itália",
+    "period": "renascimento",
+    "period_label": "Alto Renascimento",
+    "technique_primary": "Afresco, óleo sobre tela",
+    "tagline": "A harmonia como ideal. A beleza como ordem visível.",
+    "biography": "Rafael sintetizou os grandes mestres do Renascimento — a perspectiva de Brunelleschi, o sfumato de Leonardo, a monumentalidade de Michelangelo — em uma gramática visual de harmonia suprema. Suas composições são equilibradas, claras e racionalmente organizadas. A Escola de Atenas é o manifesto visual do humanismo: cada figura tem seu espaço, cada gesto sua função, cada grupo sua lógica.",
+    "formal_language": "Equilíbrio clássico, composição em pirâmide e arco, perspectiva arquitetônica, paleta luminosa, beleza idealizada.",
+    "featured": true,
+    "portrait": "assets/artists/rafael.svg"
+  }
+]

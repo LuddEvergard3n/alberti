@@ -1,0 +1,262 @@
+[
+  {
+    "id": "last-supper",
+    "title": "A Última Ceia",
+    "artist": "leonardo-da-vinci",
+    "period": "renascimento",
+    "technique": "afresco-tempera",
+    "year": "1495–1498",
+    "location": "Santa Maria delle Grazie, Milão",
+    "dimensions": "460 × 880 cm",
+    "concepts": [
+      "perspectiva",
+      "composição",
+      "ritmo",
+      "equilíbrio",
+      "luz"
+    ],
+    "image": "assets/artworks/last-supper.jpg",
+    "thumbnail": "assets/thumbnails/last-supper.jpg",
+    "description": "A composição organiza treze figuras em uma única linha horizontal, com Cristo ao centro como ponto focal absoluto. Todas as linhas de fuga convergem para sua cabeça, criando uma perspectiva linear que impõe uma hierarquia visual rigorosa. O ritmo das figuras agrupa-se em quatro trios, criando equilíbrio bilateral. A luz vem das janelas ao fundo, modelando volumes e separando grupos.",
+    "focal_point": {
+      "x": 200,
+      "y": 85
+    },
+    "fuga_lines": [
+      {
+        "x1": 200,
+        "y1": 85,
+        "x2": 0,
+        "y2": 300
+      },
+      {
+        "x1": 200,
+        "y1": 85,
+        "x2": 400,
+        "y2": 300
+      },
+      {
+        "x1": 200,
+        "y1": 85,
+        "x2": 0,
+        "y2": 200
+      },
+      {
+        "x1": 200,
+        "y1": 85,
+        "x2": 400,
+        "y2": 200
+      }
+    ],
+    "hints": [
+      {
+        "text": "Observe o ponto para onde todas as linhas de fuga convergem. Não é aleatório — é a cabeça de Cristo. A perspectiva é um instrumento de hierarquia, não apenas de profundidade.",
+        "overlay": "fuga",
+        "concept": "perspectiva"
+      },
+      {
+        "text": "Conte os grupos de figuras. Existem quatro trios de apóstolos. Como essa divisão cria ritmo e equilíbrio bilateral ao redor da figura central?",
+        "overlay": "thirds",
+        "concept": "composição"
+      },
+      {
+        "text": "Onde está a luz? As janelas ao fundo iluminam Cristo por trás, criando uma aura sutil. Como a luz dirige o olhar e reforça a hierarquia da cena?",
+        "concept": "luz"
+      }
+    ]
+  },
+  {
+    "id": "mona-lisa",
+    "title": "Mona Lisa",
+    "artist": "leonardo-da-vinci",
+    "period": "renascimento",
+    "technique": "oleo-sobre-madeira",
+    "year": "1503–1519",
+    "location": "Museu do Louvre, Paris",
+    "dimensions": "77 × 53 cm",
+    "concepts": [
+      "sfumato",
+      "perspectiva",
+      "composição",
+      "luz",
+      "forma"
+    ],
+    "image": "assets/artworks/mona-lisa.svg",
+    "thumbnail": "assets/thumbnails/mona-lisa.svg",
+    "description": "A figura é enquadrada em postura de três-quartos, com a paisagem ao fundo em dois níveis distintos — da esquerda para a direita, os horizontes desalinham ligeiramente, amplificando a ambiguidade. O sfumato — técnica de fusão de contornos por camadas de véu — dissolve bordas e cria a sensação de atmosfera. Não há linhas duras. Tudo é transição.",
+    "focal_point": {
+      "x": 200,
+      "y": 120
+    },
+    "hints": [
+      {
+        "text": "Observe os contornos do rosto. Onde exatamente a pele termina e o fundo começa? O sfumato elimina a linha — tudo se funde em gradiente atmosférico.",
+        "concept": "sfumato"
+      },
+      {
+        "text": "Compare os horizontes da paisagem à esquerda e à direita. Eles não se alinham. Essa discrepância cria uma leve desorientação espacial intencional.",
+        "overlay": "thirds",
+        "concept": "perspectiva"
+      }
+    ]
+  },
+  {
+    "id": "creation-of-adam",
+    "title": "A Criação de Adão",
+    "artist": "michelangelo",
+    "period": "renascimento",
+    "technique": "afresco",
+    "year": "1508–1512",
+    "location": "Capela Sistina, Vaticano",
+    "dimensions": "280 × 570 cm",
+    "concepts": [
+      "composição",
+      "forma",
+      "equilíbrio",
+      "linha",
+      "figura-humana"
+    ],
+    "image": "assets/artworks/creation-of-adam.jpg",
+    "thumbnail": "assets/thumbnails/creation-of-adam.jpg",
+    "description": "Duas figuras em tensão diagonal definem a composição inteira. O intervalo entre os dedos — o espaço que ainda não é contato — é o centro dramatico e espacial da obra. Michelangelo substitui a perspectiva arquitetônica por tensão corporal: o espaço existe no corpo, não na paisagem.",
+    "focal_point": {
+      "x": 210,
+      "y": 150
+    },
+    "highlight_area": {
+      "x": 160,
+      "y": 120,
+      "w": 100,
+      "h": 60
+    },
+    "hints": [
+      {
+        "text": "O centro da obra não é nenhuma das figuras — é o vazio entre os dois dedos. Observe como todo o peso das duas figuras se orienta para esse espaço não-tocado.",
+        "overlay": "focal",
+        "concept": "composição"
+      },
+      {
+        "text": "Compare as postures: Deus inclina-se com energia, Adão recosta-se com passividade. A diagonal de tensão entre eles define a narrativa sem palavras.",
+        "overlay": "thirds",
+        "concept": "linha"
+      }
+    ]
+  },
+  {
+    "id": "school-of-athens",
+    "title": "A Escola de Atenas",
+    "artist": "rafael",
+    "period": "renascimento",
+    "technique": "afresco",
+    "year": "1509–1511",
+    "location": "Palácio Apostólico, Vaticano",
+    "dimensions": "500 × 770 cm",
+    "concepts": [
+      "perspectiva",
+      "composição",
+      "espaço",
+      "ritmo",
+      "equilíbrio"
+    ],
+    "image": "assets/artworks/school-of-athens.svg",
+    "thumbnail": "assets/thumbnails/school-of-athens.svg",
+    "description": "A perspectiva arquitetônica profunda organiza mais de cinquenta figuras em um espaço claro e racional. Platão e Aristóteles ao centro marcam o eixo vertical de simetria. A abóbada em arcos cria ritmo horizontal que distribui o olhar de forma controlada. Rafael sintetiza humanismo e harmonia formal: cada figura tem espaço, cada grupo tem função.",
+    "focal_point": {
+      "x": 200,
+      "y": 100
+    },
+    "fuga_lines": [
+      {
+        "x1": 200,
+        "y1": 100,
+        "x2": 0,
+        "y2": 300
+      },
+      {
+        "x1": 200,
+        "y1": 100,
+        "x2": 400,
+        "y2": 300
+      },
+      {
+        "x1": 200,
+        "y1": 100,
+        "x2": 50,
+        "y2": 200
+      },
+      {
+        "x1": 200,
+        "y1": 100,
+        "x2": 350,
+        "y2": 200
+      }
+    ],
+    "hints": [
+      {
+        "text": "Siga os arcos da abóbada. Eles criam um túnel de perspectiva que puxa o olhar para o fundo, onde as duas figuras centrais estão. A arquitetura serve a narrativa.",
+        "overlay": "fuga",
+        "concept": "perspectiva"
+      },
+      {
+        "text": "Platão aponta para cima (o mundo das ideias); Aristóteles aponta para baixo (o mundo observável). Como essa diferença gestual concentra toda a oposição filosófica em um único ato visual?",
+        "overlay": "focal",
+        "concept": "composição"
+      }
+    ]
+  },
+  {
+    "id": "sistine-ceiling",
+    "title": "Teto da Capela Sistina",
+    "artist": "michelangelo",
+    "period": "renascimento",
+    "technique": "afresco",
+    "year": "1508–1512",
+    "location": "Capela Sistina, Vaticano",
+    "concepts": [
+      "composição",
+      "figura-humana",
+      "espaço",
+      "perspectiva"
+    ],
+    "image": "assets/artworks/sistine-ceiling.svg",
+    "thumbnail": "assets/thumbnails/sistine-ceiling.svg",
+    "description": "A ilusão de trompe-l'oeil faz o teto plano parecer uma estrutura arquitetônica tridimensional. Nove cenas do Gênesis ocupam o centro, emolduradas por nus escultóricos, profetas e sibilas. Michelangelo constrói um sistema visual completo: cada zona tem sua escala, seu ritmo e sua tensão próprios.",
+    "hints": [
+      {
+        "text": "Observe as molduras fingidas em perspectiva. O teto é plano — mas a pintura simula arquitetura tridimensional. Onde a ilusão começa a funcionar?",
+        "overlay": "thirds",
+        "concept": "perspectiva"
+      }
+    ]
+  },
+  {
+    "id": "vitruvian-man",
+    "title": "O Homem Vitruviano",
+    "artist": "leonardo-da-vinci",
+    "period": "renascimento",
+    "technique": "tinta-e-aquarela",
+    "year": "c. 1490",
+    "location": "Gallerie dell'Accademia, Veneza",
+    "dimensions": "34 × 24 cm",
+    "concepts": [
+      "proporção",
+      "forma",
+      "equilíbrio",
+      "composição"
+    ],
+    "image": "assets/artworks/vitruvian-man.svg",
+    "thumbnail": "assets/thumbnails/vitruvian-man.svg",
+    "description": "O círculo e o quadrado como formas geométricas perfeitas enquadram o corpo humano — a proporção como lei universal. A figura duplicada (duas posições sobrepostas) demonstra o alcance e a harmonia do corpo em movimento. Leonardo segue Vitrúvio: o homem é medida de todas as coisas.",
+    "focal_point": {
+      "x": 200,
+      "y": 140
+    },
+    "hints": [
+      {
+        "text": "O umbigo é o centro do círculo; o genital é o centro do quadrado. Observe como as duas geometrias perfeitas se relacionam com diferentes centros corporais.",
+        "overlay": "focal",
+        "concept": "proporção"
+      }
+    ]
+  }
+]

@@ -1,0 +1,6 @@
+[
+  { "id": "renascimento-italiano", "title": "Renascimento Italiano", "period": "renascimento", "key_features": ["perspectiva linear", "proporção matemática", "humanismo", "sfumato"] },
+  { "id": "alto-renascimento",     "title": "Alto Renascimento",    "period": "renascimento", "key_features": ["harmonia suprema", "idealização", "monumentalidade"] },
+  { "id": "maneirismo",            "title": "Maneirismo",           "period": "renascimento", "key_features": ["alongamento das figuras", "composições complexas", "tensão artificial"] },
+  { "id": "barroco-italiano",      "title": "Barroco Italiano",     "period": "barroco",      "key_features": ["chiaroscuro", "diagonal de força", "dramaticidade emocional"] }
+]

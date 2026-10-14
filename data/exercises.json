@@ -1,0 +1,68 @@
+[
+  {
+    "id": "perspectiva-01",
+    "type": "identification",
+    "title": "Encontre o ponto de fuga",
+    "short_description": "Na Última Ceia, todas as linhas de perspectiva convergem para um único ponto. Clique nele.",
+    "instruction": "Observe a obra atentamente. As linhas do teto, das paredes e do piso todas convergem para um único ponto. Clique na imagem onde você acredita estar esse ponto de fuga principal.",
+    "artwork_id": "last-supper",
+    "target_label": "o ponto de fuga",
+    "answer_area": { "x": 50, "y": 28, "radius": 8 },
+    "hint_on_wrong": "O ponto de fuga coincide com a figura central da composição. Siga as linhas do teto e das paredes.",
+    "hint_text": "Nas obras renascentistas, o ponto de fuga raramente é aleatório — coincide com o personagem mais importante da cena.",
+    "concepts": ["perspectiva", "composição"],
+    "estimated_minutes": 5,
+    "teacher": {
+      "objective": "Identificar o ponto de fuga na perspectiva linear e compreender seu papel na hierarquia compositiva.",
+      "central_concept": "Perspectiva linear como instrumento de significado",
+      "technique": "Perspectiva de um ponto de fuga",
+      "context": "A Última Ceia de Leonardo usa a perspectiva para reforçar a hierarquia narrativa: o ponto de fuga é a cabeça de Cristo.",
+      "mediation": "Pergunte ao aluno: 'Para onde as linhas vão?' Antes de revelar a resposta, deixe-o traçar mentalmente as linhas do teto e do piso.",
+      "criteria": "O aluno deve identificar a área central-superior da composição como ponto focal/de fuga.",
+      "estimated_minutes": "5–10 minutos"
+    }
+  },
+  {
+    "id": "composicao-01",
+    "type": "identification",
+    "title": "Onde está o ponto focal?",
+    "short_description": "Na Criação de Adão, existe um centro dramático que não é nenhum dos dois personagens. Identifique-o.",
+    "instruction": "A obra tem dois protagonistas, mas o centro dramático está entre eles. Clique no ponto que você considera o verdadeiro centro visual e dramático da composição.",
+    "artwork_id": "creation-of-adam",
+    "target_label": "o espaço entre os dedos",
+    "answer_area": { "x": 52, "y": 50, "radius": 10 },
+    "hint_on_wrong": "Não é nenhuma das figuras — é o que ainda não aconteceu entre elas.",
+    "hint_text": "O espaço vazio pode ser protagonista. O intervalo entre os dedos é onde toda a tensão da obra se concentra.",
+    "concepts": ["composição", "forma"],
+    "estimated_minutes": 5,
+    "teacher": {
+      "objective": "Perceber que o espaço negativo pode ser o centro dramático de uma composição.",
+      "central_concept": "Espaço negativo como protagonista",
+      "context": "Michelangelo usou o intervalo entre os dedos como o momento antes do contato — a tensão do ainda-não.",
+      "mediation": "Cubra os dois personagens com as mãos. O que sobra? O aluno deve reconhecer o espaço entre eles.",
+      "criteria": "O aluno identifica a região entre os dedos de Deus e Adão como centro compositivo."
+    }
+  },
+  {
+    "id": "classificacao-01",
+    "type": "classification",
+    "title": "Medieval ou Renascimento?",
+    "short_description": "Dadas as características visuais de uma obra, identifique se pertence ao período medieval ou renascentista.",
+    "instruction": "Observe a descrição das características visuais a seguir e classifique a obra no período correto. Uma obra tem figuras de tamanhos diferentes segundo importância hierárquica, fundo dourado, perspectiva ausente e gestos rígidos.",
+    "options": [
+      { "value": "medieval",      "label": "Arte Medieval" },
+      { "value": "renascimento",  "label": "Renascimento" },
+      { "value": "barroco",       "label": "Barroco" }
+    ],
+    "correct_answer": "medieval",
+    "explanation_correct": "As características descritas — hierarquia por tamanho, fundo dourado, ausência de perspectiva — são marcadores da linguagem visual medieval, que subordina a representação naturalista à hierarquia espiritual.",
+    "explanation_wrong": "Observe: perspectiva ausente e figuras de tamanhos distintos por importância são traços da arte medieval, não do Renascimento (que usa perspectiva linear e proporção natural).",
+    "concepts": ["composição", "perspectiva"],
+    "estimated_minutes": 8,
+    "teacher": {
+      "objective": "Distinguir características formais dos períodos medieval e renascentista.",
+      "central_concept": "Perspectiva e hierarquia visual como marcadores de período",
+      "mediation": "Discutir: 'Por que um rei medieval seria pintado maior que um servo, mesmo que estivesse mais longe?'"
+    }
+  }
+]
