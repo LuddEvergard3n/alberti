@@ -205,17 +205,9 @@ function notifySubscribers(prev, next) {
  * @returns {Promise<*|null>}
  */
 async function fetchJSON(path) {
-  try {
-    const response = await fetch(path);
-    if (!response.ok) {
-      console.warn(`[Alberti] Falha ao carregar ${path}: HTTP ${response.status}`);
-      return null;
-    }
-    return await response.json();
-  } catch (err) {
-    console.warn(`[Alberti] Erro ao carregar ${path}:`, err.message);
-    return null;
-  }
+  const response = await fetch(path, { cache: 'no-cache' });
+  if (!response.ok) throw new Error(`${path}: HTTP ${response.status}`);
+  return response.json();
 }
 
 /**
@@ -230,18 +222,11 @@ export async function loadAllData() {
 
   try {
     const entries = Object.entries(DATA_PATHS);
-    const results = await Promise.all(
-      entries.map(([key, path]) => fetchJSON(path).then(data => [key, data]))
-    );
+    const results = await Promise.all(entries.map(async ([key, path]) => [key, await fetchJSON(path)]));
 
     const loadedData = {};
     for (const [key, data] of results) {
-      if (data !== null) {
-        loadedData[key] = data;
-      } else {
-        console.warn(`[Alberti] ${key} não carregado — usando fallback vazio`);
-        loadedData[key] = [];
-      }
+      loadedData[key] = data;
     }
 
     setState({

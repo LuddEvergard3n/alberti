@@ -15,6 +15,8 @@ export function renderComparisonView(a1, a2, data) {
   const artist2 = data.artists?.find(a => a.id === a2.artist);
   const period1 = data.periods?.find(p => p.id === a1.period);
   const period2 = data.periods?.find(p => p.id === a2.period);
+  const image1 = a1.mediaStatus === 'pending-faithful-reproduction' ? '' : a1.image || '';
+  const image2 = a2.mediaStatus === 'pending-faithful-reproduction' ? '' : a2.image || '';
 
   return `
     <div class="section-header">
@@ -28,12 +30,12 @@ export function renderComparisonView(a1, a2, data) {
       <!-- Painel esquerdo -->
       <div class="comparison-panel">
         <div class="comparison-panel-label" data-panel="Obra A">Obra A</div>
-        <img
-          src="${a1.image || ''}"
+        ${image1 ? `<img
+          src="${image1}"
           alt="${a1.title}${artist1 ? ', ' + artist1.name : ''}"
           class="comparison-panel-image"
           loading="eager"
-        >
+        >` : `<p class="viewer-image-unavailable">Reprodução em verificação.</p>`}
         <div class="artwork-caption">
           <div class="artwork-caption-title">${a1.title}</div>
           <div class="artwork-caption-artist">${artist1?.name || ''}${a1.year ? ', ' + a1.year : ''}</div>
@@ -47,12 +49,12 @@ export function renderComparisonView(a1, a2, data) {
       <!-- Painel direito -->
       <div class="comparison-panel">
         <div class="comparison-panel-label" data-panel="Obra B">Obra B</div>
-        <img
-          src="${a2.image || ''}"
+        ${image2 ? `<img
+          src="${image2}"
           alt="${a2.title}${artist2 ? ', ' + artist2.name : ''}"
           class="comparison-panel-image"
           loading="eager"
-        >
+        >` : `<p class="viewer-image-unavailable">Reprodução em verificação.</p>`}
         <div class="artwork-caption">
           <div class="artwork-caption-title">${a2.title}</div>
           <div class="artwork-caption-artist">${artist2?.name || ''}${a2.year ? ', ' + a2.year : ''}</div>

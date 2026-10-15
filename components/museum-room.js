@@ -39,15 +39,17 @@ export function renderMuseumRoom(room, data) {
           <div class="museum-room-gallery"
                style="grid-template-columns: repeat(${Math.min(thumbCount, 3)}, 1fr);"
                aria-hidden="true">
-            ${artworks.slice(0, 3).map(a => `
+            ${artworks.slice(0, 3).map(a => {
+              const image = a.mediaStatus === 'pending-faithful-reproduction' ? '' : a.thumbnail || a.image || '';
+              return `
               <div class="museum-room-thumb">
-                <img
-                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E"
+                ${image ? `<img
+                  src="${image}"
                   alt="${a.title}"
                   loading="lazy"
-                >
+                >` : '<span class="museum-room-thumb-fallback">Em verificação</span>'}
               </div>
-            `).join('')}
+            `; }).join('')}
           </div>
         ` : `
           <div style="height:120px; background:var(--color-bg-deep);

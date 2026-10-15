@@ -14,6 +14,7 @@ export function renderExerciseEngine(exercise, data) {
     ? data.artworks?.find(a => a.id === exercise.artwork_id)
     : null;
   const artist  = artwork ? data.artists?.find(a => a.id === artwork.artist) : null;
+  const reproductionReady = artwork?.mediaStatus !== 'pending-faithful-reproduction';
 
   return `
     <!-- Cabeçalho do exercício -->
@@ -44,13 +45,13 @@ export function renderExerciseEngine(exercise, data) {
         ${artwork ? `
           <div style="margin-bottom: var(--space-5);">
             <div class="studio-canvas-wrap" style="position:relative;">
-              <img
+              ${reproductionReady ? `<img
                 src="${artwork.image || ''}"
                 alt="${artwork.title}${artist ? ', ' + artist.name : ''}"
                 style="width:100%; max-height:480px; object-fit:contain; display:block;"
                 loading="eager"
-              >
-              ${exercise.type === 'identification' ? `
+              >` : `<p class="viewer-image-unavailable">A reprodução desta atividade está em verificação. Escolha outra atividade enquanto o acervo é concluído.</p>`}
+              ${reproductionReady && exercise.type === 'identification' ? `
                 <canvas class="studio-canvas"
                         width="800" height="600"
                         style="position:absolute; inset:0; width:100%; height:100%;"

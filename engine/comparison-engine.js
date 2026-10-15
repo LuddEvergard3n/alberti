@@ -12,6 +12,7 @@
  */
 
 import { getState } from '../js/state.js';
+import { escapeHtml } from '../js/ui.js';
 
 /* =========================================================
    INICIALIZAÇÃO
@@ -149,30 +150,33 @@ function generateComparativeNotes(id1, id2) {
   const { data } = getState();
   const a1 = data.artworks.find(a => a.id === id1);
   const a2 = data.artworks.find(a => a.id === id2);
+  const prepared = data.comparisons.find(comparison =>
+    comparison.artwork_ids?.length === 2 && comparison.artwork_ids.includes(id1) && comparison.artwork_ids.includes(id2)
+  );
 
   if (!a1 || !a2) return;
 
-  const notes = [];
+  const notes = prepared?.axis ? [escapeHtml(prepared.axis)] : [];
 
   // Período
   if (a1.period !== a2.period) {
     const p1 = data.periods.find(p => p.id === a1.period);
     const p2 = data.periods.find(p => p.id === a2.period);
-    notes.push(`Períodos distintos: <strong>${p1?.title || a1.period}</strong> e <strong>${p2?.title || a2.period}</strong>. Observe as diferenças de linguagem visual entre os dois contextos.`);
+    notes.push(`Períodos distintos: <strong>${escapeHtml(p1?.title || a1.period)}</strong> e <strong>${escapeHtml(p2?.title || a2.period)}</strong>. Observe as diferenças de linguagem visual entre os dois contextos.`);
   } else {
     const p = data.periods.find(p => p.id === a1.period);
-    notes.push(`Ambas as obras pertencem ao mesmo período: <strong>${p?.title || a1.period}</strong>. Compare as diferenças dentro de uma mesma visão de mundo.`);
+    notes.push(`Ambas as obras pertencem ao mesmo período: <strong>${escapeHtml(p?.title || a1.period)}</strong>. Compare as diferenças dentro de uma mesma visão de mundo.`);
   }
 
   // Técnica
   if (a1.technique !== a2.technique) {
-    notes.push(`Técnicas diferentes: <em>${a1.technique}</em> e <em>${a2.technique}</em>. Como a técnica influencia a superfície, a cor e a textura visíveis?`);
+    notes.push(`Técnicas diferentes: <em>${escapeHtml(a1.technique)}</em> e <em>${escapeHtml(a2.technique)}</em>. Como a técnica influencia a superfície, a cor e a textura visíveis?`);
   }
 
   // Conceitos compartilhados
   const shared = (a1.concepts || []).filter(c => (a2.concepts || []).includes(c));
   if (shared.length > 0) {
-    notes.push(`Conceitos comuns: <strong>${shared.join(', ')}</strong>. Como cada obra aborda esses elementos de forma diferente?`);
+    notes.push(`Conceitos comuns: <strong>${escapeHtml(shared.join(', '))}</strong>. Como cada obra aborda esses elementos de forma diferente?`);
   }
 
   // Artista
@@ -180,7 +184,7 @@ function generateComparativeNotes(id1, id2) {
     const ar1 = data.artists.find(a => a.id === a1.artist);
     const ar2 = data.artists.find(a => a.id === a2.artist);
     if (ar1 && ar2 && ar1.period === ar2.period) {
-      notes.push(`Artistas diferentes no mesmo período. Compare as escolhas formais individuais de <strong>${ar1.name}</strong> e <strong>${ar2.name}</strong>.`);
+      notes.push(`Artistas diferentes no mesmo período. Compare as escolhas formais individuais de <strong>${escapeHtml(ar1.name)}</strong> e <strong>${escapeHtml(ar2.name)}</strong>.`);
     }
   }
 

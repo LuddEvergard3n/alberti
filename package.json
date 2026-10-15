@@ -1,0 +1,10 @@
+{
+  "name": "alberti-museu-interativo",
+  "version": "2.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --experimental-vm-modules tests/test-runner.js",
+    "verify:media": "node tools/verify-media.js"
+  }
+}

@@ -22,6 +22,8 @@ Não é uma galeria estática de imagens. É um **museu-laboratório** que ensin
 - **Linha do tempo** de períodos artísticos
 - **Estúdio** com exercícios de identificação, composição e classificação
 - **Modo Professor** com painel de mediação para cada lição e exercício
+- **Plano de aula local** com identificação, duração calculada, habilidades de Arte da BNCC, objetivos, metodologias, recursos, avaliação, cópia e impressão
+- **Sobre o Alberti** com a origem do nome, o recorte pedagógico e os limites de uma reprodução digital
 - **Acessibilidade** completa: navegação por teclado, alto contraste, tamanho de fonte ajustável
 - **Responsivo** — funciona em desktop, tablet e mobile
 

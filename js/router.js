@@ -16,6 +16,7 @@
  */
 
 import { setState, getState } from './state.js';
+import { updateProgress } from './progress.js';
 
 /**
  * Mapa de rotas registradas.
@@ -107,7 +108,11 @@ function matchRoute(pattern, path) {
 
     if (p.startsWith(':')) {
       // Segmento dinâmico — extrai parâmetro
-      params[p.slice(1)] = decodeURIComponent(s);
+      try {
+        params[p.slice(1)] = decodeURIComponent(s);
+      } catch {
+        return null;
+      }
     } else if (p !== s) {
       // Segmento estático não corresponde
       return null;
@@ -134,6 +139,7 @@ function resolve() {
     const params = matchRoute(pattern, path);
     if (params !== null) {
       setState({ route: routeName, routeParams: params });
+      updateProgress({ lastRoute: window.location.hash || '#/' });
       handler(params);
       updateNavLinks(routeName);
       scrollToTop();
@@ -204,7 +210,8 @@ export function getCurrentRoute() {
  * @returns {void}
  */
 function scrollToTop() {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+  const reduceMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+  window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
 }
 
 /**
@@ -218,7 +225,8 @@ function updateNavLinks(routeName) {
   const links = document.querySelectorAll('[data-route]');
   links.forEach(link => {
     const isActive = link.dataset.route === routeName;
-    link.setAttribute('aria-current', isActive ? 'page' : 'false');
+    if (isActive) link.setAttribute('aria-current', 'page');
+    else link.removeAttribute('aria-current');
   });
 }
 

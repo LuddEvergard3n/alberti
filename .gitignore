@@ -1,11 +1,7 @@
 # Alberti — .gitignore
 
-# Imagens de obras (baixadas via tools/download-assets.js)
-# Os SVGs placeholder SÃO commitados.
-# Os JPEGs reais NÃO são commitados (muito grandes para o Git).
-assets/artworks/*.jpg
-assets/thumbnails/*.jpg
-assets/artists/*.jpg
+# Reproduções verificadas fazem parte do museu publicado.
+# Arquivos temporários do sincronizador continuam fora do repositório.
 
 # Arquivos temporários de download
 assets/**/*.tmp
@@ -27,3 +23,7 @@ desktop.ini
 # Logs
 *.log
 npm-debug.log*
+# Temporários e relatórios locais do sincronizador de mídia
+*.candidate
+*.candidate.part
+data/media-report.json

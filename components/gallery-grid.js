@@ -30,19 +30,20 @@ export function renderGalleryGrid(artworks, data) {
  */
 function renderGalleryItem(artwork, data) {
   const artist = data.artists?.find(a => a.id === artwork.artist);
+  const image = artwork.mediaStatus === 'pending-faithful-reproduction' ? '' : artwork.thumbnail || artwork.image || '';
   return `
     <article class="gallery-item" role="listitem" style="aspect-ratio: 3/4;"
              onclick="window.location.hash='/obra/${artwork.id}'"
              tabindex="0"
              onkeydown="if(event.key==='Enter'||event.key===' ')window.location.hash='/obra/${artwork.id}'"
              aria-label="${artwork.title}${artist ? ', ' + artist.name : ''}">
-      <img
-        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E"
+      ${image ? `<img
+        src="${image}"
         alt="${artwork.title}${artist ? ', ' + artist.name : ''}"
         class="gallery-item-image"
         style="height:100%;"
         loading="lazy"
-      >
+      >` : '<span class="gallery-item-fallback">Reprodução em verificação</span>'}
       <div class="gallery-item-overlay" aria-hidden="true">
         <div class="gallery-item-title">${artwork.title}</div>
         <div class="gallery-item-meta">${artist?.name || ''}${artwork.year ? ' — ' + artwork.year : ''}</div>

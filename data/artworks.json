@@ -1,5 +1,56 @@
 [
   {
+    "id": "santa-maria-novella-facade",
+    "title": "Fachada de Santa Maria Novella",
+    "artist": "leon-battista-alberti",
+    "period": "renascimento",
+    "technique": "projeto arquitetônico em mármore",
+    "year": "1458–1470",
+    "location": "Basílica de Santa Maria Novella, Florença",
+    "medium": "arquitetura",
+    "concepts": ["proporção", "composição", "geometria", "fachada"],
+    "image": "assets/artworks/santa-maria-novella-facade.jpg",
+    "thumbnail": "assets/thumbnails/santa-maria-novella-facade.jpg",
+    "description": "A fachada articula mármores claros e escuros, ordens clássicas e volutas laterais para relacionar partes preexistentes a uma nova composição. A fotografia mostra uma face do edifício; proporção, implantação urbana e experiência de escala exigem observação presencial ou documentação complementar.",
+    "source_id": "commons-santa-maria-novella-facade",
+    "lastReviewed": "2026-10-15",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "palazzo-rucellai",
+    "title": "Palazzo Rucellai",
+    "artist": "leon-battista-alberti",
+    "period": "renascimento",
+    "technique": "projeto arquitetônico em pedra",
+    "year": "c. 1446–1451",
+    "location": "Florença, Itália",
+    "medium": "arquitetura",
+    "concepts": ["proporção", "ritmo", "ordem", "fachada"],
+    "image": "assets/artworks/palazzo-rucellai.jpg",
+    "thumbnail": "assets/thumbnails/palazzo-rucellai.jpg",
+    "description": "A fachada organiza três níveis com pilastras de ordens clássicas e um ritmo regular de vãos. A atribuição do projeto a Alberti é amplamente aceita, mas a obra material dependeu de mestres de obra, patronato e transformações posteriores.",
+    "source_id": "commons-palazzo-rucellai",
+    "lastReviewed": "2026-10-15",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "sant-andrea-mantua",
+    "title": "Basílica de Sant'Andrea, Mântua",
+    "artist": "leon-battista-alberti",
+    "period": "renascimento",
+    "technique": "projeto arquitetônico em alvenaria",
+    "year": "projeto de 1472; execução posterior",
+    "location": "Mântua, Itália",
+    "medium": "arquitetura",
+    "concepts": ["escala", "arco", "fachada", "composição"],
+    "image": "assets/artworks/sant-andrea-mantua.jpg",
+    "thumbnail": "assets/thumbnails/sant-andrea-mantua.jpg",
+    "description": "O projeto combina uma linguagem de arco triunfal e templo clássico em uma fachada de escala monumental. Alberti morreu no ano do projeto; a construção posterior torna importante distinguir o desenho atribuído a ele das decisões de execução e das transformações do edifício.",
+    "source_id": "commons-sant-andrea-mantua",
+    "lastReviewed": "2026-10-15",
+    "reviewStatus": "reviewed"
+  },
+  {
     "id": "last-supper",
     "title": "A Última Ceia",
     "artist": "leonardo-da-vinci",
@@ -81,8 +132,8 @@
       "luz",
       "forma"
     ],
-    "image": "assets/artworks/mona-lisa.svg",
-    "thumbnail": "assets/thumbnails/mona-lisa.svg",
+    "image": "assets/artworks/mona-lisa.jpg",
+    "thumbnail": "assets/thumbnails/mona-lisa.jpg",
     "description": "A figura é enquadrada em postura de três-quartos, com a paisagem ao fundo em dois níveis distintos — da esquerda para a direita, os horizontes desalinham ligeiramente, amplificando a ambiguidade. O sfumato — técnica de fusão de contornos por camadas de véu — dissolve bordas e cria a sensação de atmosfera. Não há linhas duras. Tudo é transição.",
     "focal_point": {
       "x": 200,
@@ -158,8 +209,8 @@
       "ritmo",
       "equilíbrio"
     ],
-    "image": "assets/artworks/school-of-athens.svg",
-    "thumbnail": "assets/thumbnails/school-of-athens.svg",
+    "image": "assets/artworks/school-of-athens.jpg",
+    "thumbnail": "assets/thumbnails/school-of-athens.jpg",
     "description": "A perspectiva arquitetônica profunda organiza mais de cinquenta figuras em um espaço claro e racional. Platão e Aristóteles ao centro marcam o eixo vertical de simetria. A abóbada em arcos cria ritmo horizontal que distribui o olhar de forma controlada. Rafael sintetiza humanismo e harmonia formal: cada figura tem espaço, cada grupo tem função.",
     "focal_point": {
       "x": 200,
@@ -218,8 +269,8 @@
       "espaço",
       "perspectiva"
     ],
-    "image": "assets/artworks/sistine-ceiling.svg",
-    "thumbnail": "assets/thumbnails/sistine-ceiling.svg",
+    "image": "assets/artworks/sistine-ceiling.jpg",
+    "thumbnail": "assets/thumbnails/sistine-ceiling.jpg",
     "description": "A ilusão de trompe-l'oeil faz o teto plano parecer uma estrutura arquitetônica tridimensional. Nove cenas do Gênesis ocupam o centro, emolduradas por nus escultóricos, profetas e sibilas. Michelangelo constrói um sistema visual completo: cada zona tem sua escala, seu ritmo e sua tensão próprios.",
     "hints": [
       {
@@ -244,8 +295,8 @@
       "equilíbrio",
       "composição"
     ],
-    "image": "assets/artworks/vitruvian-man.svg",
-    "thumbnail": "assets/thumbnails/vitruvian-man.svg",
+    "image": "assets/artworks/vitruvian-man.jpg",
+    "thumbnail": "assets/thumbnails/vitruvian-man.jpg",
     "description": "O círculo e o quadrado como formas geométricas perfeitas enquadram o corpo humano — a proporção como lei universal. A figura duplicada (duas posições sobrepostas) demonstra o alcance e a harmonia do corpo em movimento. Leonardo segue Vitrúvio: o homem é medida de todas as coisas.",
     "focal_point": {
       "x": 200,
@@ -258,5 +309,35 @@
         "concept": "proporção"
       }
     ]
-  }
+  },
+  {"id":"alexander-mosaic","title":"Mosaico de Alexandre","artist":"unknown-roman","period":"arte-antiga","technique":"mosaico","year":"c. 100 a.C.","location":"Museu Arqueológico Nacional, Nápoles","dimensions":"582 × 313 cm","medium":"mosaico","concepts":["composição","movimento","cor"],"image":"assets/artworks/alexander-mosaic.jpg","thumbnail":"assets/thumbnails/alexander-mosaic.jpg","description":"A cena organiza o choque entre dois exércitos por diagonais, lanças e olhares convergentes. A leitura parte da tensão entre Alexandre e Dario, não de uma única linha de fuga.","source_id":"commons-alexander-mosaic","lastReviewed":"2026-10-14","reviewStatus":"reviewed"},
+  {"id":"parthenon-frieze","title":"Friso do Partenon","artist":"unknown-greek","period":"arte-antiga","technique":"relevo em mármore","year":"c. 443–438 a.C.","location":"Museu da Acrópole, Atenas","medium":"escultura","concepts":["ritmo","movimento","linha"],"image":"assets/artworks/parthenon-frieze.jpg","thumbnail":"assets/thumbnails/parthenon-frieze.jpg","description":"O relevo organiza uma procissão contínua. A repetição controlada de corpos e animais cria ritmo sem apagar variações de postura.","source_id":"commons-parthenon-frieze","lastReviewed":"2026-10-14","reviewStatus":"reviewed"},
+  {"id":"augustus-prima-porta","title":"Augusto de Prima Porta","artist":"unknown-roman","period":"arte-antiga","technique":"mármore","year":"início do século I d.C.","location":"Museus Vaticanos, Roma","medium":"escultura","concepts":["forma","proporção","hierarquia"],"image":"assets/artworks/augustus-prima-porta.jpg","thumbnail":"assets/thumbnails/augustus-prima-porta.jpg","description":"A estátua combina retrato e idealização. O gesto e a couraça constroem uma imagem política, cuja leitura depende do contexto romano de poder.","source_id":"commons-augustus-prima-porta","lastReviewed":"2026-10-14","reviewStatus":"reviewed"},
+  {"id":"duccio-maesta","title":"Maestà","artist":"duccio","period":"medieval","technique":"têmpera e ouro sobre madeira","year":"1308–1311","location":"Museo dell'Opera del Duomo, Siena","medium":"pintura","concepts":["hierarquia","cor","composição"],"image":"assets/artworks/duccio-maesta.jpg","thumbnail":"assets/thumbnails/duccio-maesta.jpg","description":"A obra usa ouro, escala e frontalidade em uma organização devocional. Esses recursos não significam ausência de elaboração espacial, mas obedecem a convenções próprias.","source_id":"commons-duccio-maesta","lastReviewed":"2026-10-14","reviewStatus":"reviewed"},
+  {"id":"hagia-sophia-nave","title":"Nave de Santa Sofia","artist":"unknown-byzantine","period":"medieval","technique":"arquitetura e mosaico","year":"séculos VI–XIX","location":"Istambul","medium":"arquitetura","concepts":["espaço","luz","proporção"],"image":"assets/artworks/hagia-sophia-nave.jpg","thumbnail":"assets/thumbnails/hagia-sophia-nave.jpg","description":"A fotografia registra uma arquitetura transformada ao longo dos séculos. A cúpula, a luz e os suportes estruturais criam uma experiência espacial, não uma planta simplificada.","source_id":"commons-hagia-sophia-nave","lastReviewed":"2026-10-14","reviewStatus":"reviewed"},
+  {"id":"chartres-south-rose","title":"Rosácea Sul da Catedral de Chartres","artist":"unknown-medieval","period":"medieval","technique":"vitral","year":"c. 1225","location":"Chartres, França","medium":"vitral","concepts":["cor","luz","ritmo"],"image":"assets/artworks/chartres-south-rose.jpg","thumbnail":"assets/thumbnails/chartres-south-rose.jpg","description":"A roseta organiza narrativas e figuras em anéis. Sua leitura pressupõe luz transmitida e arquitetura, dimensões que uma fotografia apresenta apenas parcialmente.","source_id":"commons-chartres-south-rose","lastReviewed":"2026-10-14","reviewStatus":"reviewed"},
+  {"id":"calling-of-saint-matthew","title":"A Vocação de São Mateus","artist":"caravaggio","period":"barroco","technique":"óleo sobre tela","year":"1599–1600","location":"San Luigi dei Francesi, Roma","medium":"pintura","concepts":["luz","composição","drama"],"image":"assets/artworks/calling-of-saint-matthew.jpg","thumbnail":"assets/thumbnails/calling-of-saint-matthew.jpg","description":"Uma luz lateral separa figuras e dirige a atenção ao gesto de Cristo. A interpretação religiosa é central, mas a organização formal também estrutura a cena.","source_id":"commons-calling-of-saint-matthew","lastReviewed":"2026-10-14","reviewStatus":"reviewed"},
+  {"id":"las-meninas","title":"Las Meninas","artist":"velazquez","period":"barroco","technique":"óleo sobre tela","year":"1656","location":"Museu do Prado, Madri","medium":"pintura","concepts":["espaço","olhar","composição"],"image":"assets/artworks/las-meninas.jpg","thumbnail":"assets/thumbnails/las-meninas.jpg","description":"Espelhos, portas e olhares cruzados tornam instável a posição de quem observa. Leituras sobre representação e poder coexistem com questões técnicas de luz e profundidade.","source_id":"commons-las-meninas","lastReviewed":"2026-10-14","reviewStatus":"reviewed"},
+  {"id":"ecstasy-of-teresa","title":"Êxtase de Santa Teresa","artist":"bernini","period":"barroco","technique":"mármore e instalação arquitetônica","year":"1647–1652","location":"Santa Maria della Vittoria, Roma","medium":"escultura","concepts":["luz","drama","movimento"],"image":"assets/artworks/ecstasy-of-teresa.jpg","thumbnail":"assets/thumbnails/ecstasy-of-teresa.jpg","description":"Escultura, arquitetura e luz formam uma encenação devocional. A fotografia não reproduz a posição corporal do visitante nem a iluminação variável da capela.","source_id":"commons-ecstasy-of-teresa","lastReviewed":"2026-10-14","reviewStatus":"reviewed"},
+  {"id":"judith-holofernes","title":"Judite Decapitando Holofernes","artist":"artemisia-gentileschi","period":"barroco","technique":"óleo sobre tela","year":"c. 1612–1613","location":"Museo e Real Bosco di Capodimonte, Nápoles","medium":"pintura","concepts":["luz","tensão","composição"],"image":"assets/artworks/judith-holofernes.jpg","thumbnail":"assets/thumbnails/judith-holofernes.jpg","description":"A composição concentra a ação em planos próximos e contrastes de claro e escuro. Relações entre biografia da artista e interpretação da obra exigem cautela documental.","source_id":"commons-judith-holofernes","lastReviewed":"2026-10-14","reviewStatus":"reviewed"},
+  {"id":"oath-of-horatii","title":"O Juramento dos Horácios","artist":"jacques-louis-david","period":"neoclassicismo","technique":"óleo sobre tela","year":"1784","location":"Museu do Louvre, Paris","medium":"pintura","concepts":["linha","geometria","hierarquia"],"image":"assets/artworks/oath-of-horatii.jpg","thumbnail":"assets/thumbnails/oath-of-horatii.jpg","description":"Arcos, linhas retas e grupos separados organizam um drama cívico. A clareza formal serve a uma narrativa de dever e sacrifício, sujeita a leituras políticas diversas.","source_id":"commons-oath-of-horatii","lastReviewed":"2026-10-14","reviewStatus":"reviewed"},
+  {"id":"death-of-socrates","title":"A Morte de Sócrates","artist":"jacques-louis-david","period":"neoclassicismo","technique":"óleo sobre tela","year":"1787","location":"Metropolitan Museum of Art, Nova York","medium":"pintura","concepts":["linha","composição","ideia"],"image":"assets/artworks/death-of-socrates.jpg","thumbnail":"assets/thumbnails/death-of-socrates.jpg","description":"A cena usa gestos e arquitetura para opor serenidade filosófica e luto. Trata-se de uma construção artística posterior, não de documentação visual da Antiguidade.","source_id":"commons-death-of-socrates","lastReviewed":"2026-10-14","reviewStatus":"reviewed"},
+  {"id":"wanderer-sea-fog","title":"O Caminhante sobre o Mar de Névoa","artist":"caspar-david-friedrich","period":"romantismo","technique":"óleo sobre tela","year":"c. 1818","location":"Kunsthalle Hamburg, Hamburgo","medium":"pintura","concepts":["paisagem","escala","subjetividade"],"image":"assets/artworks/wanderer-sea-fog.jpg","thumbnail":"assets/thumbnails/wanderer-sea-fog.jpg","description":"A figura de costas abre a paisagem para a experiência do observador. A sensação de sublime é uma leitura histórica frequente, não uma medida objetiva da intenção do artista.","source_id":"commons-wanderer-sea-fog","lastReviewed":"2026-10-14","reviewStatus":"reviewed"},
+  {"id":"raft-of-medusa","title":"A Balsa da Medusa","artist":"theodore-gericault","period":"romantismo","technique":"óleo sobre tela","year":"1818–1819","location":"Museu do Louvre, Paris","medium":"pintura","concepts":["diagonal","drama","corpo"],"image":"assets/artworks/raft-of-medusa.jpg","thumbnail":"assets/thumbnails/raft-of-medusa.jpg","description":"Pirâmides instáveis de corpos e uma diagonal ascendente organizam uma cena ligada a um naufrágio contemporâneo. A obra une observação, composição e crítica pública.","source_id":"commons-raft-of-medusa","lastReviewed":"2026-10-14","reviewStatus":"reviewed"},
+  {"id":"liberty-leading-people","title":"A Liberdade Guiando o Povo","artist":"eugene-delacroix","period":"romantismo","technique":"óleo sobre tela","year":"1830","location":"Museu do Louvre, Paris","medium":"pintura","concepts":["cor","movimento","alegoria"],"image":"assets/artworks/liberty-leading-people.jpg","thumbnail":"assets/thumbnails/liberty-leading-people.jpg","description":"Uma figura alegórica conduz combatentes de origens distintas. A imagem dialoga com a Revolução de Julho, mas não deve ser tomada como registro literal do acontecimento.","source_id":"commons-liberty-leading-people","lastReviewed":"2026-10-14","reviewStatus":"reviewed"},
+  {"id":"slave-ship","title":"O Navio Negreiro","artist":"jmw-turner","period":"romantismo","technique":"óleo sobre tela","year":"1840","location":"Museum of Fine Arts, Boston","medium":"pintura","concepts":["cor","luz","paisagem"],"image":"assets/artworks/slave-ship.jpg","thumbnail":"assets/thumbnails/slave-ship.jpg","description":"A tempestade e a cor tornam a violência do tráfico atlântico tema central. A obra demanda contextualização histórica para além de sua expressividade visual.","source_id":"commons-slave-ship","lastReviewed":"2026-10-14","reviewStatus":"reviewed"},
+  {"id":"impression-sunrise","title":"Impressão, Nascer do Sol","artist":"claude-monet","period":"impressionismo","technique":"óleo sobre tela","year":"1872","location":"Musée Marmottan Monet, Paris","medium":"pintura","concepts":["cor","pincelada","atmosfera"],"image":"assets/artworks/impression-sunrise.jpg","thumbnail":"assets/thumbnails/impression-sunrise.jpg","description":"Pinceladas visíveis e contrastes de cor constroem uma impressão luminosa do porto. O título foi associado à denominação do movimento impressionista por críticos da época.","source_id":"commons-impression-sunrise","lastReviewed":"2026-10-14","reviewStatus":"reviewed"},
+  {"id":"moulin-galette","title":"Baile no Moulin de la Galette","artist":"pierre-auguste-renoir","period":"impressionismo","technique":"óleo sobre tela","year":"1876","location":"Musée d'Orsay, Paris","medium":"pintura","concepts":["luz","ritmo","vida urbana"],"image":"assets/artworks/moulin-galette.jpg","thumbnail":"assets/thumbnails/moulin-galette.jpg","description":"Luz filtrada, figuras parciais e pincelada fragmentada sugerem uma cena urbana em movimento. A aparência espontânea resulta de escolhas formais complexas.","source_id":"commons-moulin-galette","lastReviewed":"2026-10-14","reviewStatus":"reviewed"},
+  {"id":"ballet-class","title":"A Aula de Dança","artist":"edgar-degas","period":"impressionismo","technique":"óleo sobre tela","year":"c. 1874","location":"Metropolitan Museum of Art, Nova York","medium":"pintura","concepts":["recorte","ritmo","espaço"],"image":"assets/artworks/ballet-class.jpg","thumbnail":"assets/thumbnails/ballet-class.jpg","description":"O enquadramento desloca o centro e distribui bailarinas em gestos interrompidos. A cena articula observação de ensaio e organização deliberada do espaço.","source_id":"commons-ballet-class","lastReviewed":"2026-10-14","reviewStatus":"reviewed"},
+  {"id":"child-bath","title":"O Banho da Criança","artist":"mary-cassatt","period":"impressionismo","technique":"óleo sobre tela","year":"1893","location":"Art Institute of Chicago, Chicago","medium":"pintura","concepts":["padrão","intimidade","composição"],"image":"assets/artworks/child-bath.jpg","thumbnail":"assets/thumbnails/child-bath.jpg","description":"A visão elevada, os padrões e o recorte aproximam a obra de gravuras japonesas. A cena doméstica recebeu leituras de gênero que devem ser apresentadas como interpretações.","source_id":"commons-child-bath","lastReviewed":"2026-10-14","reviewStatus":"reviewed"},
+  {"id":"starry-night","title":"A Noite Estrelada","artist":"vincent-van-gogh","period":"modernismo","technique":"óleo sobre tela","year":"1889","location":"Museum of Modern Art, Nova York","medium":"pintura","concepts":["linha","cor","expressão"],"image":"assets/artworks/starry-night.jpg","thumbnail":"assets/thumbnails/starry-night.jpg","description":"Espirais, pincelada e contrastes cromáticos transformam uma paisagem noturna. Explicações psicológicas simples sobre a obra precisam ser tratadas com cuidado.","source_id":"commons-starry-night","lastReviewed":"2026-10-14","reviewStatus":"reviewed"},
+  {"id":"les-demoiselles","title":"Les Demoiselles d'Avignon","artist":"pablo-picasso","period":"modernismo","technique":"óleo sobre tela","year":"1907","location":"Museum of Modern Art, Nova York","medium":"pintura","concepts":["forma","plano","fragmentação"],"image":"assets/artworks/les-demoiselles.png","thumbnail":"assets/thumbnails/les-demoiselles.png","description":"Planos angulares e referências heterogêneas rompem com a profundidade tradicional. O contexto de apropriação de objetos africanos requer discussão histórica cuidadosa.","source_id":"wikiart-les-demoiselles","lastReviewed":"2026-10-15","reviewStatus":"reviewed"},
+  {"id":"mondrian-composition-ii","title":"Composição com Vermelho, Azul e Amarelo","artist":"piet-mondrian","period":"modernismo","technique":"óleo sobre tela","year":"1930","location":"Kunsthaus Zürich, Zurique","medium":"pintura","concepts":["linha","cor","equilíbrio"],"image":"assets/artworks/mondrian-composition-ii.jpg","thumbnail":"assets/thumbnails/mondrian-composition-ii.jpg","description":"Linhas pretas e planos de cor constroem equilíbrio assimétrico. A aparente simplicidade depende de relações precisas de proporção e vazio.","source_id":"commons-mondrian-composition-ii","lastReviewed":"2026-10-14","reviewStatus":"reviewed"},
+  {"id":"first-mass-brazil","title":"A Primeira Missa no Brasil","artist":"victor-meirelles","period":"neoclassicismo","technique":"óleo sobre tela","year":"1860","location":"Museu Nacional de Belas Artes, Rio de Janeiro","medium":"pintura","concepts":["composição","história","hierarquia"],"image":"assets/artworks/first-mass-brazil.jpg","thumbnail":"assets/thumbnails/first-mass-brazil.jpg","description":"A tela constrói uma visão do início da colonização. Ela deve ser estudada como imagem histórica do século XIX, não como relato neutro do acontecimento de 1500.","source_id":"commons-first-mass-brazil","lastReviewed":"2026-10-14","reviewStatus":"reviewed"},
+  {"id":"independence-or-death","title":"Independência ou Morte","artist":"pedro-americo","period":"romantismo","technique":"óleo sobre tela","year":"1888","location":"Museu Paulista, São Paulo","medium":"pintura","concepts":["história","composição","heroização"],"image":"assets/artworks/independence-or-death.jpg","thumbnail":"assets/thumbnails/independence-or-death.jpg","description":"A composição heroiza o episódio do Ipiranga e foi pintada décadas depois. Serve para discutir construção de memória nacional, fonte visual e idealização.","source_id":"commons-independence-or-death","lastReviewed":"2026-10-14","reviewStatus":"reviewed"},
+  {"id":"caipira","title":"Caipira Picando Fumo","artist":"almeida-junior","period":"romantismo","technique":"óleo sobre tela","year":"1893","location":"Pinacoteca de São Paulo, São Paulo","medium":"pintura","concepts":["figura","cor","cotidiano"],"image":"assets/artworks/caipira.jpg","thumbnail":"assets/thumbnails/caipira.jpg","description":"A figura sentada e o ambiente rural compõem uma cena de forte presença material. A categoria social evocada pela obra deve ser contextualizada historicamente.","source_id":"commons-caipira","lastReviewed":"2026-10-14","reviewStatus":"reviewed"},
+  {"id":"moema","title":"Moema","artist":"victor-meirelles","period":"romantismo","technique":"óleo sobre tela","year":"1866","location":"Museu de Arte de São Paulo, São Paulo","medium":"pintura","concepts":["figura","paisagem","narrativa"],"image":"assets/artworks/moema.jpg","thumbnail":"assets/thumbnails/moema.jpg","description":"A pintura retoma personagem literária em uma paisagem idealizada. A obra permite discutir romantização e representação indígena no século XIX.","source_id":"commons-moema","lastReviewed":"2026-10-14","reviewStatus":"reviewed"},
+  {"id":"battle-of-avai","title":"Batalha do Avaí","artist":"pedro-americo","period":"romantismo","technique":"óleo sobre tela","year":"1877","location":"Museu Nacional de Belas Artes, Rio de Janeiro","medium":"pintura","concepts":["movimento","história","composição"],"image":"assets/artworks/battle-of-avai.jpg","thumbnail":"assets/thumbnails/battle-of-avai.jpg","description":"A tela monumental encena uma batalha da Guerra do Paraguai. Escala, detalhe e enquadramento exigem distinguir representação histórica de testemunho direto.","source_id":"commons-battle-of-avai","lastReviewed":"2026-10-14","reviewStatus":"reviewed"},
+  {"id":"departure-of-monsoon","title":"A Partida da Monção","artist":"almeida-junior","period":"neoclassicismo","technique":"óleo sobre tela","year":"1897","location":"Museu Paulista, São Paulo","medium":"pintura","concepts":["paisagem","história","composição"],"image":"assets/artworks/departure-of-monsoon.jpg","thumbnail":"assets/thumbnails/departure-of-monsoon.jpg","description":"A pintura organiza uma travessia fluvial em grande escala. Como toda pintura histórica, articula observação, imaginação e convenções de seu período.","source_id":"commons-departure-of-monsoon","lastReviewed":"2026-10-14","reviewStatus":"reviewed"},
+  {"id":"persistence-memory","title":"A Persistência da Memória","artist":"salvador-dali","period":"contemporaneo","technique":"óleo sobre tela","year":"1931","location":"Museum of Modern Art, Nova York","medium":"pintura","concepts":["forma","tempo","surrealismo"],"image":"assets/artworks/persistence-memory.png","thumbnail":"assets/thumbnails/persistence-memory.png","description":"Relógios maleáveis em uma paisagem precisa criam uma imagem de tempo instável. Leituras psicanalíticas são possíveis, mas não esgotam a obra.","source_id":"wikiart-persistence-memory","lastReviewed":"2026-10-15","reviewStatus":"reviewed"}
 ]

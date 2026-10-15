@@ -1,0 +1,9 @@
+{
+  "name": "Alberti — Museu Interativo de Arte",
+  "short_name": "Alberti",
+  "start_url": "./#/",
+  "display": "standalone",
+  "background_color": "#F5F1E8",
+  "theme_color": "#6E4B2A",
+  "icons": [{ "src": "assets/icons/alberti-icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }]
+}

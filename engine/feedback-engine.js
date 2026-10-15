@@ -12,6 +12,7 @@
  */
 
 import { getState } from '../js/state.js';
+import { recordExerciseResult } from '../js/progress.js';
 import { escapeHtml, showToast } from '../js/ui.js';
 
 /** Chave de armazenamento de progresso no localStorage */
@@ -83,6 +84,7 @@ function evaluateExercise(exercise) {
 
   renderFeedback(container, feedback);
   saveProgress(exercise.id, feedback.correct);
+  recordExerciseResult(exercise.id, { correct: feedback.correct, updatedAt: new Date().toISOString() });
 }
 
 /**
@@ -210,7 +212,10 @@ function renderFeedback(container, feedback) {
     </div>
   `;
 
-  container.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  container.scrollIntoView({
+    behavior: window.matchMedia?.('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
+    block: 'nearest',
+  });
 }
 
 /* =========================================================

@@ -46,6 +46,23 @@
   transform: scale(1.04);
 }
 
+.gallery-item-fallback,
+.museum-room-thumb-fallback,
+.card-image-fallback {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: var(--space-3);
+  background: var(--color-bg-secondary);
+  color: var(--color-text-discrete);
+  font-family: var(--font-mono);
+  font-size: var(--text-small);
+  text-align: center;
+}
+
+.museum-room-thumb { position: relative; }
+
 /* Overlay de legenda no hover */
 .gallery-item-overlay {
   position:   absolute;
@@ -82,6 +99,18 @@
   font-size:      var(--text-small);
   color:          rgba(251, 248, 242, 0.70);
   letter-spacing: var(--tracking-wide);
+}
+
+.viewer-image-unavailable {
+  display: grid;
+  min-height: 420px;
+  margin: 0;
+  place-items: center;
+  padding: var(--space-6);
+  background: var(--color-bg-secondary);
+  color: var(--color-text-discrete);
+  font-family: var(--font-mono);
+  text-align: center;
 }
 
 /* =========================================================

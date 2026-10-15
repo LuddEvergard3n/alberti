@@ -1,0 +1,121 @@
+[
+  {
+    "id": "last-supper",
+    "commonsFile": "Última Cena - Da Vinci 5.jpg",
+    "artworkPath": "assets/artworks/last-supper.jpg",
+    "thumbnailPath": "assets/thumbnails/last-supper.jpg",
+    "credit": "Leonardo da Vinci, A Última Ceia. Reprodução via Wikimedia Commons.",
+    "reviewedAt": "2026-10-14"
+  },
+  {
+    "id": "les-demoiselles",
+    "source": "WikiArt",
+    "sourceUrl": "https://www.wikiart.org/en/pablo-picasso/les-demoiselles-d-avignon-1907",
+    "artworkPath": "assets/artworks/les-demoiselles.png",
+    "thumbnailPath": "assets/thumbnails/les-demoiselles.png",
+    "credit": "Pablo Picasso, Les Demoiselles d'Avignon. Reprodução fornecida pelo mantenedor, com procedência registrada no WikiArt; as condições de redistribuição devem ser confirmadas antes de uma publicação pública.",
+    "reviewedAt": "2026-10-15"
+  },
+  {
+    "id": "persistence-memory",
+    "source": "WikiArt",
+    "sourceUrl": "https://www.wikiart.org/en/salvador-dali/the-persistence-of-memory-1931",
+    "artworkPath": "assets/artworks/persistence-memory.png",
+    "thumbnailPath": "assets/thumbnails/persistence-memory.png",
+    "credit": "Salvador Dalí, A Persistência da Memória. Reprodução fornecida pelo mantenedor, com procedência registrada no WikiArt; as condições de redistribuição devem ser confirmadas antes de uma publicação pública.",
+    "reviewedAt": "2026-10-15"
+  },
+  {
+    "id": "mona-lisa",
+    "commonsFile": "Mona Lisa, by Leonardo da Vinci, from C2RMF retouched.jpg",
+    "artworkPath": "assets/artworks/mona-lisa.jpg",
+    "thumbnailPath": "assets/thumbnails/mona-lisa.jpg",
+    "credit": "Leonardo da Vinci, Mona Lisa. Reprodução via Wikimedia Commons.",
+    "reviewedAt": "2026-10-14"
+  },
+  {
+    "id": "creation-of-adam",
+    "commonsFile": "Michelangelo - Creation of Adam (cropped).jpg",
+    "artworkPath": "assets/artworks/creation-of-adam.jpg",
+    "thumbnailPath": "assets/thumbnails/creation-of-adam.jpg",
+    "credit": "Michelangelo, A Criação de Adão. Reprodução via Wikimedia Commons.",
+    "reviewedAt": "2026-10-14"
+  },
+  {
+    "id": "school-of-athens",
+    "commonsFile": "Escola de Atenas.jpg",
+    "artworkPath": "assets/artworks/school-of-athens.jpg",
+    "thumbnailPath": "assets/thumbnails/school-of-athens.jpg",
+    "credit": "Rafael, A Escola de Atenas. Reprodução via Wikimedia Commons.",
+    "reviewedAt": "2026-10-14"
+  },
+  {
+    "id": "sistine-ceiling",
+    "commonsFile": "Sistine Chapel ceiling photo 2.jpg",
+    "artworkPath": "assets/artworks/sistine-ceiling.jpg",
+    "thumbnailPath": "assets/thumbnails/sistine-ceiling.jpg",
+    "credit": "Michelangelo, Teto da Capela Sistina. Fotografia via Wikimedia Commons.",
+    "reviewedAt": "2026-10-14"
+  },
+  {
+    "id": "vitruvian-man",
+    "commonsFile": "Da Vinci Vitruve Luc Viatour.jpg",
+    "artworkPath": "assets/artworks/vitruvian-man.jpg",
+    "thumbnailPath": "assets/thumbnails/vitruvian-man.jpg",
+    "credit": "Leonardo da Vinci, O Homem Vitruviano. Reprodução via Wikimedia Commons.",
+    "reviewedAt": "2026-10-14"
+  },
+  {"id":"alexander-mosaic","commonsFile":"Alexander the Great mosaic.jpg","artworkPath":"assets/artworks/alexander-mosaic.jpg","thumbnailPath":"assets/thumbnails/alexander-mosaic.jpg","credit":"Mosaico de Alexandre. Reprodução via Wikimedia Commons.","reviewedAt":"2026-10-14"},
+  {"id":"parthenon-frieze","commonsFile":"Parthenon West Frieze Block VI.jpg","artworkPath":"assets/artworks/parthenon-frieze.jpg","thumbnailPath":"assets/thumbnails/parthenon-frieze.jpg","credit":"Friso do Partenon. Fotografia via Wikimedia Commons.","reviewedAt":"2026-10-14"},
+  {"id":"augustus-prima-porta","commonsFile":"Statue-Augustus.jpg","artworkPath":"assets/artworks/augustus-prima-porta.jpg","thumbnailPath":"assets/thumbnails/augustus-prima-porta.jpg","credit":"Augusto de Prima Porta. Fotografia via Wikimedia Commons.","reviewedAt":"2026-10-14"},
+  {"id":"duccio-maesta","commonsFile":"Maest 0 duccio 1308-11 siena duomo.jpg","artworkPath":"assets/artworks/duccio-maesta.jpg","thumbnailPath":"assets/thumbnails/duccio-maesta.jpg","credit":"Duccio, Maestà. Reprodução via Wikimedia Commons.","reviewedAt":"2026-10-14"},
+  {"id":"hagia-sophia-nave","commonsFile":"Gaspare Fossati - Louis Haghe - Vue générale de la grande nef, en regardant l'occident (Hagia Sophia - Ayasofya Mosque nave).jpg","artworkPath":"assets/artworks/hagia-sophia-nave.jpg","thumbnailPath":"assets/thumbnails/hagia-sophia-nave.jpg","credit":"Nave de Santa Sofia. Reprodução via Wikimedia Commons.","reviewedAt":"2026-10-14"},
+  {"id":"chartres-south-rose","commonsFile":"South rose window of Chartres Cathedral crop1m.jpg","artworkPath":"assets/artworks/chartres-south-rose.jpg","thumbnailPath":"assets/thumbnails/chartres-south-rose.jpg","credit":"Rosácea Sul de Chartres. Fotografia via Wikimedia Commons.","reviewedAt":"2026-10-14"},
+  {"id":"calling-of-saint-matthew","commonsFile":"Caravaggio, Michelangelo Merisi da - The Calling of Saint Matthew - 1599-1600 (hi res).jpg","artworkPath":"assets/artworks/calling-of-saint-matthew.jpg","thumbnailPath":"assets/thumbnails/calling-of-saint-matthew.jpg","credit":"Caravaggio, A Vocação de São Mateus. Reprodução via Wikimedia Commons.","reviewedAt":"2026-10-14"},
+  {"id":"las-meninas","commonsFile":"Las Meninas, by Diego Velázquez, from Prado in Google Earth.jpg","artworkPath":"assets/artworks/las-meninas.jpg","thumbnailPath":"assets/thumbnails/las-meninas.jpg","credit":"Velázquez, Las Meninas. Reprodução via Wikimedia Commons.","reviewedAt":"2026-10-14"},
+  {"id":"ecstasy-of-teresa","commonsFile":"Cornaro chapel in Santa Maria della Vittoria in Rome HDR.jpg","artworkPath":"assets/artworks/ecstasy-of-teresa.jpg","thumbnailPath":"assets/thumbnails/ecstasy-of-teresa.jpg","credit":"Bernini, Êxtase de Santa Teresa. Fotografia via Wikimedia Commons.","reviewedAt":"2026-10-14"},
+  {"id":"judith-holofernes","commonsFile":"Artemisia Gentileschi - Judith Beheading Holofernes - WGA8563.jpg","artworkPath":"assets/artworks/judith-holofernes.jpg","thumbnailPath":"assets/thumbnails/judith-holofernes.jpg","credit":"Artemisia Gentileschi, Judite Decapitando Holofernes. Reprodução via Wikimedia Commons.","reviewedAt":"2026-10-14"},
+  {"id":"oath-of-horatii","commonsFile":"Jacques-Louis David - Oath of the Horatii - Google Art Project.jpg","artworkPath":"assets/artworks/oath-of-horatii.jpg","thumbnailPath":"assets/thumbnails/oath-of-horatii.jpg","credit":"Jacques-Louis David, O Juramento dos Horácios. Reprodução via Wikimedia Commons.","reviewedAt":"2026-10-14"},
+  {"id":"death-of-socrates","commonsFile":"David - The Death of Socrates.jpg","artworkPath":"assets/artworks/death-of-socrates.jpg","thumbnailPath":"assets/thumbnails/death-of-socrates.jpg","credit":"Jacques-Louis David, A Morte de Sócrates. Reprodução via Wikimedia Commons.","reviewedAt":"2026-10-14"},
+  {"id":"wanderer-sea-fog","commonsFile":"Caspar David Friedrich - Wanderer above the sea of fog.jpg","artworkPath":"assets/artworks/wanderer-sea-fog.jpg","thumbnailPath":"assets/thumbnails/wanderer-sea-fog.jpg","credit":"Caspar David Friedrich, O Caminhante sobre o Mar de Névoa. Reprodução via Wikimedia Commons.","reviewedAt":"2026-10-14"},
+  {"id":"raft-of-medusa","commonsFile":"JEAN LOUIS THÉODORE GÉRICAULT - La Balsa de la Medusa (Museo del Louvre, 1818-19).jpg","artworkPath":"assets/artworks/raft-of-medusa.jpg","thumbnailPath":"assets/thumbnails/raft-of-medusa.jpg","credit":"Théodore Géricault, A Balsa da Medusa. Reprodução via Wikimedia Commons.","reviewedAt":"2026-10-14"},
+  {"id":"moulin-galette","commonsFile":"Renoir, Pierre-Auguste - Dance at Le Moulin de la Galette, 1876.jpg","artworkPath":"assets/artworks/moulin-galette.jpg","thumbnailPath":"assets/thumbnails/moulin-galette.jpg","credit":"Pierre-Auguste Renoir, Baile no Moulin de la Galette. Reprodução via Wikimedia Commons.","reviewedAt":"2026-10-14"},
+  {"id":"liberty-leading-people","commonsFile":"Eugène Delacroix - La liberté guidant le peuple.jpg","artworkPath":"assets/artworks/liberty-leading-people.jpg","thumbnailPath":"assets/thumbnails/liberty-leading-people.jpg","credit":"Eugène Delacroix, A Liberdade Guiando o Povo. Reprodução via Wikimedia Commons.","reviewedAt":"2026-10-14"},
+  {"id":"slave-ship","commonsFile":"Slave-ship.jpg","artworkPath":"assets/artworks/slave-ship.jpg","thumbnailPath":"assets/thumbnails/slave-ship.jpg","credit":"J. M. W. Turner, O Navio Negreiro. Reprodução via Wikimedia Commons.","reviewedAt":"2026-10-14"},
+  {"id":"impression-sunrise","commonsFile":"Monet - Impression, Sunrise.jpg","artworkPath":"assets/artworks/impression-sunrise.jpg","thumbnailPath":"assets/thumbnails/impression-sunrise.jpg","credit":"Claude Monet, Impressão, Nascer do Sol. Reprodução via Wikimedia Commons.","reviewedAt":"2026-10-14"},
+  {"id":"ballet-class","commonsFile":"Degas- La classe de danse 1874.jpg","artworkPath":"assets/artworks/ballet-class.jpg","thumbnailPath":"assets/thumbnails/ballet-class.jpg","credit":"Edgar Degas, A Aula de Dança. Reprodução via Wikimedia Commons.","reviewedAt":"2026-10-14"},
+  {"id":"child-bath","commonsFile":"Mary Cassatt - The Child's Bath - Google Art Project.jpg","artworkPath":"assets/artworks/child-bath.jpg","thumbnailPath":"assets/thumbnails/child-bath.jpg","credit":"Mary Cassatt, O Banho da Criança. Reprodução via Wikimedia Commons.","reviewedAt":"2026-10-14"},
+  {"id":"starry-night","commonsFile":"VanGogh-starry night edit.jpg","artworkPath":"assets/artworks/starry-night.jpg","thumbnailPath":"assets/thumbnails/starry-night.jpg","credit":"Vincent van Gogh, A Noite Estrelada. Reprodução em domínio público via Wikimedia Commons.","reviewedAt":"2026-10-14"},
+  {"id":"mondrian-composition-ii","commonsFile":"Piet Mondriaan, 1930 - Mondrian Composition II in Red, Blue, and Yellow.jpg","artworkPath":"assets/artworks/mondrian-composition-ii.jpg","thumbnailPath":"assets/thumbnails/mondrian-composition-ii.jpg","credit":"Piet Mondrian, Composição com Vermelho, Azul e Amarelo. Reprodução de obra em domínio público via Wikimedia Commons.","reviewedAt":"2026-10-14"},
+  {"id":"first-mass-brazil","commonsFile":"Meirelles-primeiramissa2.jpg","artworkPath":"assets/artworks/first-mass-brazil.jpg","thumbnailPath":"assets/thumbnails/first-mass-brazil.jpg","credit":"Victor Meirelles, A Primeira Missa no Brasil. Reprodução em domínio público via Wikimedia Commons.","reviewedAt":"2026-10-14"},
+  {"id":"independence-or-death","commonsFile":"Pedro Américo - Independência ou Morte - Google Art Project.jpg","artworkPath":"assets/artworks/independence-or-death.jpg","thumbnailPath":"assets/thumbnails/independence-or-death.jpg","credit":"Pedro Américo, Independência ou Morte. Reprodução em domínio público via Wikimedia Commons.","reviewedAt":"2026-10-14"},
+  {"id":"moema","commonsFile":"Victor Meirelles - Moema 2.jpg","artworkPath":"assets/artworks/moema.jpg","thumbnailPath":"assets/thumbnails/moema.jpg","credit":"Victor Meirelles, Moema. Reprodução em domínio público via Wikimedia Commons.","reviewedAt":"2026-10-14"},
+  {"id":"battle-of-avai","commonsFile":"Pedro Américo - Batalha do Avaí.jpg","artworkPath":"assets/artworks/battle-of-avai.jpg","thumbnailPath":"assets/thumbnails/battle-of-avai.jpg","credit":"Pedro Américo, Batalha do Avaí. Reprodução em domínio público via Wikimedia Commons.","reviewedAt":"2026-10-14"},
+  {"id":"departure-of-monsoon","commonsFile":"Almeida Júnior - Partida da Monção, 1897.jpg","artworkPath":"assets/artworks/departure-of-monsoon.jpg","thumbnailPath":"assets/thumbnails/departure-of-monsoon.jpg","credit":"Almeida Júnior, A Partida da Monção. Reprodução em domínio público via Wikimedia Commons.","reviewedAt":"2026-10-14"}
+  ,{"id":"artist-vincent-van-gogh","commonsFile":"Vincent van Gogh - Self-Portrait - Google Art Project.jpg","artworkPath":"assets/artists/vincent-van-gogh.jpg","thumbnailPath":"assets/artists/vincent-van-gogh-thumb.jpg","credit":"Vincent van Gogh, Autorretrato. Reprodução em domínio público via Wikimedia Commons.","reviewedAt":"2026-10-14"}
+  ,{"id":"artist-pablo-picasso","commonsFile":"Juan Gris - Portrait of Pablo Picasso - Google Art Project.jpg","artworkPath":"assets/artists/pablo-picasso.jpg","thumbnailPath":"assets/artists/pablo-picasso-thumb.jpg","credit":"Juan Gris, Retrato de Pablo Picasso. Reprodução em domínio público via Wikimedia Commons.","reviewedAt":"2026-10-14"}
+  ,{"id":"artist-almeida-junior","commonsFile":"Almeida Júnior, foto.jpg","artworkPath":"assets/artists/almeida-junior.jpg","thumbnailPath":"assets/artists/almeida-junior-thumb.jpg","credit":"Almeida Júnior, fotografia de época. Reprodução em domínio público via Wikimedia Commons.","reviewedAt":"2026-10-14"}
+  ,{"id":"artist-salvador-dali","commonsFile":"Portrait of Salvador Dali, Paris, LOC 4483943847 (cropped).jpg","artworkPath":"assets/artists/salvador-dali.jpg","thumbnailPath":"assets/artists/salvador-dali-thumb.jpg","credit":"Retrato de Salvador Dalí em Paris. Reprodução em domínio público via Wikimedia Commons.","reviewedAt":"2026-10-14"}
+  ,{"id":"caipira","commonsFile":"Caipira picando fumo.jpg","artworkPath":"assets/artworks/caipira.jpg","thumbnailPath":"assets/thumbnails/caipira.jpg","credit":"Almeida Júnior, Caipira Picando Fumo. Reprodução em domínio público via Wikimedia Commons.","reviewedAt":"2026-10-14"}
+  ,{"id":"artist-caravaggio","commonsFile":"Bild-Ottavio Leoni, Caravaggio.jpg","artworkPath":"assets/artists/caravaggio.jpg","thumbnailPath":"assets/artists/caravaggio-thumb.jpg","credit":"Ottavio Leoni, Retrato de Caravaggio. Reprodução em domínio público via Wikimedia Commons.","reviewedAt":"2026-10-14"}
+  ,{"id":"artist-velazquez","commonsFile":"Self-portrait by Diego Velázquez.jpg","artworkPath":"assets/artists/velazquez.jpg","thumbnailPath":"assets/artists/velazquez-thumb.jpg","credit":"Diego Velázquez, autorretrato. Reprodução em domínio público via Wikimedia Commons.","reviewedAt":"2026-10-14"}
+  ,{"id":"artist-bernini","commonsFile":"Gian Lorenzo Bernini, self-portrait, c1623.jpg","artworkPath":"assets/artists/bernini.jpg","thumbnailPath":"assets/artists/bernini-thumb.jpg","credit":"Gian Lorenzo Bernini, autorretrato. Reprodução em domínio público via Wikimedia Commons.","reviewedAt":"2026-10-14"}
+  ,{"id":"artist-artemisia-gentileschi","commonsFile":"Self-portrait as the Allegory of Painting (La Pittura) - Artemisia Gentileschi.jpg","artworkPath":"assets/artists/artemisia-gentileschi.jpg","thumbnailPath":"assets/artists/artemisia-gentileschi-thumb.jpg","credit":"Artemisia Gentileschi, autorretrato como alegoria da pintura. Reprodução em domínio público via Wikimedia Commons.","reviewedAt":"2026-10-14"}
+  ,{"id":"artist-jacques-louis-david","commonsFile":"David Self Portrait.jpg","artworkPath":"assets/artists/jacques-louis-david.jpg","thumbnailPath":"assets/artists/jacques-louis-david-thumb.jpg","credit":"Jacques-Louis David, autorretrato. Reprodução em domínio público via Wikimedia Commons.","reviewedAt":"2026-10-14"}
+  ,{"id":"artist-caspar-david-friedrich","commonsFile":"Caroline Bardua - Porträt Caspar David Friedrichs (1810).jpg","artworkPath":"assets/artists/caspar-david-friedrich.jpg","thumbnailPath":"assets/artists/caspar-david-friedrich-thumb.jpg","credit":"Caroline Bardua, Retrato de Caspar David Friedrich. Reprodução em domínio público via Wikimedia Commons.","reviewedAt":"2026-10-14"}
+  ,{"id":"artist-theodore-gericault","commonsFile":"Théodore Géricault auto-retrato.jpg","artworkPath":"assets/artists/theodore-gericault.jpg","thumbnailPath":"assets/artists/theodore-gericault-thumb.jpg","credit":"Théodore Géricault, autorretrato. Reprodução em domínio público via Wikimedia Commons.","reviewedAt":"2026-10-14"}
+  ,{"id":"artist-eugene-delacroix","commonsFile":"Delacroix-autoportrait-rouen.jpg","artworkPath":"assets/artists/eugene-delacroix.jpg","thumbnailPath":"assets/artists/eugene-delacroix-thumb.jpg","credit":"Eugène Delacroix, autorretrato. Reprodução em domínio público via Wikimedia Commons.","reviewedAt":"2026-10-14"}
+  ,{"id":"artist-jmw-turner","commonsFile":"Portrait of J. M. W. Turner (4672094).jpg","artworkPath":"assets/artists/jmw-turner.jpg","thumbnailPath":"assets/artists/jmw-turner-thumb.jpg","credit":"Retrato de J. M. W. Turner. Reprodução em domínio público via Wikimedia Commons.","reviewedAt":"2026-10-14"}
+  ,{"id":"artist-claude-monet","commonsFile":"Claude Monet 1899 Nadar crop.jpg","artworkPath":"assets/artists/claude-monet.jpg","thumbnailPath":"assets/artists/claude-monet-thumb.jpg","credit":"Nadar, Retrato de Claude Monet. Reprodução em domínio público via Wikimedia Commons.","reviewedAt":"2026-10-14"}
+  ,{"id":"artist-pierre-auguste-renoir","commonsFile":"Renoir, Pierre-Auguste, by Dornac, BNF Gallica.jpg","artworkPath":"assets/artists/pierre-auguste-renoir.jpg","thumbnailPath":"assets/artists/pierre-auguste-renoir-thumb.jpg","credit":"Dornac, Retrato de Pierre-Auguste Renoir. Reprodução em domínio público via Wikimedia Commons.","reviewedAt":"2026-10-15"}
+  ,{"id":"artist-edgar-degas","commonsFile":"Edgar Degas Foto.jpg","artworkPath":"assets/artists/edgar-degas.jpg","thumbnailPath":"assets/artists/edgar-degas-thumb.jpg","credit":"Fotografia de Edgar Degas. Reprodução em domínio público via Wikimedia Commons.","reviewedAt":"2026-10-15"}
+  ,{"id":"artist-mary-cassatt","commonsFile":"Mary Cassatt-Selfportrait.jpg","artworkPath":"assets/artists/mary-cassatt.jpg","thumbnailPath":"assets/artists/mary-cassatt-thumb.jpg","credit":"Mary Cassatt, autorretrato. Reprodução em domínio público via Wikimedia Commons.","reviewedAt":"2026-10-15"}
+  ,{"id":"artist-victor-meirelles","commonsFile":"RETRATO DE VICTOR MEIRELLES - A. Pelliciari - 1915.jpg","artworkPath":"assets/artists/victor-meirelles.jpg","thumbnailPath":"assets/artists/victor-meirelles-thumb.jpg","credit":"A. Pelliciari, Retrato de Victor Meirelles. Reprodução em domínio público via Wikimedia Commons.","reviewedAt":"2026-10-15"}
+  ,{"id":"artist-pedro-americo","commonsFile":"Pedro Américo, ca, 1899.jpg","artworkPath":"assets/artists/pedro-americo.jpg","thumbnailPath":"assets/artists/pedro-americo-thumb.jpg","credit":"Retrato de Pedro Américo. Reprodução em domínio público via Wikimedia Commons.","reviewedAt":"2026-10-15"}
+  ,{"id":"artist-leonardo-da-vinci","commonsFile":"Leonardo da Vinci - presumed self-portrait - WGA12798.jpg","artworkPath":"assets/artists/leonardo-da-vinci.jpg","thumbnailPath":"assets/artists/leonardo-da-vinci-thumb.jpg","credit":"Leonardo da Vinci, retrato presumido. Reprodução em domínio público via Wikimedia Commons.","reviewedAt":"2026-10-15"}
+  ,{"id":"artist-rafael","commonsFile":"Portrait de l'artiste avec un ami, by Raffaello Sanzio, from C2RMF retouched.jpg","artworkPath":"assets/artists/rafael.jpg","thumbnailPath":"assets/artists/rafael-thumb.jpg","credit":"Rafael Sanzio, retrato com um amigo. Reprodução em domínio público via Wikimedia Commons.","reviewedAt":"2026-10-15"}
+  ,{"id":"artist-leon-battista-alberti","source":"WikiArt","sourceUrl":"https://www.wikiart.org/pt/leon-battista-alberti","artworkPath":"assets/artists/leon-battista-alberti.png","credit":"Retrato de Leon Battista Alberti fornecido pelo mantenedor a partir do registro no WikiArt; condições de redistribuição devem ser confirmadas antes de publicação pública.","sha256":"57FBF50ED1B97E0398B9C799916BE84A495EDD1812AFAAECB9865015B6AAA60F","reviewedAt":"2026-10-15"}
+  ,{"id":"santa-maria-novella-facade","commonsFile":"Firenze - Florence - Basilica di Santa Maria Novella - Façade 1470 by Leon Battista Alberti.jpg","artworkPath":"assets/artworks/santa-maria-novella-facade.jpg","thumbnailPath":"assets/thumbnails/santa-maria-novella-facade.jpg","credit":"Fotografia da fachada de Santa Maria Novella, por Txllxt TxllxT, via Wikimedia Commons. Arquivo sob a licença indicada na página de origem.","reviewedAt":"2026-10-15"}
+  ,{"id":"palazzo-rucellai","commonsFile":"Rucellai.jpg","artworkPath":"assets/artworks/palazzo-rucellai.jpg","thumbnailPath":"assets/thumbnails/palazzo-rucellai.jpg","credit":"Fotografia do Palazzo Rucellai, por Rainer Zenz, via Wikimedia Commons. Arquivo sob a licença indicada na página de origem.","reviewedAt":"2026-10-15"}
+  ,{"id":"sant-andrea-mantua","commonsFile":"Façade de la basilique Saint-André de Mantoue, réalisée par Leon Alberti.jpg","artworkPath":"assets/artworks/sant-andrea-mantua.jpg","thumbnailPath":"assets/thumbnails/sant-andrea-mantua.jpg","credit":"Fotografia da fachada da Basílica de Sant'Andrea, por Velvet, via Wikimedia Commons. Arquivo sob a licença indicada na página de origem.","reviewedAt":"2026-10-15"}
+]

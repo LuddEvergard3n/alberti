@@ -23,6 +23,7 @@ export function renderArtworkViewer(artwork, data) {
   const currentIdx     = artistArtworks.findIndex(a => a.id === artwork.id);
   const prev           = artistArtworks[currentIdx - 1];
   const next           = artistArtworks[currentIdx + 1];
+  const reproductionReady = artwork.mediaStatus !== 'pending-faithful-reproduction';
 
   return `
     <!-- Breadcrumb -->
@@ -48,12 +49,12 @@ export function renderArtworkViewer(artwork, data) {
       <!-- Stage da imagem -->
       <div class="viewer-stage" data-zoomed="false" aria-label="Obra: ${artwork.title}">
         <div class="viewer-image-wrap">
-          <img
+          ${reproductionReady ? `<img
             src="${artwork.image || ''}"
             alt="${artwork.title}${artist ? ', ' + artist.name : ''}"
             class="viewer-img"
             loading="eager"
-          >
+          >` : `<p class="viewer-image-unavailable">A reprodução de leitura está em verificação. A ficha e a análise continuam disponíveis.</p>`}
         </div>
 
         <!-- Overlay SVG de composição -->
@@ -235,13 +236,7 @@ function renderFugaLines(lines) {
       `<line x1="${l.x1}" y1="${l.y1}" x2="${l.x2}" y2="${l.y2}" class="overlay-line-fuga"/>`
     ).join('');
   }
-  // Fallback: duas linhas cruzando no centro
-  return `
-    <line x1="200" y1="150" x2="0"   y2="0"   class="overlay-line-fuga"/>
-    <line x1="200" y1="150" x2="400" y2="0"   class="overlay-line-fuga"/>
-    <line x1="200" y1="150" x2="0"   y2="300" class="overlay-line-fuga"/>
-    <line x1="200" y1="150" x2="400" y2="300" class="overlay-line-fuga"/>
-  `;
+  return '';
 }
 
 /**
@@ -252,8 +247,9 @@ function renderFugaLines(lines) {
  * @returns {string}
  */
 function renderFocalPoint(point) {
-  const cx = point?.x ?? 200;
-  const cy = point?.y ?? 150;
+  if (!point) return '';
+  const cx = point.x;
+  const cy = point.y;
   return `
     <circle cx="${cx}" cy="${cy}" r="20" class="overlay-focal"/>
     <circle cx="${cx}" cy="${cy}" r="5"  fill="rgba(167,120,61,0.6)"/>

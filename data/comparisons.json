@@ -22,5 +22,14 @@
     "artwork_ids": ["school-of-athens", "creation-of-adam"],
     "concepts": ["composição", "equilíbrio", "figura-humana"],
     "axis": "Rafael e Michelangelo organizam grupos de figuras com lógicas compositivas distintas — simetria racional vs. tensão diagonal."
-  }
+  },
+  {"id":"antiga-poder","title":"Mosaico e estátua imperiais","artwork_ids":["alexander-mosaic","augustus-prima-porta"],"concepts":["hierarquia","movimento"],"axis":"Como narrativa e postura corporal constroem poder em meios diferentes?"},
+  {"id":"medieval-luz","title":"Pintura e vitral medievais","artwork_ids":["duccio-maesta","chartres-south-rose"],"concepts":["cor","luz","hierarquia"],"axis":"Como ouro e vidro trabalham de modos distintos com cor e experiência devocional?"},
+  {"id":"barroco-olhar","title":"Caravaggio e Velázquez","artwork_ids":["calling-of-saint-matthew","las-meninas"],"concepts":["luz","espaço","olhar"],"axis":"Como luz e posição do observador organizam cada cena?"},
+  {"id":"classico-civismo","title":"Juramento e morte de Sócrates","artwork_ids":["oath-of-horatii","death-of-socrates"],"concepts":["linha","composição"],"axis":"Como duas cenas antigas foram ordenadas para propor modelos de virtude?"},
+  {"id":"romantico-historia","title":"Naufrágio e revolução","artwork_ids":["raft-of-medusa","liberty-leading-people"],"concepts":["diagonal","drama","história"],"axis":"Compare o uso de corpos, cor e movimento em duas imagens de crise política."},
+  {"id":"impressionista-cotidiano","title":"Monet e Cassatt","artwork_ids":["impression-sunrise","child-bath"],"concepts":["cor","composição"],"axis":"Como cada obra transforma uma situação cotidiana por recorte, pincelada e cor?"},
+  {"id":"modernismo-forma","title":"Van Gogh e Mondrian","artwork_ids":["starry-night","mondrian-composition-ii"],"concepts":["linha","cor","equilíbrio"],"axis":"Como linha e cor constroem expressividade em soluções formais muito diferentes?"},
+  {"id":"brasil-memoria","title":"Primeira Missa e Independência","artwork_ids":["first-mass-brazil","independence-or-death"],"concepts":["história","composição"],"axis":"Como duas pinturas do século XIX fabricam imagens de origem e nação?"},
+  {"id":"imagem-trabalho","title":"O Caipira e A Partida da Monção","artwork_ids":["caipira","departure-of-monsoon"],"concepts":["corpo","trabalho","escala"],"axis":"Que diferenças de escala e enquadramento alteram a representação do trabalho?"}
 ]

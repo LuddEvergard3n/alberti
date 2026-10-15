@@ -1,5 +1,25 @@
 [
   {
+    "id": "leon-battista-alberti",
+    "name": "Leon Battista Alberti",
+    "nationality": "Italiano",
+    "born": "1404, Gênova, Itália",
+    "died": "1472, Roma, Itália",
+    "period": "renascimento",
+    "period_label": "Primeiro Renascimento",
+    "catalogue_role": "Teórico e arquiteto",
+    "technique_primary": "Teoria da arte, arquitetura e escrita",
+    "tagline": "A imagem como construção: composição, visão e perspectiva como problemas de linguagem.",
+    "biography": "Leon Battista Alberti foi humanista, arquiteto e teórico do Renascimento. Em De pictura (1435), refletiu sobre a pintura, a perspectiva e a composição, oferecendo um vocabulário decisivo para discutir como uma imagem organiza espaço, figuras e olhar. Esta ficha o apresenta como referência intelectual do museu, não como pintor ou autor das obras do acervo.",
+    "formal_language": "Janela pictórica, perspectiva, composição, relação entre observador e espaço representado.",
+    "work_section_title": "Projetos arquitetônicos associados",
+    "work_section_note": "As imagens documentam edifícios e fachadas ligados a Alberti. Elas não substituem a experiência espacial, nem apagam as etapas de construção, intervenções ou atribuições discutidas pela historiografia.",
+    "portrait": "assets/artists/leon-battista-alberti.png",
+    "source_page": "https://www.wikiart.org/pt/leon-battista-alberti",
+    "reviewStatus": "revisado",
+    "lastReviewed": "2026-10-15"
+  },
+  {
     "id": "leonardo-da-vinci",
     "name": "Leonardo da Vinci",
     "nationality": "Italiano",
@@ -12,7 +32,7 @@
     "biography": "Leonardo da Vinci é o arquétipo do homem universal renascentista: artista, cientista, engenheiro e filósofo em igual medida. Sua abordagem da pintura era científica — estudou anatomia, ótica, geologia e hidrodinâmica para entender como representar o mundo com precisão. Inventou o sfumato, técnica que dissolve contornos em véus atmosféricos, e explorou a perspectiva linear como instrumento de composição e hierarquia visual.",
     "formal_language": "Sfumato, perspectiva linear rigorosa, estudo anatômico, equilíbrio piramidal das figuras, luz como modeladora de volume.",
     "featured": true,
-    "portrait": "assets/artists/leonardo-da-vinci.svg"
+    "portrait": "assets/artists/leonardo-da-vinci.jpg"
   },
   {
     "id": "michelangelo",
@@ -42,6 +62,31 @@
     "biography": "Rafael sintetizou os grandes mestres do Renascimento — a perspectiva de Brunelleschi, o sfumato de Leonardo, a monumentalidade de Michelangelo — em uma gramática visual de harmonia suprema. Suas composições são equilibradas, claras e racionalmente organizadas. A Escola de Atenas é o manifesto visual do humanismo: cada figura tem seu espaço, cada gesto sua função, cada grupo sua lógica.",
     "formal_language": "Equilíbrio clássico, composição em pirâmide e arco, perspectiva arquitetônica, paleta luminosa, beleza idealizada.",
     "featured": true,
-    "portrait": "assets/artists/rafael.svg"
-  }
+    "portrait": "assets/artists/rafael.jpg"
+  },
+  {"id":"unknown-roman","name":"Oficinas romanas","period":"arte-antiga","nationality":"Roma antiga","tagline":"Escultura e mosaico em contextos cívicos e imperiais."},
+  {"id":"unknown-greek","name":"Oficinas gregas","period":"arte-antiga","nationality":"Grécia antiga","tagline":"Arte, arquitetura e rituais do mundo grego."},
+  {"id":"duccio","name":"Duccio di Buoninsegna","period":"medieval","nationality":"Italiana","tagline":"Pintura sienesa entre devoção, ouro e narrativa."},
+  {"id":"unknown-byzantine","name":"Mestres bizantinos","period":"medieval","nationality":"Bizantina","tagline":"Arquitetura, mosaico e luz em longa duração histórica."},
+  {"id":"unknown-medieval","name":"Mestres medievais","period":"medieval","nationality":"Europeia","tagline":"Oficinas de vitral, escultura e arquitetura sacra."},
+  {"id":"caravaggio","name":"Caravaggio","period":"barroco","nationality":"Italiana","tagline":"Luz dramática e cenas de proximidade física.","portrait":"assets/artists/caravaggio.jpg"},
+  {"id":"velazquez","name":"Diego Velázquez","period":"barroco","nationality":"Espanhola","tagline":"Pintura de corte, espaço e observação.","portrait":"assets/artists/velazquez.jpg"},
+  {"id":"bernini","name":"Gian Lorenzo Bernini","period":"barroco","nationality":"Italiana","tagline":"Escultura, arquitetura e teatro devocional.","portrait":"assets/artists/bernini.jpg"},
+  {"id":"artemisia-gentileschi","name":"Artemisia Gentileschi","period":"barroco","nationality":"Italiana","tagline":"Narrativas bíblicas, luz e força dramática.","portrait":"assets/artists/artemisia-gentileschi.jpg"},
+  {"id":"jacques-louis-david","name":"Jacques-Louis David","period":"neoclassicismo","nationality":"Francesa","tagline":"História antiga, civismo e construção política.","portrait":"assets/artists/jacques-louis-david.jpg"},
+  {"id":"caspar-david-friedrich","name":"Caspar David Friedrich","period":"romantismo","nationality":"Alemã","tagline":"Paisagem, sublime e figura contemplativa.","portrait":"assets/artists/caspar-david-friedrich.jpg"},
+  {"id":"theodore-gericault","name":"Théodore Géricault","period":"romantismo","nationality":"Francesa","tagline":"Corpo, crise e pintura histórica.","portrait":"assets/artists/theodore-gericault.jpg"},
+  {"id":"eugene-delacroix","name":"Eugène Delacroix","period":"romantismo","nationality":"Francesa","tagline":"Cor, movimento e alegoria política.","portrait":"assets/artists/eugene-delacroix.jpg"},
+  {"id":"jmw-turner","name":"J. M. W. Turner","period":"romantismo","nationality":"Britânica","tagline":"Luz, atmosfera e paisagem marítima.","portrait":"assets/artists/jmw-turner.jpg"},
+  {"id":"claude-monet","name":"Claude Monet","period":"impressionismo","nationality":"Francesa","tagline":"Luz, atmosfera e pincelada visível.","portrait":"assets/artists/claude-monet.jpg"},
+  {"id":"pierre-auguste-renoir","name":"Pierre-Auguste Renoir","period":"impressionismo","nationality":"Francesa","tagline":"Cor, sociabilidade e luz filtrada.","portrait":"assets/artists/pierre-auguste-renoir.jpg"},
+  {"id":"edgar-degas","name":"Edgar Degas","period":"impressionismo","nationality":"Francesa","tagline":"Recorte, ensaio e movimento corporal.","portrait":"assets/artists/edgar-degas.jpg"},
+  {"id":"mary-cassatt","name":"Mary Cassatt","period":"impressionismo","nationality":"Americana","tagline":"Cotidiano, padrão e intimidade.","portrait":"assets/artists/mary-cassatt.jpg"},
+  {"id":"vincent-van-gogh","name":"Vincent van Gogh","period":"modernismo","nationality":"Neerlandesa","tagline":"Cor, gesto e paisagem transformada.","portrait":"assets/artists/vincent-van-gogh.jpg"},
+  {"id":"pablo-picasso","name":"Pablo Picasso","period":"modernismo","nationality":"Espanhola","tagline":"Plano, fragmentação e vanguardas.","portrait":"assets/artists/pablo-picasso.jpg"},
+  {"id":"piet-mondrian","name":"Piet Mondrian","period":"modernismo","nationality":"Neerlandesa","tagline":"Abstração geométrica e equilíbrio assimétrico."},
+  {"id":"victor-meirelles","name":"Victor Meirelles","period":"neoclassicismo","nationality":"Brasileira","tagline":"Pintura histórica e imaginação nacional.","portrait":"assets/artists/victor-meirelles.jpg"},
+  {"id":"pedro-americo","name":"Pedro Américo","period":"romantismo","nationality":"Brasileira","tagline":"Pintura histórica monumental.","portrait":"assets/artists/pedro-americo.jpg"},
+  {"id":"almeida-junior","name":"Almeida Júnior","period":"romantismo","nationality":"Brasileira","tagline":"Figura, cotidiano e pintura paulista.","portrait":"assets/artists/almeida-junior.jpg"},
+  {"id":"salvador-dali","name":"Salvador Dalí","period":"contemporaneo","nationality":"Espanhola","tagline":"Surrealismo, imagem e tempo.","portrait":"assets/artists/salvador-dali.jpg"}
 ]

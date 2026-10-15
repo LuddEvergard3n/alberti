@@ -98,6 +98,173 @@
   border-color:var(--color-brand-accent);
 }
 
+.plan-duration-fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-2);
+}
+
+.artist-reference-layout {
+  display: grid;
+  grid-template-columns: minmax(13rem, .75fr) minmax(20rem, 1.2fr) minmax(18rem, .9fr);
+  align-items: stretch;
+  gap: var(--space-5);
+}
+
+.artist-reference-portrait {
+  min-block-size: 100%;
+  overflow: hidden;
+  border: 1px solid var(--color-border-base);
+  border-radius: var(--radius-md);
+  background: var(--color-bg-deep);
+}
+
+.artist-reference-portrait img {
+  inline-size: 100%;
+  block-size: 100%;
+  min-block-size: 22rem;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  filter: sepia(.12) contrast(1.04);
+}
+
+.artist-reference-copy {
+  display: grid;
+  align-content: space-between;
+  gap: var(--space-5);
+}
+
+.artist-reference-note {
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-border-base);
+}
+
+.artist-reference-note h2 {
+  font-family: var(--font-heading);
+  font-size: var(--text-subsection);
+  margin-bottom: var(--space-2);
+}
+
+.artist-reference-note p + p {
+  margin-top: var(--space-3);
+  font-size: var(--text-small);
+}
+
+.artist-reference-meta {
+  align-self: stretch;
+  display: grid;
+  align-content: center;
+}
+
+.artist-projects {
+  margin-top: var(--space-7);
+}
+
+.artist-projects-note {
+  max-inline-size: 76ch;
+  margin-bottom: var(--space-4);
+  color: var(--color-text-secondary);
+  line-height: var(--leading-relaxed);
+}
+
+.plan-builder-layout {
+  display: grid;
+  gap: var(--space-5);
+}
+
+.plan-builder-controls > div {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.plan-builder-controls .plan-checklist,
+.plan-builder-controls .plan-actions,
+.plan-builder-controls label:has(textarea) {
+  grid-column: 1 / -1;
+}
+
+.plan-checklist {
+  display: grid;
+  gap: var(--space-2);
+  padding: var(--space-3);
+  border: 1px solid var(--color-border-base);
+  border-radius: var(--radius-sm);
+  background: var(--color-bg-surface);
+}
+
+.plan-checklist legend {
+  padding: 0 var(--space-1);
+}
+
+.plan-check-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+  color: var(--color-text-primary);
+  line-height: var(--leading-normal);
+}
+
+.plan-check-item input {
+  inline-size: 1rem;
+  block-size: 1rem;
+  margin-top: .15rem;
+  accent-color: var(--color-accent-primary);
+}
+
+@media (max-width: 480px) {
+  .plan-builder-controls > div {
+    grid-template-columns: 1fr;
+  }
+
+  .plan-duration-fields {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 980px) {
+  .artist-reference-layout {
+    grid-template-columns: minmax(11rem, .65fr) minmax(18rem, 1fr);
+  }
+
+  .artist-reference-meta {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 620px) {
+  .artist-reference-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .artist-reference-portrait {
+    max-block-size: 26rem;
+  }
+
+  .artist-reference-portrait img {
+    min-block-size: 0;
+    max-block-size: 26rem;
+  }
+}
+
+@media print {
+  body.print-plan #site-header,
+  body.print-plan #site-footer,
+  body.print-plan #teacher-panel,
+  body.print-plan .plan-builder-controls,
+  body.print-plan .plan-builder-notes,
+  body.print-plan .plan-actions {
+    display: none !important;
+  }
+
+  body.print-plan [data-view].hidden {
+    display: none !important;
+  }
+
+  body.print-plan #view-plano-aula {
+    display: block !important;
+  }
+}
+
 .btn-accent:hover {
   background:  #8E6228;
   border-color:#8E6228;

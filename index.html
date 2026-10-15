@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Alberti — Museu Interativo de Arte. Ver, ler e compreender a arte como linguagem, forma e civilização.">
   <meta name="theme-color" content="#F5F1E8">
+  <link rel="manifest" href="manifest.webmanifest">
 
   <!-- Open Graph -->
   <meta property="og:title"       content="Alberti — Museu Interativo de Arte">
@@ -53,6 +54,8 @@
             <li><a href="#/museu"     class="nav-link" data-route="museu">Museu</a></li>
             <li><a href="#/studio"    class="nav-link" data-route="studio">Estúdio</a></li>
             <li><a href="#/comparar"  class="nav-link" data-route="comparar">Comparar</a></li>
+            <li><a href="#/plano-aula" class="nav-link" data-route="plano-aula">Plano</a></li>
+            <li><a href="#/sobre"     class="nav-link" data-route="sobre">Sobre</a></li>
           </ul>
         </nav>
 
@@ -95,6 +98,8 @@
       <li><a href="#/museu"     class="nav-link" style="font-size:1.1rem; padding:0.75rem 0;">Museu</a></li>
       <li><a href="#/studio"    class="nav-link" style="font-size:1.1rem; padding:0.75rem 0;">Estúdio</a></li>
       <li><a href="#/comparar"  class="nav-link" style="font-size:1.1rem; padding:0.75rem 0;">Comparar</a></li>
+      <li><a href="#/plano-aula" class="nav-link" style="font-size:1.1rem; padding:0.75rem 0;">Plano de aula</a></li>
+      <li><a href="#/sobre"     class="nav-link" style="font-size:1.1rem; padding:0.75rem 0;">Sobre</a></li>
     </ul>
     <div style="margin-top:2rem; padding-top:2rem; border-top:1px solid var(--color-divider);">
       <button class="btn btn-secondary" id="btn-teacher-mode-mobile" style="width:100%; justify-content:center;">
@@ -180,13 +185,13 @@
                        style="width:100%;height:100%;object-fit:cover;opacity:0.82;display:block;">
                 </figure>
                 <figure class="hero-thumb">
-                  <img src="assets/thumbnails/school-of-athens.svg"
+                  <img src="assets/thumbnails/school-of-athens.jpg"
                        alt="" role="presentation"
                        loading="lazy"
                        style="width:100%;height:100%;object-fit:cover;opacity:0.82;display:block;">
                 </figure>
                 <figure class="hero-thumb">
-                  <img src="assets/thumbnails/mona-lisa.svg"
+                  <img src="assets/thumbnails/mona-lisa.jpg"
                        alt="" role="presentation"
                        loading="lazy"
                        style="width:100%;height:100%;object-fit:cover;opacity:0.82;display:block;">
@@ -365,6 +370,12 @@
       </div>
     </div>
 
+    <div id="view-aula" data-view="aula" class="hidden">
+      <div class="container section">
+        <div id="aula-view-content"></div>
+      </div>
+    </div>
+
     <!-- VIEW: COMPARAR -->
     <div id="view-comparar" data-view="comparar" class="hidden">
       <div class="container section">
@@ -383,6 +394,20 @@
     <div id="view-artista" data-view="artista" class="hidden">
       <div class="container section">
         <div id="artista-view-content"></div>
+      </div>
+    </div>
+
+    <!-- VIEW: PLANO DE AULA -->
+    <div id="view-plano-aula" data-view="plano-aula" class="hidden">
+      <div class="container section">
+        <div id="plano-aula-view-content"></div>
+      </div>
+    </div>
+
+    <!-- VIEW: SOBRE -->
+    <div id="view-sobre" data-view="sobre" class="hidden">
+      <div class="container section">
+        <div id="sobre-view-content"></div>
       </div>
     </div>
 
@@ -436,6 +461,8 @@
             <ul class="footer-nav-list" role="list">
               <li><a href="#/studio"   class="footer-nav-link">Estúdio</a></li>
               <li><a href="#/comparar" class="footer-nav-link">Comparar</a></li>
+              <li><a href="#/plano-aula" class="footer-nav-link">Plano de aula</a></li>
+              <li><a href="#/sobre" class="footer-nav-link">Sobre o Alberti</a></li>
             </ul>
           </div>
           <div class="footer-nav-group">
@@ -474,7 +501,7 @@
   <!-- ====================================================
        JAVASCRIPT — ES Modules
        ==================================================== -->
-  <script type="module" src="js/main.js"></script>
+  <script type="module" src="js/main.js?v=20"></script>
 
 </body>
 </html>

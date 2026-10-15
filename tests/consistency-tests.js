@@ -128,9 +128,10 @@ export async function runConsistencyTests() {
     });
   });
 
-  group('Consistência: artistas referenciados têm obras', () => {
-    test('cada artista em artists.json tem ao menos uma obra em artworks.json', () => {
+  group('Consistência: artistas produtores têm obras', () => {
+    test('cada artista produtor em artists.json tem ao menos uma obra em artworks.json', () => {
       for (const artist of artists) {
+        if (artist.catalogue_role) continue;
         const has = artworks.some(a => a.artist === artist.id);
         assert(has, `artista "${artist.id}" não tem nenhuma obra em artworks.json`);
       }

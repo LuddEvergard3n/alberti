@@ -13,7 +13,7 @@
 
 'use strict';
 
-import { readFileSync } from 'fs';
+import { existsSync, readFileSync, statSync } from 'fs';
 import { resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { test, assert, assertEqual, assertNonEmpty, assertHasKeys, group } from './test-runner.js';
@@ -72,7 +72,7 @@ function assertValidSlug(id, context) {
    TESTES DE ARTWORKS
    ========================================================= */
 
-function testArtworks(artworks) {
+function testArtworks(artworks, media) {
   group('artworks.json', () => {
 
     test('arquivo carregado como array', () => {
@@ -128,6 +128,30 @@ function testArtworks(artworks) {
         }
       }
     });
+
+    test('toda mídia publicada possui arquivo local e crédito verificável', () => {
+      for (const item of media.filter(item => item.status !== 'pending')) {
+        assert(typeof item.credit === 'string' && item.credit.length > 10, `mídia "${item.id}": crédito ausente`);
+        for (const path of [item.artworkPath, item.thumbnailPath].filter(path => typeof path === 'string')) {
+          const absolutePath = resolve(DATA_DIR, '..', path);
+          assert(existsSync(absolutePath), `mídia "${item.id}": arquivo ausente ${path}`);
+          assert(statSync(absolutePath).size >= 5120, `mídia "${item.id}": arquivo muito pequeno ${path}`);
+        }
+      }
+    });
+
+    test('obra sem arquivo local é marcada como reprodução pendente', () => {
+      for (const artwork of artworks) {
+        const imagePath = resolve(DATA_DIR, '..', artwork.image);
+        if (!existsSync(imagePath)) {
+          assertEqual(
+            artwork.mediaStatus,
+            'pending-faithful-reproduction',
+            `obra "${artwork.id}": arquivo ausente precisa ser marcado como pendente`
+          );
+        }
+      }
+    });
   });
 }
 
@@ -135,7 +159,7 @@ function testArtworks(artworks) {
    TESTES DE ARTISTS
    ========================================================= */
 
-function testArtists(artists) {
+function testArtists(artists, artworks) {
   group('artists.json', () => {
 
     test('arquivo carregado como array', () => {
@@ -160,6 +184,19 @@ function testArtists(artists) {
     test('todos os IDs são slugs válidos', () => {
       for (const artist of artists) {
         assertValidSlug(artist.id, `artist "${artist.id}"`);
+      }
+    });
+
+    test('cada artista tem retrato ou obra local para o cartão', () => {
+      for (const artist of artists) {
+        const representative = artworks.find(artwork => artwork.artist === artist.id);
+        const visualPath = artist.portrait || representative?.thumbnail || representative?.image;
+        assert(visualPath, `artista "${artist.id}": sem imagem possível para o cartão`);
+        if (artist.portrait) {
+          assert(existsSync(resolve(DATA_DIR, '..', artist.portrait)), `artista "${artist.id}": retrato ausente`);
+        } else if (representative?.mediaStatus !== 'pending-faithful-reproduction') {
+          assert(existsSync(resolve(DATA_DIR, '..', visualPath)), `artista "${artist.id}": obra associada ausente`);
+        }
       }
     });
   });
@@ -312,9 +349,10 @@ export async function runDataTests() {
   const techniques = loadJSON('techniques.json');
   const styles     = loadJSON('styles.json');
   const lessons    = loadJSON('lessons.json');
+  const media      = loadJSON('media.json');
 
-  testArtworks(artworks);
-  testArtists(artists);
+  testArtworks(artworks, media);
+  testArtists(artists, artworks);
   testPeriods(periods);
   testModules(modules);
   testExercises(exercises);
