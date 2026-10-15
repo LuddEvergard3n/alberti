@@ -1,4 +1,4 @@
-const CACHE_NAME = 'alberti-v20-shell';
+const CACHE_NAME = 'alberti-v24-shell';
 const SHELL = [
   './', './index.html', './manifest.webmanifest', './js/main.js', './js/state.js', './js/router.js', './js/ui.js', './js/accessibility.js', './js/progress.js',
   './css/base.css', './css/theme.css', './css/components.css', './css/layout.css', './css/gallery.css', './css/mobile.css',
@@ -11,8 +11,11 @@ self.addEventListener('activate', event => event.waitUntil(caches.keys().then(ke
 self.addEventListener('fetch', event => {
   const request = event.request;
   if (request.method !== 'GET' || new URL(request.url).origin !== self.location.origin) return;
-  event.respondWith(caches.match(request).then(cached => cached || fetch(request).then(response => {
-    if (response.ok && (request.destination === 'image' || request.destination === 'script')) caches.open(CACHE_NAME).then(cache => cache.put(request, response.clone()));
+  const url = new URL(request.url);
+  const refreshable = request.mode === 'navigate' || request.destination === 'script' || request.destination === 'style' || url.pathname.includes('/data/');
+  const networkFirst = () => fetch(request).then(response => {
+    if (response.ok) caches.open(CACHE_NAME).then(cache => cache.put(request, response.clone()));
     return response;
-  }).catch(() => request.mode === 'navigate' ? caches.match('./index.html') : new Response('', { status: 503 }))));
+  }).catch(() => caches.match(request).then(cached => cached || (request.mode === 'navigate' ? caches.match('./index.html') : new Response('', { status: 503 }))));
+  event.respondWith(refreshable ? networkFirst() : caches.match(request).then(cached => cached || networkFirst()));
 });

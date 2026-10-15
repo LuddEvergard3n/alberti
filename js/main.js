@@ -99,7 +99,7 @@ async function init() {
   // Verificar protocolo — file:// bloqueia imagens cross-origin
   checkFileProtocol();
   if ('serviceWorker' in navigator && window.location.protocol.startsWith('http')) {
-    navigator.serviceWorker.register('./sw.js?v=20').catch(error => console.warn('[Alberti] Service Worker indisponível:', error));
+    navigator.serviceWorker.register('./sw.js?v=24').catch(error => console.warn('[Alberti] Service Worker indisponível:', error));
   }
 
   // 1. UI shell

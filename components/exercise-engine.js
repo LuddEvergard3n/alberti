@@ -22,7 +22,7 @@ export function renderExerciseEngine(exercise, data) {
       <a href="#/studio" class="btn btn-ghost btn-sm" style="padding-left:0;">&larr; Estúdio</a>
     </div>
 
-    <div class="studio-exercise">
+    <div class="studio-exercise" data-exercise-root>
       <div class="studio-exercise-header">
         <div>
           <div class="studio-exercise-type">${exercise.type || 'Exercício visual'}</div>
@@ -72,12 +72,18 @@ export function renderExerciseEngine(exercise, data) {
                aria-label="Selecione uma opção">
             ${exercise.options.map(opt => `
               <button class="filter-pill" data-option="${opt.value}"
-                      onclick="this.closest('[role=group]').querySelectorAll('[data-option]').forEach(b=>b.classList.remove('selected')); this.classList.add('selected');"
                       aria-pressed="false">
                 ${opt.label}
               </button>
             `).join('')}
           </div>
+        ` : ''}
+
+        ${exercise.type === 'reflection' ? `
+          <label class="sr-only" for="exercise-response-${exercise.id}">Sua observação</label>
+          <textarea id="exercise-response-${exercise.id}" class="exercise-response"
+                    data-exercise-response rows="6"
+                    placeholder="Registre sua observação apoiando-se nos elementos visíveis da obra."></textarea>
         ` : ''}
 
         <!-- Ações -->
@@ -86,7 +92,6 @@ export function renderExerciseEngine(exercise, data) {
             Verificar observação
           </button>
           <button class="btn btn-ghost" data-exercise-action="reset"
-                  onclick="document.querySelector('.exercise-feedback').innerHTML=''"
                   aria-label="Limpar e recomeçar">
             Recomeçar
           </button>

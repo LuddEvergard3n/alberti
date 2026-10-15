@@ -35,6 +35,8 @@ export function initExercise(exerciseId) {
   if (!exercise) return;
 
   bindSubmitButton(exercise);
+  bindSelection(exercise);
+  bindResetButton(exercise);
   bindCanvasInteractions(exercise);
   loadProgress(exerciseId);
 }
@@ -54,6 +56,42 @@ function bindSubmitButton(exercise) {
   btn?.addEventListener('click', () => evaluateExercise(exercise));
 }
 
+/** Mantém seleção visual, estado semântico e correção no mesmo elemento. */
+function bindSelection(exercise) {
+  if (exercise.type !== 'classification') return;
+
+  const root = document.querySelector('[data-exercise-root]');
+  root?.querySelectorAll('[data-option]').forEach(option => {
+    option.addEventListener('click', () => {
+      root.querySelectorAll('[data-option]').forEach(button => {
+        const selected = button === option;
+        button.classList.toggle('selected', selected);
+        button.setAttribute('aria-pressed', String(selected));
+      });
+    });
+  });
+}
+
+/** Restaura todos os controles, não apenas o texto de feedback. */
+function bindResetButton(exercise) {
+  const root = document.querySelector('[data-exercise-root]');
+  root?.querySelector('[data-exercise-action="reset"]')?.addEventListener('click', () => {
+    root.querySelector('.exercise-feedback').replaceChildren();
+    root.querySelectorAll('[data-option]').forEach(button => {
+      button.classList.remove('selected');
+      button.setAttribute('aria-pressed', 'false');
+    });
+    const response = root.querySelector('[data-exercise-response]');
+    if (response) response.value = '';
+    const canvas = root.querySelector('.studio-canvas');
+    if (canvas) {
+      delete canvas.dataset.markerX;
+      delete canvas.dataset.markerY;
+      canvas.getContext('2d')?.clearRect(0, 0, canvas.width, canvas.height);
+    }
+  });
+}
+
 /**
  * Avalia o estado atual do exercício e exibe feedback.
  * O feedback é orientado ao olhar — nunca apenas "errado".
@@ -62,7 +100,8 @@ function bindSubmitButton(exercise) {
  * @returns {void}
  */
 function evaluateExercise(exercise) {
-  const container = document.querySelector('.exercise-feedback');
+  const root = document.querySelector('[data-exercise-root]');
+  const container = root?.querySelector('.exercise-feedback');
   if (!container) return;
 
   // Cada tipo de exercício tem avaliação própria
@@ -95,7 +134,7 @@ function evaluateExercise(exercise) {
  * @returns {{correct:boolean, message:string, hint:string}}
  */
 function evaluateIdentification(exercise) {
-  const canvas    = document.querySelector('.studio-canvas');
+  const canvas    = document.querySelector('[data-exercise-root] .studio-canvas');
   const markerX   = canvas ? parseFloat(canvas.dataset.markerX || '0') : 0;
   const markerY   = canvas ? parseFloat(canvas.dataset.markerY || '0') : 0;
 
@@ -126,7 +165,7 @@ function evaluateIdentification(exercise) {
  * @returns {{correct:boolean, message:string, hint:string}}
  */
 function evaluateComposition(exercise) {
-  const canvas  = document.querySelector('.studio-canvas');
+  const canvas  = document.querySelector('[data-exercise-root] .studio-canvas');
   const correct = canvas ? canvas.dataset.compositionCorrect === 'true' : false;
 
   return {
@@ -146,7 +185,7 @@ function evaluateComposition(exercise) {
  * @returns {{correct:boolean, message:string, hint:string}}
  */
 function evaluateClassification(exercise) {
-  const selected = document.querySelector('[data-option].selected');
+  const selected = document.querySelector('[data-exercise-root] [data-option].selected');
   if (!selected) {
     return { correct: false, message: 'Selecione uma opção para continuar.', hint: '' };
   }
@@ -170,6 +209,15 @@ function evaluateClassification(exercise) {
  * @returns {{correct:boolean, message:string, hint:string}}
  */
 function generateGenericFeedback(exercise) {
+  const response = document.querySelector('[data-exercise-root] [data-exercise-response]');
+  if (exercise.type === 'reflection' && !response?.value.trim()) {
+    return {
+      correct: false,
+      message: 'Registre sua observação antes de concluir a atividade.',
+      hint: exercise.criteria || '',
+    };
+  }
+
   return {
     correct: true,
     message: exercise.feedback_general || 'Reflexão registrada. Compare sua análise com os critérios abaixo.',
@@ -232,7 +280,7 @@ function renderFeedback(container, feedback) {
 function bindCanvasInteractions(exercise) {
   if (exercise.type !== 'identification') return;
 
-  const canvas = document.querySelector('.studio-canvas');
+  const canvas = document.querySelector('[data-exercise-root] .studio-canvas');
   if (!canvas) return;
 
   canvas.addEventListener('click', e => {

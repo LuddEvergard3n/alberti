@@ -299,14 +299,32 @@ function testExercises(exercises) {
           typeof ex.correct_answer === 'string',
           `exercício "${ex.id}": correct_answer obrigatório para classification`
         );
+        assert(
+          ex.options.some(option => option.value === ex.correct_answer),
+          `exercício "${ex.id}": correct_answer deve existir em options`
+        );
       }
     });
 
-    test('exercícios de identificação têm answer_area', () => {
+    test('exercícios de identificação têm área clicável válida', () => {
       for (const ex of exercises.filter(e => e.type === 'identification')) {
+        const area = ex.answer_area;
         assert(
-          ex.answer_area && typeof ex.answer_area.x === 'number',
+          area && typeof area.x === 'number' && typeof area.y === 'number' && typeof area.radius === 'number',
           `exercício "${ex.id}": answer_area com x,y,radius obrigatório para identification`
+        );
+        assert(
+          area.x >= 0 && area.x <= 100 && area.y >= 0 && area.y <= 100 && area.radius > 0 && area.radius <= 50,
+          `exercício "${ex.id}": answer_area deve usar porcentagens válidas`
+        );
+      }
+    });
+
+    test('exercícios reflexivos oferecem critério de autoavaliação', () => {
+      for (const ex of exercises.filter(e => e.type === 'reflection')) {
+        assert(
+          typeof ex.criteria === 'string' && ex.criteria.trim().length > 0,
+          `exercício "${ex.id}": criteria obrigatório para reflection`
         );
       }
     });
